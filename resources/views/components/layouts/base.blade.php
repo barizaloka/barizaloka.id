@@ -26,9 +26,10 @@
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Komunitas</a>
-                <a href="#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Layanan</a>
-                <a href="#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Tentang</a>
+                <a href="{{ route('home') }}#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Komunitas</a>
+                <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Solusi</a>
+                <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Layanan</a>
+                <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Tentang</a>
             </div>
 
             <a href="#kontak"
@@ -53,10 +54,11 @@
 
         {{-- Mobile menu --}}
         <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-100 bg-white px-6 py-4 flex flex-col gap-4">
-            <a href="#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
-            <a href="#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Layanan</a>
-            <a href="#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Tentang</a>
-            <a href="#kontak" class="text-sm font-medium text-zinc-900 font-semibold">Hubungi Kami</a>
+            <a href="{{ route('home') }}#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
+            <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Solusi</a>
+            <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Layanan</a>
+            <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Tentang</a>
+            <a href="{{ route('home') }}#kontak" class="text-sm font-medium text-zinc-900 font-semibold">Hubungi Kami</a>
         </div>
     </header>
 

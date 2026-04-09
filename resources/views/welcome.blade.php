@@ -81,6 +81,10 @@
                    class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm hover:from-indigo-500 hover:to-purple-500 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-300">
                     🚀 Jelajahi Komunitas
                 </a>
+                <a href="{{ route('solusi') }}"
+                   class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-pink-500 to-orange-500 text-white font-semibold text-sm hover:from-pink-400 hover:to-orange-400 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200 hover:shadow-xl">
+                    💡 Lihat Solusi Kami
+                </a>
                 <a href="#layanan"
                    class="px-7 py-3.5 rounded-xl bg-white border border-zinc-200 text-zinc-700 font-semibold text-sm hover:bg-zinc-50 hover:-translate-y-0.5 transition-all duration-200 shadow-sm">
                     ✨ Lihat Layanan
