@@ -142,6 +142,10 @@
                             <span>🗑️</span> Program Pengelolaan Sampah
                         </li>
                     </ul>
+                    <a href="https://astraloka.my.id" target="_blank" rel="noopener noreferrer"
+                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold hover:from-green-400 hover:to-emerald-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-green-200">
+                        🌍 Kunjungi Astraloka
+                    </a>
                 </div>
 
                 {{-- Baricode --}}
@@ -167,6 +171,10 @@
                             <span>🌐</span> Jaringan Developer
                         </li>
                     </ul>
+                    <a href="https://baricode.org" target="_blank" rel="noopener noreferrer"
+                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold hover:from-blue-400 hover:to-indigo-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-blue-200">
+                        💻 Kunjungi Baricode
+                    </a>
                 </div>
 
                 {{-- Self Reminder --}}
@@ -192,6 +200,10 @@
                             <span>📊</span> Pantauan Progres Ibadah
                         </li>
                     </ul>
+                    <a href="https://selfreminder.org" target="_blank" rel="noopener noreferrer"
+                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-violet-600 text-white text-sm font-semibold hover:from-purple-400 hover:to-violet-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-purple-200">
+                        📿 Kunjungi Self Reminder
+                    </a>
                 </div>
             </div>
         </div>
@@ -243,13 +255,14 @@
             </div>
 
             <div class="flex flex-wrap justify-center items-center gap-8">
-                <div class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl border border-zinc-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                <a href="https://masjidsyathosedan.com" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl border border-zinc-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                     <span class="text-3xl">🕌</span>
                     <div class="text-left">
                         <p class="font-bold text-zinc-900 text-sm">Masjid Syatho Sedan</p>
                         <p class="text-xs text-zinc-500">📍 Rembang, Jawa Tengah</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
