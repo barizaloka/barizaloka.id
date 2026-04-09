@@ -38,29 +38,51 @@
 
             {{-- Mobile menu button --}}
             <button
-                x-data
-                @click="$dispatch('toggle-menu')"
+                id="menu-toggle"
                 class="md:hidden p-2 rounded-lg hover:bg-zinc-100 transition-colors"
-                aria-label="Menu">
-                <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                aria-label="Menu"
+                aria-expanded="false">
+                <svg id="icon-open" class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="icon-close" class="size-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
         </nav>
 
         {{-- Mobile menu --}}
-        <div
-            x-data="{ open: false }"
-            @toggle-menu.window="open = !open"
-            x-show="open"
-            x-transition
-            class="md:hidden border-t border-zinc-100 bg-white px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-100 bg-white px-6 py-4 flex flex-col gap-4">
             <a href="#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
             <a href="#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Layanan</a>
             <a href="#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Tentang</a>
             <a href="#kontak" class="text-sm font-medium text-zinc-900 font-semibold">Hubungi Kami</a>
         </div>
     </header>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', isOpen);
+            iconOpen.classList.toggle('hidden', !isOpen);
+            iconClose.classList.toggle('hidden', isOpen);
+            toggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 
     {{-- Main content --}}
     <main>
