@@ -93,7 +93,7 @@
     <section class="border-y border-purple-100 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
         <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-3 divide-x divide-purple-100">
             <div class="text-center px-4">
-                <p class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">3</p>
+                <p class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">4</p>
                 <p class="text-sm text-zinc-500 mt-1">🏘️ Komunitas Aktif</p>
             </div>
             <div class="text-center px-4">
@@ -114,11 +114,40 @@
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-widest text-purple-700">
                     🏘️ Komunitas Kami
                 </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">Tiga Pilar Utama 🌟</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">Empat Pilar Utama 🌟</h2>
                 <p class="text-zinc-500 max-w-lg">Setiap komunitas memiliki fokus yang berbeda namun bersatu dalam satu tujuan: dampak nyata yang positif.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {{-- Astro Sedan --}}
+                <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-amber-100 bg-gradient-to-b from-amber-50/60 to-white hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100 hover:-translate-y-1 transition-all duration-300">
+                    <div class="size-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-3xl shadow-lg shadow-amber-200 group-hover:scale-110 transition-transform duration-300">
+                        🌙
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-bold text-zinc-900">Astro Sedan</h3>
+                        <p class="text-sm font-semibold text-amber-600">🔭 Komunitas Belajar Falak</p>
+                        <p class="text-sm text-zinc-500 leading-relaxed">
+                            Belajar ilmu falak dan astronomi bersama agar memahami bagaimana ulama memandang waktu—dari hilal hingga arah kiblat.
+                        </p>
+                    </div>
+                    <ul class="flex flex-col gap-2 mt-auto">
+                        <li class="flex items-center gap-2 text-sm text-zinc-600">
+                            <span>🌙</span> Pengamatan Hilal & Kalender
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-zinc-600">
+                            <span>⭐</span> Ilmu Falak & Astronomi Islam
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-zinc-600">
+                            <span>🧭</span> Arah Kiblat & Waktu Shalat
+                        </li>
+                    </ul>
+                    <a href="#"
+                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white text-sm font-semibold hover:from-amber-400 hover:to-orange-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-amber-200">
+                        🔭 Kunjungi Astro Sedan
+                    </a>
+                </div>
+
                 {{-- Astraloka --}}
                 <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-green-100 bg-gradient-to-b from-green-50/60 to-white hover:border-green-300 hover:shadow-xl hover:shadow-green-100 hover:-translate-y-1 transition-all duration-300">
                     <div class="size-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-3xl shadow-lg shadow-green-200 group-hover:scale-110 transition-transform duration-300">
