@@ -68,6 +68,14 @@
                 💻 teknologi, dan ✨ spiritual yang positif.
             </p>
 
+            <div class="anim-up-4 flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400 shadow-lg shadow-orange-200 border border-orange-300">
+                <span class="text-2xl">🏡</span>
+                <p class="text-sm font-bold text-white drop-shadow">
+                    Didirikan oleh Pemuda Desa — Kecamatan Sedan, Kabupaten Rembang
+                </p>
+                <span class="text-2xl">🌾</span>
+            </div>
+
             <div class="anim-up-4 flex flex-col sm:flex-row items-center gap-3 mt-2">
                 <a href="#komunitas"
                    class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm hover:from-indigo-500 hover:to-purple-500 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-300">
