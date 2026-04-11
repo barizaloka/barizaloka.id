@@ -146,10 +146,9 @@
                             <span>🧭</span> Arah Kiblat & Waktu Shalat
                         </li>
                     </ul>
-                    <a href="#"
-                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white text-sm font-semibold hover:from-amber-400 hover:to-orange-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-amber-200">
-                        🔭 Kunjungi Astro Sedan
-                    </a>
+                    <span class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 text-zinc-400 text-sm font-semibold cursor-not-allowed select-none">
+                        🔭 Segera Hadir
+                    </span>
                 </div>
 
                 {{-- Astraloka --}}

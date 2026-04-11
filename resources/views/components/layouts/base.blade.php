@@ -9,6 +9,22 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    {{-- Open Graph (WhatsApp, Facebook, dll) --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
+    <meta property="og:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
+    <meta property="og:image" content="{{ url('/og-image.png') }}">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="{{ config('app.name', 'Barizaloka') }}">
+
+    {{-- Twitter/X Card --}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
+    <meta name="twitter:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
+    <meta name="twitter:image" content="{{ url('/og-image.png') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
 
