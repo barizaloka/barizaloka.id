@@ -124,9 +124,9 @@
                 <div class="flex flex-col gap-4">
                     <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Komunitas</h3>
                     <ul class="flex flex-col gap-2 text-sm">
-                        <li><a href="#komunitas" class="hover:text-white transition-colors">Astraloka</a></li>
-                        <li><a href="#komunitas" class="hover:text-white transition-colors">Baricode</a></li>
-                        <li><a href="#komunitas" class="hover:text-white transition-colors">Self Reminder</a></li>
+                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Astraloka</a></li>
+                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Baricode</a></li>
+                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Self Reminder</a></li>
                     </ul>
                 </div>
 

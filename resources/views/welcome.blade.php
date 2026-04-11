@@ -337,7 +337,7 @@
                     <h3 class="text-xl font-bold text-zinc-900">💬 Mulai Konsultasi Gratis</h3>
                     <p class="text-sm text-zinc-500">Hubungi kami melalui Instagram untuk mendiskusikan kebutuhan website Anda. Kami siap membantu! 🚀</p>
 
-                    <a href="https://instagram.com/@namaku.ahla"
+                    <a href="https://instagram.com/namaku.ahla"
                        target="_blank"
                        rel="noopener noreferrer"
                        class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-bold text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200">

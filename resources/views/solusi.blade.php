@@ -91,7 +91,7 @@
                         </li>
                     </ul>
 
-                    <a href="https://instagram.com/barizaloka" target="_blank" rel="noopener noreferrer"
+                    <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                        class="mt-auto flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 text-white text-sm font-semibold hover:from-pink-400 hover:to-rose-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-pink-200">
                         💌 Pesan Sekarang
                     </a>
@@ -135,7 +135,7 @@
                         </li>
                     </ul>
 
-                    <a href="https://instagram.com/barizaloka" target="_blank" rel="noopener noreferrer"
+                    <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                        class="mt-auto flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold hover:from-blue-400 hover:to-indigo-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-blue-200">
                         🌐 Konsultasi Gratis
                     </a>
@@ -179,7 +179,7 @@
                         </li>
                     </ul>
 
-                    <a href="https://instagram.com/barizaloka" target="_blank" rel="noopener noreferrer"
+                    <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                        class="mt-auto flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-semibold hover:from-emerald-400 hover:to-green-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-emerald-200">
                         🕌 Hubungi Kami
                     </a>
@@ -295,7 +295,7 @@
                             </li>
                         </ul>
 
-                        <a href="https://instagram.com/barizaloka" target="_blank" rel="noopener noreferrer"
+                        <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                            class="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white text-indigo-700 text-sm font-bold hover:bg-indigo-50 hover:-translate-y-0.5 transition-all duration-200 shadow-lg">
                             💬 Hubungi Kami
                         </a>
@@ -316,7 +316,7 @@
                 Tim Barizaloka siap membangun solusi digital sesuai kebutuhan spesifik Anda. Hubungi kami sekarang untuk konsultasi gratis.
             </p>
             <div class="flex flex-col sm:flex-row items-center gap-3">
-                <a href="https://instagram.com/barizaloka" target="_blank" rel="noopener noreferrer"
+                <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                    class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm hover:from-indigo-500 hover:to-purple-500 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-200">
                     📱 Hubungi via Instagram
                 </a>
