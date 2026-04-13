@@ -1,95 +1,101 @@
-<x-layouts::auth :title="__('Two-factor authentication')">
-    <div class="flex flex-col gap-6">
-        <div
-            class="relative w-full h-auto"
-            x-cloak
-            x-data="{
-                showRecoveryInput: @js($errors->has('recovery_code')),
-                code: '',
-                recovery_code: '',
-                toggleInput() {
-                    this.showRecoveryInput = !this.showRecoveryInput;
+<x-layouts.base title="Autentikasi Dua Faktor — Barizaloka">
+    <section class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-16 bg-zinc-50">
+        <div class="w-full max-w-md">
 
-                    this.code = '';
-                    this.recovery_code = '';
+            {{-- Card --}}
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-zinc-100 p-8 flex flex-col gap-6"
+                x-cloak
+                x-data="{
+                    showRecoveryInput: @js($errors->has('recovery_code')),
+                    code: '',
+                    recovery_code: '',
+                    toggleInput() {
+                        this.showRecoveryInput = !this.showRecoveryInput;
+                        this.code = '';
+                        this.recovery_code = '';
+                        $dispatch('clear-2fa-auth-code');
+                        $nextTick(() => {
+                            this.showRecoveryInput
+                                ? this.$refs.recovery_code?.focus()
+                                : $dispatch('focus-2fa-auth-code');
+                        });
+                    },
+                }"
+            >
 
-                    $dispatch('clear-2fa-auth-code');
+                {{-- Header (OTP) --}}
+                <div x-show="!showRecoveryInput" class="text-center flex flex-col gap-1">
+                    <div class="text-4xl mb-2">🔐</div>
+                    <h1 class="text-2xl font-bold text-zinc-900">Kode Autentikasi</h1>
+                    <p class="text-sm text-zinc-500">Masukkan kode 6 digit dari aplikasi autentikator kamu</p>
+                </div>
 
-                    $nextTick(() => {
-                        this.showRecoveryInput
-                            ? this.$refs.recovery_code?.focus()
-                            : $dispatch('focus-2fa-auth-code');
-                    });
-                },
-            }"
-        >
-            <div x-show="!showRecoveryInput">
-                <x-auth-header
-                    :title="__('Authentication code')"
-                    :description="__('Enter the authentication code provided by your authenticator application.')"
-                />
-            </div>
+                {{-- Header (Recovery) --}}
+                <div x-show="showRecoveryInput" class="text-center flex flex-col gap-1">
+                    <div class="text-4xl mb-2">🆘</div>
+                    <h1 class="text-2xl font-bold text-zinc-900">Kode Pemulihan</h1>
+                    <p class="text-sm text-zinc-500">Masukkan salah satu kode pemulihan darurat kamu</p>
+                </div>
 
-            <div x-show="showRecoveryInput">
-                <x-auth-header
-                    :title="__('Recovery code')"
-                    :description="__('Please confirm access to your account by entering one of your emergency recovery codes.')"
-                />
-            </div>
+                {{-- Form --}}
+                <form method="POST" action="{{ route('two-factor.login.store') }}" class="flex flex-col gap-5">
+                    @csrf
 
-            <form method="POST" action="{{ route('two-factor.login.store') }}">
-                @csrf
-
-                <div class="space-y-5 text-center">
-                    <div x-show="!showRecoveryInput">
-                        <div class="flex items-center justify-center my-5">
-                            <flux:otp
-                                x-model="code"
-                                length="6"
-                                name="code"
-                                label="OTP Code"
-                                label:sr-only
-                                class="mx-auto"
-                             />
-                        </div>
+                    {{-- OTP Input --}}
+                    <div x-show="!showRecoveryInput" class="flex justify-center">
+                        <flux:otp
+                            x-model="code"
+                            length="6"
+                            name="code"
+                            label="Kode OTP"
+                            label:sr-only
+                            class="mx-auto"
+                        />
                     </div>
 
-                    <div x-show="showRecoveryInput">
-                        <div class="my-5">
-                            <flux:input
-                                type="text"
-                                name="recovery_code"
-                                x-ref="recovery_code"
-                                x-bind:required="showRecoveryInput"
-                                autocomplete="one-time-code"
-                                x-model="recovery_code"
-                            />
-                        </div>
-
+                    {{-- Recovery Code Input --}}
+                    <div x-show="showRecoveryInput" class="flex flex-col gap-1.5">
+                        <label class="text-sm font-medium text-zinc-700">🆘 Kode Pemulihan</label>
+                        <input
+                            type="text"
+                            name="recovery_code"
+                            x-ref="recovery_code"
+                            x-bind:required="showRecoveryInput"
+                            autocomplete="one-time-code"
+                            x-model="recovery_code"
+                            placeholder="xxxx-xxxx"
+                            class="w-full px-4 py-2.5 rounded-lg border border-zinc-200 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+                        >
                         @error('recovery_code')
-                            <flux:text color="red">
-                                {{ $message }}
-                            </flux:text>
+                            <p class="text-xs text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <flux:button
-                        variant="primary"
+                    {{-- Submit --}}
+                    <button
                         type="submit"
-                        class="w-full"
+                        class="w-full py-2.5 rounded-lg bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 transition-colors"
                     >
-                        {{ __('Continue') }}
-                    </flux:button>
-                </div>
+                        Lanjutkan →
+                    </button>
+                </form>
 
-                <div class="mt-5 space-x-0.5 text-sm leading-5 text-center">
-                    <span class="opacity-50">{{ __('or you can') }}</span>
-                    <div class="inline font-medium underline cursor-pointer opacity-80">
-                        <span x-show="!showRecoveryInput" @click="toggleInput()">{{ __('login using a recovery code') }}</span>
-                        <span x-show="showRecoveryInput" @click="toggleInput()">{{ __('login using an authentication code') }}</span>
-                    </div>
-                </div>
-            </form>
+                {{-- Toggle --}}
+                <p class="text-center text-sm text-zinc-500">
+                    atau
+                    <button
+                        type="button"
+                        @click="toggleInput()"
+                        class="font-semibold text-zinc-900 hover:underline cursor-pointer"
+                    >
+                        <span x-show="!showRecoveryInput">gunakan kode pemulihan</span>
+                        <span x-show="showRecoveryInput">gunakan kode autentikator</span>
+                    </button>
+                </p>
+
+            </div>
+
         </div>
-    </div>
-</x-layouts::auth>
+    </section>
+</x-layouts.base>

@@ -1,52 +1,85 @@
-<x-layouts::auth :title="__('Reset password')">
-    <div class="flex flex-col gap-6">
-        <x-auth-header :title="__('Reset password')" :description="__('Please enter your new password below')" />
+<x-layouts.base title="Reset Kata Sandi — Barizaloka">
+    <section class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-16 bg-zinc-50">
+        <div class="w-full max-w-md">
 
-        <!-- Session Status -->
-        <x-auth-session-status class="text-center" :status="session('status')" />
+            {{-- Card --}}
+            <div class="bg-white rounded-2xl shadow-sm border border-zinc-100 p-8 flex flex-col gap-6">
 
-        <form method="POST" action="{{ route('password.update') }}" class="flex flex-col gap-6">
-            @csrf
-            <!-- Token -->
-            <input type="hidden" name="token" value="{{ request()->route('token') }}">
+                {{-- Header --}}
+                <div class="text-center flex flex-col gap-1">
+                    <div class="text-4xl mb-2">🔐</div>
+                    <h1 class="text-2xl font-bold text-zinc-900">Buat kata sandi baru</h1>
+                    <p class="text-sm text-zinc-500">Masukkan kata sandi baru yang kuat untuk akunmu</p>
+                </div>
 
-            <!-- Email Address -->
-            <flux:input
-                name="email"
-                value="{{ request('email') }}"
-                :label="__('Email')"
-                type="email"
-                required
-                autocomplete="email"
-            />
+                {{-- Session Status --}}
+                <x-auth-session-status class="text-center" :status="session('status')" />
 
-            <!-- Password -->
-            <flux:input
-                name="password"
-                :label="__('Password')"
-                type="password"
-                required
-                autocomplete="new-password"
-                :placeholder="__('Password')"
-                viewable
-            />
+                {{-- Form --}}
+                <form method="POST" action="{{ route('password.update') }}" class="flex flex-col gap-5">
+                    @csrf
+                    <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
-            <!-- Confirm Password -->
-            <flux:input
-                name="password_confirmation"
-                :label="__('Confirm password')"
-                type="password"
-                required
-                autocomplete="new-password"
-                :placeholder="__('Confirm password')"
-                viewable
-            />
+                    {{-- Email (readonly) --}}
+                    <div class="flex flex-col gap-1.5">
+                        <label for="email" class="text-sm font-medium text-zinc-700">📧 Alamat Email</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value="{{ request('email') }}"
+                            required
+                            autocomplete="email"
+                            class="w-full px-4 py-2.5 rounded-lg border border-zinc-200 text-sm text-zinc-900 bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition @error('email') border-red-400 @enderror"
+                        >
+                        @error('email')
+                            <p class="text-xs text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <div class="flex items-center justify-end">
-                <flux:button type="submit" variant="primary" class="w-full" data-test="reset-password-button">
-                    {{ __('Reset password') }}
-                </flux:button>
+                    {{-- Password Baru --}}
+                    <div class="flex flex-col gap-1.5">
+                        <label for="password" class="text-sm font-medium text-zinc-700">🔒 Kata Sandi Baru</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            required
+                            autocomplete="new-password"
+                            placeholder="Min. 8 karakter"
+                            class="w-full px-4 py-2.5 rounded-lg border border-zinc-200 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition @error('password') border-red-400 @enderror"
+                        >
+                        @error('password')
+                            <p class="text-xs text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    {{-- Konfirmasi Password --}}
+                    <div class="flex flex-col gap-1.5">
+                        <label for="password_confirmation" class="text-sm font-medium text-zinc-700">🔐 Konfirmasi Kata Sandi</label>
+                        <input
+                            id="password_confirmation"
+                            name="password_confirmation"
+                            type="password"
+                            required
+                            autocomplete="new-password"
+                            placeholder="Ulangi kata sandi baru"
+                            class="w-full px-4 py-2.5 rounded-lg border border-zinc-200 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent transition"
+                        >
+                    </div>
+
+                    {{-- Submit --}}
+                    <button
+                        type="submit"
+                        class="w-full py-2.5 rounded-lg bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 transition-colors"
+                        data-test="reset-password-button"
+                    >
+                        Simpan Kata Sandi Baru →
+                    </button>
+                </form>
+
             </div>
-        </form>
-    </div>
-</x-layouts::auth>
+
+        </div>
+    </section>
+</x-layouts.base>

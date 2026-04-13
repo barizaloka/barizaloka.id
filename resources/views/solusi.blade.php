@@ -47,9 +47,22 @@
         </div>
     </section>
 
-    {{-- Solusi Grid --}}
+    {{-- Section: Platform Siap Pakai --}}
     <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col gap-10">
+
+            {{-- Section Header --}}
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold tracking-wide uppercase">
+                        Platform Siap Pakai
+                    </span>
+                    <div class="h-px flex-1 bg-zinc-100"></div>
+                </div>
+                <p class="text-sm text-zinc-500 max-w-xl">
+                    Bayar, langsung aktif — tidak perlu instalasi atau konfigurasi teknis. Kamu cukup isi data dan platform siap digunakan.
+                </p>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -93,9 +106,32 @@
 
                     <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                        class="mt-auto flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 text-white text-sm font-semibold hover:from-pink-400 hover:to-rose-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-pink-200">
-                        💌 Pesan Sekarang
+                        💌 Mulai Sekarang
                     </a>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    {{-- Section: Jasa Pengembangan --}}
+    <section class="py-20 bg-zinc-50/60 border-t border-zinc-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col gap-10">
+
+            {{-- Section Header --}}
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800 text-white text-xs font-bold tracking-wide uppercase">
+                        Jasa Pengembangan
+                    </span>
+                    <div class="h-px flex-1 bg-zinc-200"></div>
+                </div>
+                <p class="text-sm text-zinc-500 max-w-xl">
+                    Dibangun khusus sesuai kebutuhan kamu — mulai dari konsultasi, desain, hingga peluncuran. Cocok untuk kebutuhan yang lebih spesifik dan unik.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 {{-- Website Profil --}}
                 <div class="group flex flex-col gap-5 p-8 rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/60 to-white hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100 hover:-translate-y-1 transition-all duration-300">
@@ -181,7 +217,7 @@
 
                     <a href="https://instagram.com/namaku.ahla" target="_blank" rel="noopener noreferrer"
                        class="mt-auto flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-semibold hover:from-emerald-400 hover:to-green-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-emerald-200">
-                        🕌 Hubungi Kami
+                        🕌 Konsultasi Gratis
                     </a>
                 </div>
 
@@ -198,7 +234,7 @@
 
                     <div class="flex flex-col gap-2">
                         <h3 class="text-xl font-bold text-zinc-900">Toko Online</h3>
-                        <p class="text-sm font-semibold text-orange-600">🛍️ Platform Jual Beli Digital</p>
+                        <p class="text-sm font-semibold text-orange-600">🛍️ Toko Digital Milik Sendiri</p>
                         <p class="text-sm text-zinc-500 leading-relaxed">
                             Kembangkan usaha Anda dengan toko online sendiri yang independen — tanpa bergantung pada marketplace besar. Kelola produk, pesanan, dan pelanggan dengan mudah.
                         </p>
@@ -278,7 +314,7 @@
 
                     <div class="relative flex flex-col gap-4">
                         <span class="text-4xl">💡</span>
-                        <h3 class="text-xl font-bold">Punya Ide Lain?</h3>
+                        <h3 class="text-xl font-bold">Punya Kebutuhan Lain?</h3>
                         <p class="text-sm text-white/80 leading-relaxed">
                             Kami terbuka untuk berdiskusi tentang kebutuhan digital Anda. Ceritakan ide Anda dan kami akan bantu wujudkan.
                         </p>

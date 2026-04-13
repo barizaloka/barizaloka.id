@@ -10,21 +10,28 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="robots" content="index, follow">
+
     {{-- Open Graph (WhatsApp, Facebook, dll) --}}
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
     <meta property="og:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
-    <meta property="og:image" content="{{ url('/og-image.png') }}">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="{{ $ogImage ?? url('/og-image.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
     <meta property="og:site_name" content="{{ config('app.name', 'Barizaloka') }}">
+    <meta property="og:locale" content="id_ID">
 
     {{-- Twitter/X Card --}}
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@barizaloka">
     <meta name="twitter:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
     <meta name="twitter:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
-    <meta name="twitter:image" content="{{ url('/og-image.png') }}">
+    <meta name="twitter:image" content="{{ $ogImage ?? url('/og-image.png') }}">
+    <meta name="twitter:image:alt" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
 
@@ -42,13 +49,13 @@
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="{{ route('home') }}#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Komunitas</a>
+                <a href="{{ route('komunitas') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Komunitas</a>
                 <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Solusi</a>
                 <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Layanan</a>
                 <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Tentang</a>
             </div>
 
-            <a href="#kontak"
+            <a href="{{ route('home') }}#kontak"
                class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors">
                 Hubungi Kami
             </a>
@@ -70,7 +77,7 @@
 
         {{-- Mobile menu --}}
         <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-100 bg-white px-6 py-4 flex flex-col gap-4">
-            <a href="{{ route('home') }}#komunitas" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
+            <a href="{{ route('komunitas') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
             <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Solusi</a>
             <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Layanan</a>
             <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Tentang</a>
@@ -124,9 +131,11 @@
                 <div class="flex flex-col gap-4">
                     <h3 class="text-white font-semibold text-sm uppercase tracking-wider">Komunitas</h3>
                     <ul class="flex flex-col gap-2 text-sm">
-                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Astraloka</a></li>
-                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Baricode</a></li>
-                        <li><a href="{{ route('home') }}#komunitas" class="hover:text-white transition-colors">Self Reminder</a></li>
+                        <li><a href="{{ route('komunitas') }}" class="hover:text-white transition-colors">🏘️ Semua Komunitas</a></li>
+                        <li><a href="https://astraloka.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">🌍 Astraloka</a></li>
+                        <li><a href="https://baricode.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">💻 Baricode</a></li>
+                        <li><a href="https://selfreminder.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">📿 Self Reminder</a></li>
+                        <li><a href="{{ route('solusi') }}" class="hover:text-white transition-colors">💡 Solusi Digital</a></li>
                     </ul>
                 </div>
 
