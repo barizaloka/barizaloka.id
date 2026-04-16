@@ -134,7 +134,7 @@
                         <li><a href="{{ route('komunitas') }}" class="hover:text-white transition-colors">🏘️ Semua Komunitas</a></li>
                         <li><a href="https://astraloka.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">🌍 Astraloka</a></li>
                         <li><a href="https://baricode.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">💻 Baricode</a></li>
-                        <li><a href="https://selfreminder.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">📿 Self Reminder</a></li>
+                        <li class="text-zinc-400">📿 Self Reminder (Segera Hadir)</li>
                         <li><a href="{{ route('solusi') }}" class="hover:text-white transition-colors">💡 Solusi Digital</a></li>
                     </ul>
                 </div>

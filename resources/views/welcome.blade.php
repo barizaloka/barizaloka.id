@@ -232,10 +232,9 @@
                             <span>📊</span> Pantauan Progres Ibadah
                         </li>
                     </ul>
-                    <a href="https://selfreminder.org" target="_blank" rel="noopener noreferrer"
-                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-violet-600 text-white text-sm font-semibold hover:from-purple-400 hover:to-violet-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-purple-200">
-                        📿 Kunjungi Self Reminder
-                    </a>
+                    <div class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 text-zinc-400 text-sm font-semibold cursor-not-allowed">
+                        📿 Segera Hadir
+                    </div>
                 </div>
             </div>
         </div>
