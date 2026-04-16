@@ -156,5 +156,6 @@
     </footer>
 
     {{ $scripts ?? '' }}
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="QT3vkVW4ywuJBzCorYjTGQ" async></script>
 </body>
 </html>
