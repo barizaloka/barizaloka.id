@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Komunitas — Barizaloka"
-    description="Kenali 4 komunitas aktif Barizaloka: Astro Sedan, Astraloka, Baricode, dan Self Reminder. Bersama membangun dampak nyata di bidang lingkungan, teknologi, dan spiritual."
+    description="Kenali komunitas aktif Barizaloka: Astraloka, Baricode, dan Self Reminder. Bersama membangun dampak nyata di bidang lingkungan, teknologi, dan spiritual."
 >
 
     <style>

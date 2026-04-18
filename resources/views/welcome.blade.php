@@ -1,4 +1,7 @@
-<x-layouts.base title="Barizaloka — Menghubungkan Komunitas, Membangun Solusi">
+<x-layouts.base
+    title="Barizaloka — Menghubungkan Komunitas, Membangun Solusi"
+    description="Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual."
+>
 
     <style>
         @keyframes float {

@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Blog — Barizaloka"
-    description="Artikel, tips, dan cerita dari ekosistem Barizaloka."
+    description="Baca artikel terbaru dari Barizaloka seputar teknologi, pengembangan website, SaaS, komunitas, lingkungan, dan inspirasi digital dari Rembang, Jawa Tengah."
 >
     <section class="max-w-6xl mx-auto px-6 py-12">
 

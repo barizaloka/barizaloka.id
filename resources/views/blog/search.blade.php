@@ -1,6 +1,6 @@
 <x-layouts.base
     :title="$query ? 'Hasil pencarian: ' . $query . ' — Barizaloka' : 'Cari Artikel — Barizaloka'"
-    description="Cari artikel di blog Barizaloka."
+    description="Cari artikel di blog Barizaloka seputar teknologi, pembuatan website, SaaS, komunitas lingkungan, dan inspirasi digital dari ekosistem Barizaloka, Rembang."
 >
     <section class="max-w-6xl mx-auto px-6 py-12">
 

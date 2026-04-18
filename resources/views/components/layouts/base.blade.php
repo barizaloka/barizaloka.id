@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? config('app.name', 'Barizaloka') }}</title>
-    <meta name="description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
+    <meta name="description" content="{{ $description ?? 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.' }}">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -17,7 +17,7 @@
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
-    <meta property="og:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
+    <meta property="og:description" content="{{ $description ?? 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.' }}">
     <meta property="og:image" content="{{ $ogImage ?? url('/og-image.png') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@barizaloka">
     <meta name="twitter:title" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
-    <meta name="twitter:description" content="{{ $description ?? 'Ekosistem teknologi inovatif yang mendukung komunitas.' }}">
+    <meta name="twitter:description" content="{{ $description ?? 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.' }}">
     <meta name="twitter:image" content="{{ $ogImage ?? url('/og-image.png') }}">
     <meta name="twitter:image:alt" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">

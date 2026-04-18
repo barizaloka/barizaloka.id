@@ -1,6 +1,6 @@
 <x-layouts.base
     :title="'Kategori: ' . $category->name . ' — Barizaloka'"
-    :description="$category->meta_description ?? $category->description ?? 'Artikel dalam kategori ' . $category->name"
+    :description="$category->meta_description ?? $category->description ?? 'Baca artikel kategori ' . $category->name . ' di blog Barizaloka — ekosistem teknologi, pembuatan website, SaaS, dan komunitas dari Rembang, Jawa Tengah.'"
 >
     <section class="max-w-6xl mx-auto px-6 py-12">
 

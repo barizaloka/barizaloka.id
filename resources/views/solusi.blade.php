@@ -1,4 +1,7 @@
-<x-layouts.base title="Solusi Digital — Barizaloka" description="Daftar platform dan solusi digital dari Barizaloka untuk memenuhi kebutuhan Anda.">
+<x-layouts.base
+    title="Solusi Digital — Barizaloka"
+    description="Temukan solusi digital Barizaloka: jasa pembuatan website profesional, pengembangan SaaS, serta jual beli website & aplikasi siap pakai untuk bisnis dan komunitas Anda."
+>
 
     <style>
         @keyframes slide-up {

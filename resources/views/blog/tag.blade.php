@@ -1,6 +1,6 @@
 <x-layouts.base
     :title="'Tag: #' . $tag->name . ' — Barizaloka'"
-    :description="'Artikel dengan tag #' . $tag->name . ' di Barizaloka.'"
+    :description="'Kumpulan artikel bertag #' . $tag->name . ' di blog Barizaloka — ekosistem teknologi, pembuatan website, SaaS, dan komunitas dari Rembang, Jawa Tengah.'"
 >
     <section class="max-w-6xl mx-auto px-6 py-12">
 
