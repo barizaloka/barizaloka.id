@@ -126,13 +126,13 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {{-- Astro Sedan --}}
+                {{-- Astro Falak --}}
                 <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-amber-100 bg-gradient-to-b from-amber-50/60 to-white hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100 hover:-translate-y-1 transition-all duration-300">
                     <div class="size-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-3xl shadow-lg shadow-amber-200 group-hover:scale-110 transition-transform duration-300">
                         🌙
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-bold text-zinc-900">Astro Sedan</h3>
+                        <h3 class="text-xl font-bold text-zinc-900">Astro Falak</h3>
                         <p class="text-sm font-semibold text-amber-600">🔭 Komunitas Belajar Falak</p>
                         <p class="text-sm text-zinc-500 leading-relaxed">
                             Belajar ilmu falak dan astronomi bersama agar memahami bagaimana ulama memandang waktu—dari hilal hingga arah kiblat.

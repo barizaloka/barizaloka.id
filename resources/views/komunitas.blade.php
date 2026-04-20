@@ -340,7 +340,7 @@
                     </div>
                 </div>
 
-                {{-- Astro Sedan --}}
+                {{-- Astro Falak --}}
                 <div class="card-hover group rounded-3xl border border-amber-100 overflow-hidden shadow-lg shadow-amber-50 hover:shadow-2xl hover:shadow-amber-100 hover:border-amber-200">
                     <div class="grid grid-cols-1 lg:grid-cols-5">
                         {{-- Content panel (left) --}}
@@ -351,7 +351,7 @@
                                     <span class="text-xs text-zinc-400">in development</span>
                                 </div>
                                 <p class="text-zinc-600 leading-relaxed text-base">
-                                    Astro Sedan adalah komunitas belajar ilmu falak dan astronomi Islam. Bersama para pecinta langit dan ulama, komunitas ini membuka ruang untuk memahami bagaimana Islam memandang waktu—dari pengamatan hilal hingga penetapan arah kiblat yang tepat.
+                                    Astro Falak adalah komunitas belajar ilmu falak dan astronomi Islam. Bersama para pecinta langit dan ulama, komunitas ini membuka ruang untuk memahami bagaimana Islam memandang waktu—dari pengamatan hilal hingga penetapan arah kiblat yang tepat.
                                 </p>
                             </div>
 
@@ -398,7 +398,7 @@
                                 <div class="size-18 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-5xl shadow-lg mb-6">
                                     🌙
                                 </div>
-                                <h2 class="text-3xl font-bold text-white mb-2">Astro Sedan</h2>
+                                <h2 class="text-3xl font-bold text-white mb-2">Astro Falak</h2>
                                 <p class="text-amber-100 font-medium text-sm">🔭 Komunitas Belajar Falak</p>
                             </div>
 
