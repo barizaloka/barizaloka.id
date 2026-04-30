@@ -353,6 +353,73 @@
         </div>
     </section>
 
+    {{-- Founder --}}
+    <section class="py-24 bg-gradient-to-br from-zinc-50 via-white to-purple-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 size-80 rounded-full bg-indigo-100/50 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 size-80 rounded-full bg-purple-100/50 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+
+                {{-- Avatar & identitas --}}
+                <div class="flex flex-col items-center gap-5 shrink-0">
+                    <div class="relative">
+                        <div class="size-32 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl shadow-purple-200">
+                            <span class="text-6xl font-black text-white select-none">A</span>
+                        </div>
+                        <span class="absolute -bottom-2 -right-2 size-8 rounded-full bg-green-400 border-2 border-white flex items-center justify-center text-xs">✓</span>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-200 text-xs font-semibold text-amber-700">🕌 Santri Muhammadiyah</span>
+                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-xs font-semibold text-blue-700">💻 Web Developer</span>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 border border-green-200 text-xs font-semibold text-green-700">🤝 Community Builder</span>
+                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-orange-100 to-yellow-100 border border-orange-200 text-xs font-semibold text-orange-700">🏡 Pemuda Desa</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Konten --}}
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <span class="inline-flex items-center gap-2 w-fit px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-widest text-purple-700">
+                            👋 Tentang Pendiri
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight">
+                            Dibangun oleh<br>
+                            <span class="gradient-text">santri yang ngerti kode</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-zinc-600 leading-relaxed text-base">
+                        Barizaloka lahir dari keyakinan bahwa santri Muhammadiyah punya peran besar di era digital. Bukan hanya sebagai pengguna teknologi, tapi sebagai pembangun ekosistem yang membawa nilai — lingkungan, ilmu, dan spiritual — ke dalam satu gerakan nyata dari desa.
+                    </p>
+
+                    {{-- Quote --}}
+                    <blockquote class="relative pl-5 border-l-4 border-gradient-to-b from-indigo-500 to-purple-500 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-r-xl px-6 py-5">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"></div>
+                        <p class="text-zinc-700 italic text-sm leading-relaxed font-medium">
+                            "Ilmu agama dan teknologi bukan dua hal yang bertentangan — keduanya adalah alat untuk memberi manfaat sebesar-besarnya bagi umat."
+                        </p>
+                    </blockquote>
+
+                    <a href="https://instagram.com/namaku.ahla"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-3 w-fit px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200">
+                        <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        📸 Ikuti Perjalanan Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- CTA --}}
     <section class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.1),transparent)] pointer-events-none"></div>
