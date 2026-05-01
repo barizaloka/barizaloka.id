@@ -51,7 +51,6 @@
             <div class="hidden md:flex items-center gap-8">
                 <a href="{{ route('komunitas') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Komunitas</a>
                 <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Solusi</a>
-                <a href="{{ route('blog.index') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Blog</a>
                 <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Layanan</a>
                 <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Tentang</a>
             </div>
@@ -80,7 +79,6 @@
         <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-100 bg-white px-6 py-4 flex flex-col gap-4">
             <a href="{{ route('komunitas') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Komunitas</a>
             <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Solusi</a>
-            <a href="{{ route('blog.index') }}" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Blog</a>
             <a href="{{ route('home') }}#layanan" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Layanan</a>
             <a href="{{ route('home') }}#tentang" class="text-sm font-medium text-zinc-600 hover:text-zinc-900">Tentang</a>
             <a href="{{ route('home') }}#kontak" class="text-sm font-medium text-zinc-900 font-semibold">Hubungi Kami</a>
@@ -138,7 +136,6 @@
                         <li><a href="https://baricode.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">💻 Baricode</a></li>
                         <li class="text-zinc-400">📿 Self Reminder (Segera Hadir)</li>
                         <li><a href="{{ route('solusi') }}" class="hover:text-white transition-colors">💡 Solusi Digital</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-white transition-colors">✍️ Blog</a></li>
                     </ul>
                 </div>
 
