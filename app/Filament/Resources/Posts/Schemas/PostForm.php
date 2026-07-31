@@ -67,6 +67,7 @@ class PostForm
                             ->label('Gambar Unggulan')
                             ->image()
                             ->imageEditor()
+                            ->disk('public')
                             ->directory('blog/images')
                             ->columnSpanFull(),
                     ]),

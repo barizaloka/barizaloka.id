@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\CarbonInterface;
 use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -86,7 +86,7 @@ class Post extends Model
      * The date used to build the post's /{year}/{month}/{slug} permalink.
      * Falls back to created_at for drafts that haven't been published yet.
      */
-    public function permalinkDate(): Carbon
+    public function permalinkDate(): CarbonInterface
     {
         return $this->published_at ?? $this->created_at ?? now();
     }

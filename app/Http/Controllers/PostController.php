@@ -23,8 +23,8 @@ class PostController extends Controller
             ->latest('published_at')
             ->first();
 
-        $categories = Category::withCount(['posts' => fn ($q) => $q->published()])
-            ->having('posts_count', '>', 0)
+        $categories = Category::whereHas('posts', fn ($q) => $q->published())
+            ->withCount(['posts' => fn ($q) => $q->published()])
             ->orderBy('name')
             ->get();
 
