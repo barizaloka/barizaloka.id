@@ -4,444 +4,320 @@
 >
 
     <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-18px) rotate(6deg); }
-        }
-        @keyframes float-alt {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-14px) rotate(-6deg); }
-        }
-        @keyframes slide-up {
-            from { opacity: 0; transform: translateY(28px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .float-1 { animation: float 6s ease-in-out infinite; }
-        .float-2 { animation: float-alt 7s ease-in-out infinite; animation-delay: 1s; }
-        .float-3 { animation: float 5.5s ease-in-out infinite; animation-delay: 2s; }
-        .float-4 { animation: float-alt 8s ease-in-out infinite; animation-delay: 0.5s; }
-        .float-5 { animation: float 9s ease-in-out infinite; animation-delay: 3s; }
-        .float-6 { animation: float-alt 6.5s ease-in-out infinite; animation-delay: 1.5s; }
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899, #f97316);
+        @keyframes heroFadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-anim { animation: heroFadeIn .9s ease both; }
+        .hero-title-span {
+            background: linear-gradient(135deg, #5DCAA5 0%, #a8edd4 50%, #5DCAA5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .anim-up-1 { animation: slide-up 0.8s ease-out 0.1s both; }
-        .anim-up-2 { animation: slide-up 0.8s ease-out 0.3s both; }
-        .anim-up-3 { animation: slide-up 0.8s ease-out 0.5s both; }
-        .anim-up-4 { animation: slide-up 0.8s ease-out 0.7s both; }
     </style>
 
-    {{-- Hero --}}
-    <section class="relative overflow-hidden pt-24 pb-32">
-        {{-- Background --}}
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(139,92,246,0.18),transparent)]"></div>
+    {{-- ===== HERO ===== --}}
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-brand-darker">
+        <svg class="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="islamicPat" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                    <g fill="none" stroke="#fff" stroke-width="0.8">
+                        <polygon points="40,10 44.5,25 59,25 47.5,34 52,49 40,40 28,49 32.5,34 21,25 35.5,25"/>
+                        <rect x="29" y="29" width="22" height="22" transform="rotate(45,40,40)"/>
+                        <line x1="0" y1="0" x2="21" y2="25"/><line x1="80" y1="0" x2="59" y2="25"/>
+                        <line x1="0" y1="80" x2="21" y2="55"/><line x1="80" y1="80" x2="59" y2="55"/>
+                    </g>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#islamicPat)"/>
+        </svg>
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(29,158,117,.35) 0%, transparent 70%);"></div>
 
-        {{-- Color blobs --}}
-        <div class="absolute top-16 left-6 size-72 rounded-full bg-gradient-to-br from-indigo-200/40 to-purple-200/40 blur-3xl pointer-events-none"></div>
-        <div class="absolute top-32 right-6 size-56 rounded-full bg-gradient-to-br from-pink-200/40 to-orange-200/40 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 size-96 rounded-full bg-gradient-to-br from-purple-200/25 to-indigo-200/25 blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 max-w-3xl mx-auto px-6 py-12 text-center hero-anim">
+            <span class="inline-flex items-center gap-1.5 bg-white/12 border border-white/25 rounded-full px-4.5 py-2 text-sm text-[#c8f0e2] tracking-wide mb-6">🌟 Ekosistem Digital Aktif</span>
 
-        {{-- Floating emoji decorations --}}
-        <div class="absolute top-14 left-[7%] text-4xl float-1 select-none pointer-events-none">🌍</div>
-        <div class="absolute top-28 right-[7%] text-3xl float-2 select-none pointer-events-none">💻</div>
-        <div class="absolute top-60 left-[4%] text-2xl float-3 select-none pointer-events-none">✨</div>
-        <div class="absolute top-20 right-[16%] text-2xl float-4 select-none pointer-events-none">📿</div>
-        <div class="absolute bottom-28 left-[11%] text-3xl float-5 select-none pointer-events-none">🚀</div>
-        <div class="absolute bottom-16 right-[9%] text-3xl float-6 select-none pointer-events-none">💡</div>
-        <div class="absolute top-44 left-[19%] text-xl float-2 select-none pointer-events-none">🌱</div>
-        <div class="absolute top-52 right-[19%] text-xl float-3 select-none pointer-events-none">🤝</div>
-
-        <div class="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center gap-6">
-            <span class="anim-up-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-purple-200 text-xs font-semibold text-purple-700 shadow-sm">
-                <span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
-                🎉 Ekosistem Komunitas Aktif
-            </span>
-
-            <h1 class="anim-up-2 text-4xl md:text-6xl font-bold leading-tight tracking-tight max-w-3xl text-zinc-900">
-                Menghubungkan Komunitas,<br>
-                <span class="gradient-text">Membangun Solusi</span>
+            <h1 class="font-brand-serif font-extrabold text-[clamp(2rem,6vw,3.6rem)] leading-[1.15] text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">
+                Jasa Pembuatan Website,<br>
+                <span class="hero-title-span">Solusi Digital untuk Bisnis Anda</span>
             </h1>
 
-            <p class="anim-up-3 text-lg text-zinc-600 max-w-xl leading-relaxed">
-                Ekosistem teknologi inovatif yang mendukung komunitas peduli dampak 🌍 lingkungan,
-                💻 teknologi, dan ✨ spiritual yang positif.
-            </p>
+            <p class="text-lg text-white/78 max-w-xl mx-auto mb-8">Ekosistem teknologi inovatif yang mendukung dampak 🌍 lingkungan, 💻 teknologi, dan ✨ spiritual yang positif.</p>
 
-            <div class="anim-up-4 flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400 shadow-lg shadow-orange-200 border border-orange-300">
-                <span class="text-2xl">🏡</span>
-                <p class="text-sm font-bold text-white drop-shadow">
-                    Didirikan oleh Pemuda Desa — Kecamatan Sedan, Kabupaten Rembang
-                </p>
-                <span class="text-2xl">🌾</span>
+            <div class="flex flex-wrap gap-3 justify-center mb-7">
+                <a href="#komunitas" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">🚀 Jelajahi Ekosistem</a>
+                <a href="#layanan" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">💡 Lihat Solusi Kami</a>
+                <a href="#layanan" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">✨ Lihat Layanan</a>
             </div>
 
-            <div class="anim-up-4 flex flex-col sm:flex-row items-center gap-3 mt-2">
-                <a href="#komunitas"
-                   class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm hover:from-indigo-500 hover:to-purple-500 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-300">
-                    🚀 Jelajahi Komunitas
-                </a>
-                <a href="{{ route('solusi') }}"
-                   class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-pink-500 to-orange-500 text-white font-semibold text-sm hover:from-pink-400 hover:to-orange-400 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200 hover:shadow-xl">
-                    💡 Lihat Solusi Kami
-                </a>
-                <a href="#layanan"
-                   class="px-7 py-3.5 rounded-xl bg-white border border-zinc-200 text-zinc-700 font-semibold text-sm hover:bg-zinc-50 hover:-translate-y-0.5 transition-all duration-200 shadow-sm">
-                    ✨ Lihat Layanan
-                </a>
-            </div>
+            <p class="text-sm text-white/50">🏡 Didirikan oleh Pemuda Desa — Kecamatan Sedan dan Sarang, Kabupaten Rembang 🌾</p>
         </div>
     </section>
 
-    {{-- Stats --}}
-    <section class="border-y border-purple-100 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
-        <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-3 divide-x divide-purple-100">
-            <div class="text-center px-4">
-                <p class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">4</p>
-                <p class="text-sm text-zinc-500 mt-1">🏘️ Komunitas Aktif</p>
-            </div>
-            <div class="text-center px-4">
-                <p class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">100+</p>
-                <p class="text-sm text-zinc-500 mt-1">👥 Anggota Bergabung</p>
-            </div>
-            <div class="text-center px-4">
-                <p class="text-4xl font-bold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">∞</p>
-                <p class="text-sm text-zinc-500 mt-1">🌟 Dampak Positif</p>
-            </div>
-        </div>
-    </section>
-
-    {{-- Komunitas --}}
-    <section id="komunitas" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center flex flex-col items-center gap-3 mb-16">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-widest text-purple-700">
-                    🏘️ Komunitas Kami
-                </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">Empat Pilar Utama 🌟</h2>
-                <p class="text-zinc-500 max-w-lg">Setiap komunitas memiliki fokus yang berbeda namun bersatu dalam satu tujuan: dampak nyata yang positif.</p>
+    {{-- ===== LAYANAN KAMI ===== --}}
+    <section id="layanan-kami" class="py-20 bg-[#f4f8f6]">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center max-w-lg mx-auto mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🛠️ Layanan Kami</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold leading-tight mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Solusi Digital Lengkap<br>untuk Bisnis Anda</h2>
+                <p class="text-zinc-500">Dari strategi hingga eksekusi, semua yang Anda butuhkan untuk sukses di era digital ada di sini.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {{-- Astro Falak --}}
-                <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-amber-100 bg-gradient-to-b from-amber-50/60 to-white hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-3xl shadow-lg shadow-amber-200 group-hover:scale-110 transition-transform duration-300">
-                        🌙
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-bold text-zinc-900">Astro Falak</h3>
-                        <p class="text-sm font-semibold text-amber-600">🔭 Komunitas Belajar Falak</p>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
-                            Belajar ilmu falak dan astronomi bersama agar memahami bagaimana ulama memandang waktu—dari hilal hingga arah kiblat.
-                        </p>
-                    </div>
-                    <ul class="flex flex-col gap-2 mt-auto">
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🌙</span> Pengamatan Hilal & Kalender
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>⭐</span> Ilmu Falak & Astronomi Islam
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🧭</span> Arah Kiblat & Waktu Shalat
-                        </li>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-8 overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-primary"></div>
+                    <span class="block text-4xl mb-4">💻</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Web Development</h3>
+                    <p class="text-sm text-zinc-500 mb-5 leading-relaxed">Website profesional yang cepat, responsif, dan dioptimalkan untuk konversi bisnis Anda.</p>
+                    <ul class="flex flex-col gap-1.5">
+                        <li class="text-sm text-[#1a2420]">✅ Custom Design</li>
+                        <li class="text-sm text-[#1a2420]">✅ Responsive Mobile-First</li>
+                        <li class="text-sm text-[#1a2420]">✅ SEO Optimized</li>
+                        <li class="text-sm text-[#1a2420]">✅ CMS Integration</li>
                     </ul>
-                    <span class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 text-zinc-400 text-sm font-semibold cursor-not-allowed select-none">
-                        🔭 Segera Hadir
-                    </span>
+                </div>
+                <a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="relative bg-white border border-[#e0ebe7] rounded-2xl p-8 overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-gold"></div>
+                    <span class="block text-4xl mb-4">🛠️</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Etalase Karya Digital</h3>
+                    <p class="text-sm text-zinc-500 mb-5 leading-relaxed">Website, aplikasi, konsultasi, dan tools buatan sendiri. Bukan marketplace umum, semua dikurasi langsung 🛠️</p>
+                    <ul class="flex flex-col gap-1.5">
+                        <li class="text-sm text-[#1a2420]">✅ Semua karya dikurasi langsung</li>
+                        <li class="text-sm text-[#1a2420]">✅ Website & aplikasi siap pakai</li>
+                        <li class="text-sm text-[#1a2420]">✅ Konsultasi & tools digital</li>
+                    </ul>
+                    <span class="inline-block mt-5 text-sm font-semibold text-brand-primary">Kunjungi lynk.id/barizaloka →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {{-- ===== STATS ===== --}}
+    <section id="stats" class="bg-white border-b border-[#e0ebe7] py-8">
+        <div class="max-w-[1100px] mx-auto px-6 flex flex-wrap justify-center items-center">
+            <div class="text-center px-12 border-r border-[#e0ebe7] max-sm:px-6">
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">4</div>
+                <div class="text-sm text-zinc-500 font-medium">🏘️ Pilar Aktif</div>
+            </div>
+            <div class="text-center px-12 border-r border-[#e0ebe7] max-sm:px-6">
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">200+</div>
+                <div class="text-sm text-zinc-500 font-medium">👥 Anggota Bergabung</div>
+            </div>
+            <div class="text-center px-12 max-sm:px-6">
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">∞</div>
+                <div class="text-sm text-zinc-500 font-medium">🌟 Dampak Positif</div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ===== KOMUNITAS ===== --}}
+    <section id="komunitas" class="py-20 bg-[#f4f8f6]">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center max-w-lg mx-auto mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🏘️ Pilar Utama</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Ekosistem Kami</h2>
+                <p class="text-zinc-500">Setiap pilar memiliki fokus yang berbeda namun bersatu dalam satu tujuan: dampak nyata yang positif.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                {{-- Astro Falak --}}
+                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <div class="absolute top-0 inset-x-0 h-1" style="background:#6C5CE7"></div>
+                    <span class="block text-4xl mb-4">🌙</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Astro Falak</h3>
+                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🔭 Komunitas Belajar Falak</div>
+                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Belajar ilmu falak dan astronomi bersama agar memahami bagaimana ulama memandang waktu—dari hilal hingga arah kiblat.</p>
+                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
+                        <li>🌙 Pengamatan Hilal &amp; Kalender</li>
+                        <li>⭐ Ilmu Falak &amp; Astronomi Islam</li>
+                        <li>🧭 Arah Kiblat &amp; Waktu Shalat</li>
+                    </ul>
                 </div>
 
                 {{-- Astraloka --}}
-                <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-green-100 bg-gradient-to-b from-green-50/60 to-white hover:border-green-300 hover:shadow-xl hover:shadow-green-100 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-3xl shadow-lg shadow-green-200 group-hover:scale-110 transition-transform duration-300">
-                        🌍
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-bold text-zinc-900">Astraloka</h3>
-                        <p class="text-sm font-semibold text-green-600">🌱 Komunitas Peduli Alam</p>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
-                            Membangun kesadaran lingkungan melalui edukasi daur ulang, aksi sosial, dan program pengelolaan sampah yang berkelanjutan.
-                        </p>
-                    </div>
-                    <ul class="flex flex-col gap-2 mt-auto">
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>♻️</span> Edukasi Daur Ulang
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🤝</span> Aksi Sosial Lingkungan
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🗑️</span> Program Pengelolaan Sampah
-                        </li>
+                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-primary"></div>
+                    <span class="block text-4xl mb-4">🌍</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Astraloka</h3>
+                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🌱 Usaha Peduli Alam</div>
+                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Membangun kesadaran lingkungan melalui edukasi daur ulang, aksi sosial, dan program pengelolaan sampah yang berkelanjutan.</p>
+                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
+                        <li>♻️ Edukasi Daur Ulang</li>
+                        <li>🤝 Aksi Sosial Lingkungan</li>
+                        <li>🗑️ Program Pengelolaan Sampah</li>
                     </ul>
-                    <a href="https://astraloka.my.id" target="_blank" rel="noopener noreferrer"
-                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold hover:from-green-400 hover:to-emerald-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-green-200">
-                        🌍 Kunjungi Astraloka
-                    </a>
+                    <a href="https://astraloka.my.id" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">🌍 Kunjungi Astraloka</a>
                 </div>
 
                 {{-- Baricode --}}
-                <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/60 to-white hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-14 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-3xl shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform duration-300">
-                        💻
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-bold text-zinc-900">Baricode</h3>
-                        <p class="text-sm font-semibold text-blue-600">🖥️ Komunitas Belajar IT</p>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
-                            Ruang belajar mandiri dan kolaboratif bagi para developer—dari pemula hingga profesional yang ingin terus berkembang.
-                        </p>
-                    </div>
-                    <ul class="flex flex-col gap-2 mt-auto">
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>📚</span> Belajar Mandiri & Terstruktur
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🚀</span> Proyek Kolaboratif
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🌐</span> Jaringan Developer
-                        </li>
+                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-blue"></div>
+                    <span class="block text-4xl mb-4">💻</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Baricode</h3>
+                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🖥️ Usaha Teknologi &amp; IT</div>
+                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Ruang belajar mandiri dan kolaboratif bagi para developer—dari pemula hingga profesional yang ingin terus berkembang.</p>
+                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
+                        <li>📚 Belajar Mandiri &amp; Terstruktur</li>
+                        <li>🚀 Proyek Kolaboratif</li>
+                        <li>🌐 Jaringan Developer</li>
                     </ul>
-                    <a href="https://baricode.org" target="_blank" rel="noopener noreferrer"
-                       class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold hover:from-blue-400 hover:to-indigo-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-blue-200">
-                        💻 Kunjungi Baricode
-                    </a>
+                    <a href="https://app.baricode.org" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">💻 Kunjungi Baricode</a>
                 </div>
 
                 {{-- Self Reminder --}}
-                <div class="group flex flex-col gap-5 p-7 rounded-2xl border border-purple-100 bg-gradient-to-b from-purple-50/60 to-white hover:border-purple-300 hover:shadow-xl hover:shadow-purple-100 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-14 rounded-2xl bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-3xl shadow-lg shadow-purple-200 group-hover:scale-110 transition-transform duration-300">
-                        📿
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <h3 class="text-xl font-bold text-zinc-900">Self Reminder</h3>
-                        <p class="text-sm font-semibold text-purple-600">🕌 Pengingat Diri Menuju Akhirat</p>
-                        <p class="text-sm text-zinc-500 leading-relaxed">
-                            Ruang refleksi spiritual yang menyediakan pengingat harian, muhasabah diri, dan wawasan untuk perjalanan menuju akhirat.
-                        </p>
-                    </div>
-                    <ul class="flex flex-col gap-2 mt-auto">
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>🌙</span> Pengingat Spiritual Harian
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>💭</span> Muhasabah & Refleksi Diri
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-zinc-600">
-                            <span>📊</span> Pantauan Progres Ibadah
-                        </li>
+                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-gold"></div>
+                    <span class="block text-4xl mb-4">📿</span>
+                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Self Reminder</h3>
+                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🕌 Pengingat Diri Menuju Akhirat</div>
+                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Ruang refleksi spiritual yang menyediakan pengingat harian, muhasabah diri, dan wawasan untuk perjalanan menuju akhirat.</p>
+                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
+                        <li>🌙 Pengingat Spiritual Harian</li>
+                        <li>💭 Muhasabah &amp; Refleksi Diri</li>
+                        <li>📊 Pantauan Progres Ibadah</li>
                     </ul>
-                    <div class="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 text-zinc-400 text-sm font-semibold cursor-not-allowed">
-                        📿 Segera Hadir
-                    </div>
+                    <a href="https://selfreminder.org" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">📿 Kunjungi Self Reminder</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {{-- ===== NILAI ===== --}}
+    <section id="nilai" class="py-20 bg-white">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center max-w-lg mx-auto mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">💎 Filosofi Kami</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Nilai Kami</h2>
+                <p class="text-zinc-500">Kami percaya bahwa perubahan nyata lahir dari kolaborasi yang tulus dan niat yang ikhlas.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-3">🤝</div>
+                    <h3 class="font-brand-serif text-base font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Kolaboratif</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Setiap anggota berkontribusi dan saling menguatkan dalam ekosistem yang inklusif.</p>
+                </div>
+                <div class="bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-3">💡</div>
+                    <h3 class="font-brand-serif text-base font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Inovatif</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Teknologi adalah alat, bukan tujuan. Kami memanfaatkannya secara kreatif untuk memecahkan masalah nyata.</p>
+                </div>
+                <div class="bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-3">🌱</div>
+                    <h3 class="font-brand-serif text-base font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Berdampak</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Setiap langkah yang kami ambil memiliki tujuan yang jelas: dampak positif bagi lingkungan, ilmu, dan spiritual.</p>
+                </div>
+                <div class="bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <div class="text-3xl mb-3">🏆</div>
+                    <h3 class="font-brand-serif text-base font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Dipercaya</h3>
+                    <p class="text-sm text-zinc-500 leading-relaxed">Dipercaya oleh mitra &amp; klien, termasuk Masjid Syatho Sedan, Rembang, Jawa Tengah.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- Nilai --}}
-    <section class="py-24 bg-gradient-to-br from-zinc-900 via-indigo-950 to-purple-950 text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 size-72 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 size-72 rounded-full bg-purple-500/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 rounded-full bg-violet-500/5 blur-3xl pointer-events-none"></div>
-
-        <div class="relative max-w-6xl mx-auto px-6">
-            <div class="text-center flex flex-col items-center gap-3 mb-16">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-semibold uppercase tracking-widest text-purple-300">
-                    💎 Nilai Kami
-                </span>
-                <h2 class="text-3xl md:text-4xl font-bold">Mengapa Bergabung? 🤔</h2>
-                <p class="text-zinc-400 max-w-lg">Kami percaya bahwa perubahan nyata lahir dari kolaborasi yang tulus dan niat yang ikhlas.</p>
+    {{-- ===== MITRA ===== --}}
+    <section id="mitra" class="py-20 bg-[#f4f8f6]">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🏆 Kepercayaan</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold" style="font-family: 'Playfair Display', Georgia, serif;">Dipercaya Oleh Mitra &amp; Klien Kami</h2>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="group flex flex-col gap-4 p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-indigo-500/50 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-12 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-2xl shadow-lg shadow-indigo-900/50 group-hover:scale-110 transition-transform duration-300">🤝</div>
-                    <h3 class="text-lg font-bold">Kolaboratif</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Kami percaya pada kekuatan kebersamaan. Setiap anggota berkontribusi dan saling menguatkan dalam ekosistem yang inklusif.</p>
-                </div>
-
-                <div class="group flex flex-col gap-4 p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-purple-500/50 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-2xl shadow-lg shadow-purple-900/50 group-hover:scale-110 transition-transform duration-300">💡</div>
-                    <h3 class="text-lg font-bold">Inovatif</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Teknologi adalah alat, bukan tujuan. Kami memanfaatkannya secara kreatif untuk memecahkan masalah nyata di masyarakat.</p>
-                </div>
-
-                <div class="group flex flex-col gap-4 p-7 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-green-500/50 hover:-translate-y-1 transition-all duration-300">
-                    <div class="size-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-2xl shadow-lg shadow-green-900/50 group-hover:scale-110 transition-transform duration-300">🌱</div>
-                    <h3 class="text-lg font-bold">Berdampak</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">Setiap langkah yang kami ambil memiliki tujuan yang jelas: menciptakan dampak positif bagi lingkungan, ilmu, dan spiritual.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Klien --}}
-    <section class="py-20 bg-gradient-to-b from-zinc-50 to-white border-b border-zinc-100">
-        <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center gap-8">
-            <div class="flex flex-col gap-2">
-                <span class="text-xs font-semibold uppercase tracking-widest text-zinc-400">🏆 Dipercaya Oleh</span>
-                <h2 class="text-2xl font-bold text-zinc-900">Mitra & Klien Kami</h2>
-            </div>
-
-            <div class="flex flex-wrap justify-center items-center gap-8">
-                <a href="https://masjidsyathosedan.com" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl border border-zinc-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-                    <span class="text-3xl">🕌</span>
-                    <div class="text-left">
-                        <p class="font-bold text-zinc-900 text-sm">Masjid Syatho Sedan</p>
-                        <p class="text-xs text-zinc-500">📍 Rembang, Jawa Tengah</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="https://masjidsyathosedan.com" target="_blank" rel="noopener" class="flex flex-col items-center text-center gap-2.5 bg-white border border-[#e0ebe7] rounded-xl px-4 py-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                    <span class="text-4xl">🕌</span>
+                    <div>
+                        <strong class="block text-sm font-bold text-[#1a2420]">Masjid Syatho Sedan</strong>
+                        <span class="text-xs text-zinc-500 leading-tight">📍 Rembang, Jawa Tengah</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    {{-- Layanan --}}
-    <section id="layanan" class="py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 size-96 rounded-full bg-gradient-to-br from-indigo-100/50 to-purple-100/50 blur-3xl pointer-events-none"></div>
+    {{-- ===== JASA WEBSITE CTA ===== --}}
+    <section id="layanan" class="relative py-20 overflow-hidden bg-brand-darker">
+        <svg class="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="jasaPat" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                    <g fill="none" stroke="#fff" stroke-width="0.8">
+                        <polygon points="40,10 44.5,25 59,25 47.5,34 52,49 40,40 28,49 32.5,34 21,25 35.5,25"/>
+                        <rect x="29" y="29" width="22" height="22" transform="rotate(45,40,40)"/>
+                    </g>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#jasaPat)"/>
+        </svg>
+        <div class="relative z-10 max-w-[1100px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <div class="relative max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="flex flex-col gap-6">
-                    <span class="inline-flex items-center gap-2 w-fit px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-widest text-purple-700">
-                        🛠️ Layanan
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight">
-                        Butuh Website<br>
-                        <span class="gradient-text">Profesional? 🌐</span>
+                <div>
+                    <span class="inline-block bg-white/15 text-white/90 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">🛠️ Jasa Pembuatan Website</span>
+                    <h2 class="font-brand-serif text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold text-white leading-tight mb-5" style="font-family: 'Playfair Display', Georgia, serif;">
+                        Website Profesional<br>Mulai <span class="text-brand-gold">Rp 350.000</span> / Tahun
                     </h2>
-                    <p class="text-zinc-500 leading-relaxed">
-                        Kami menyediakan jasa pembuatan website profesional yang modern, cepat, dan sesuai kebutuhan bisnis atau organisasi Anda. Dari landing page hingga sistem informasi lengkap.
-                    </p>
-
-                    <ul class="flex flex-col gap-3">
-                        <li class="flex items-center gap-3 text-sm text-zinc-700 bg-green-50 px-4 py-3 rounded-xl border border-green-100">
-                            <span class="text-lg">🖼️</span>
-                            Landing page & company profile
+                    <p class="text-white/75 leading-relaxed mb-8">Untuk pesantren, masjid, UMKM, dan komunitas desa. Cepat jadi, desain modern, dan sudah termasuk hosting + SSL.</p>
+                    <ul class="flex flex-col gap-3.5 mb-10">
+                        <li class="flex items-center gap-3 text-white/85 text-sm">
+                            <span class="bg-white/15 rounded-full size-7 flex items-center justify-center shrink-0">⚡</span>
+                            Selesai dalam 1–7 hari kerja
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-zinc-700 bg-purple-50 px-4 py-3 rounded-xl border border-purple-100">
-                            <span class="text-lg">🎨</span>
-                            Desain modern & responsif
+                        <li class="flex items-center gap-3 text-white/85 text-sm">
+                            <span class="bg-white/15 rounded-full size-7 flex items-center justify-center shrink-0">📱</span>
+                            Responsif di HP & Desktop
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-zinc-700 bg-orange-50 px-4 py-3 rounded-xl border border-orange-100">
-                            <span class="text-lg">💬</span>
-                            Konsultasi & dukungan teknis
+                        <li class="flex items-center gap-3 text-white/85 text-sm">
+                            <span class="bg-white/15 rounded-full size-7 flex items-center justify-center shrink-0">🔒</span>
+                            SSL, Hosting & Maintenance sudah termasuk
+                        </li>
+                        <li class="flex items-center gap-3 text-white/85 text-sm">
+                            <span class="bg-white/15 rounded-full size-7 flex items-center justify-center shrink-0">💬</span>
+                            Konsultasi gratis via WhatsApp
                         </li>
                     </ul>
+                    <div class="flex gap-4 flex-wrap">
+                        <a href="{{ route('solusi') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">💻 Lihat Paket &amp; Harga</a>
+                        <a href="https://wa.me/6285188158542?text=Halo%20Barizaloka%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">💬 Konsultasi Gratis</a>
+                    </div>
                 </div>
 
-                <div id="kontak" class="flex flex-col gap-6 p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-purple-100 shadow-xl shadow-purple-100">
-                    <h3 class="text-xl font-bold text-zinc-900">💬 Mulai Konsultasi Gratis</h3>
-                    <p class="text-sm text-zinc-500">Hubungi kami melalui Instagram untuk mendiskusikan kebutuhan website Anda. Kami siap membantu! 🚀</p>
-
-                    <a href="https://instagram.com/namaku.ahla"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-bold text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200">
-                        <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        @barizaloka di Instagram
+                <div class="flex flex-col gap-5">
+                    <div class="bg-white/8 border border-white/15 rounded-2xl p-7 backdrop-blur-sm">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-3xl">🌐</span>
+                            <div>
+                                <div class="text-white font-bold text-sm">Paket Landing</div>
+                                <div class="text-white/60 text-xs">1 halaman, langsung online</div>
+                            </div>
+                            <div class="ml-auto text-white/90 font-extrabold text-base whitespace-nowrap">Rp 350rb</div>
+                        </div>
+                        <div class="text-white/55 text-xs leading-relaxed">Cocok untuk profil bisnis, jadwal kajian, atau landing page acara.</div>
+                    </div>
+                    <div class="relative bg-white/12 border border-white/30 rounded-2xl p-7 backdrop-blur-sm">
+                        <span class="absolute -top-2.5 right-5 bg-brand-gold text-white text-[.68rem] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Paling Populer</span>
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-3xl">⚙️</span>
+                            <div>
+                                <div class="text-white font-bold text-sm">Paket CMS</div>
+                                <div class="text-white/60 text-xs">Kelola website sendiri</div>
+                            </div>
+                            <div class="ml-auto text-white/90 font-extrabold text-base whitespace-nowrap">Rp 600rb</div>
+                        </div>
+                        <div class="text-white/55 text-xs leading-relaxed">WordPress CMS. Cocok untuk UMKM, masjid, atau organisasi yang aktif update konten.</div>
+                    </div>
+                    <a href="{{ route('solusi') }}" class="flex items-center justify-center gap-2 bg-transparent border border-dashed border-white/30 rounded-lg p-4 text-white/65 text-sm hover:bg-white/8 hover:text-white/90 transition-colors">
+                        Bandingkan paket lengkap →
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    {{-- Founder --}}
-    <section class="py-24 bg-gradient-to-br from-zinc-50 via-white to-purple-50 relative overflow-hidden">
-        <div class="absolute top-0 left-0 size-80 rounded-full bg-indigo-100/50 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 size-80 rounded-full bg-purple-100/50 blur-3xl pointer-events-none"></div>
-
-        <div class="relative max-w-5xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-
-                {{-- Avatar & identitas --}}
-                <div class="flex flex-col items-center gap-5 shrink-0">
-                    <div class="relative">
-                        <div class="size-32 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl shadow-purple-200">
-                            <span class="text-6xl font-black text-white select-none">A</span>
-                        </div>
-                        <span class="absolute -bottom-2 -right-2 size-8 rounded-full bg-green-400 border-2 border-white flex items-center justify-center text-xs">✓</span>
-                    </div>
-
-                    <div class="flex flex-col items-center gap-2 text-center">
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-200 text-xs font-semibold text-amber-700">🕌 Santri Muhammadiyah</span>
-                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-xs font-semibold text-blue-700">💻 Web Developer</span>
-                        </div>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 border border-green-200 text-xs font-semibold text-green-700">🤝 Community Builder</span>
-                            <span class="px-3 py-1 rounded-full bg-gradient-to-r from-orange-100 to-yellow-100 border border-orange-200 text-xs font-semibold text-orange-700">🏡 Pemuda Desa</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Konten --}}
-                <div class="flex flex-col gap-6">
-                    <div class="flex flex-col gap-2">
-                        <span class="inline-flex items-center gap-2 w-fit px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-xs font-semibold uppercase tracking-widest text-purple-700">
-                            👋 Tentang Pendiri
-                        </span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight">
-                            Dibangun oleh<br>
-                            <span class="gradient-text">santri yang ngerti kode</span>
-                        </h2>
-                    </div>
-
-                    <p class="text-zinc-600 leading-relaxed text-base">
-                        Barizaloka lahir dari keyakinan bahwa santri Muhammadiyah punya peran besar di era digital. Bukan hanya sebagai pengguna teknologi, tapi sebagai pembangun ekosistem yang membawa nilai — lingkungan, ilmu, dan spiritual — ke dalam satu gerakan nyata dari desa.
-                    </p>
-
-                    {{-- Quote --}}
-                    <blockquote class="relative pl-5 border-l-4 border-gradient-to-b from-indigo-500 to-purple-500 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-r-xl px-6 py-5">
-                        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-                        <p class="text-zinc-700 italic text-sm leading-relaxed font-medium">
-                            "Ilmu agama dan teknologi bukan dua hal yang bertentangan — keduanya adalah alat untuk memberi manfaat sebesar-besarnya bagi umat."
-                        </p>
-                    </blockquote>
-
-                    <a href="https://instagram.com/namaku.ahla"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 w-fit px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-pink-200">
-                        <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        📸 Ikuti Perjalanan Kami
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- CTA --}}
-    <section class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.1),transparent)] pointer-events-none"></div>
-
-        {{-- Floating emoji accents --}}
-        <div class="absolute top-6 left-[8%] text-4xl float-1 opacity-30 select-none pointer-events-none">🎯</div>
-        <div class="absolute bottom-6 right-[8%] text-4xl float-2 opacity-30 select-none pointer-events-none">🌟</div>
-        <div class="absolute top-8 right-[22%] text-3xl float-3 opacity-30 select-none pointer-events-none">💪</div>
-        <div class="absolute bottom-8 left-[22%] text-3xl float-4 opacity-30 select-none pointer-events-none">✨</div>
-
-        <div class="relative max-w-3xl mx-auto px-6 text-center flex flex-col items-center gap-6">
-            <span class="text-5xl animate-bounce">🚀</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
-                Siap Bergabung dengan<br>Komunitas Kami?
-            </h2>
-            <p class="text-white/80 text-lg">
-                Jadilah bagian dari gerakan positif. Bersama kita bisa menciptakan perubahan yang lebih besar. 💪
-            </p>
-            <a href="#komunitas"
-               class="px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 shadow-lg">
-                🌍 Jelajahi Komunitas
-            </a>
+    {{-- ===== CTA FINAL ===== --}}
+    <section class="relative py-20 text-center overflow-hidden bg-brand-darker">
+        <div class="relative z-10 max-w-[700px] mx-auto px-6">
+            <h2 class="font-brand-serif text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">🚀 Siap Bergabung dengan Ekosistem Kami?</h2>
+            <p class="text-white/75 max-w-md mx-auto mb-8">Jadilah bagian dari gerakan positif. Bersama kita bisa menciptakan perubahan yang lebih besar. 💪</p>
+            <a href="#komunitas" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-8 py-4 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">🌍 Jelajahi Ekosistem</a>
         </div>
     </section>
 

@@ -26,4 +26,20 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>{{ route('blog.index') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    @foreach ($posts as $post)
+    <url>
+        <loc>{{ $post->permalink() }}</loc>
+        <lastmod>{{ $post->updated_at->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    @endforeach
+
 </urlset>

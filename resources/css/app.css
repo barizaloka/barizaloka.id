@@ -10,6 +10,16 @@
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-brand-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-brand-serif: 'Playfair Display', Georgia, serif;
+
+    --color-brand-primary: #1D9E75;
+    --color-brand-dark: #0D5C46;
+    --color-brand-darker: #093D2F;
+    --color-brand-light: #E1F5EE;
+    --color-brand-mid: #5DCAA5;
+    --color-brand-gold: #D4A843;
+    --color-brand-blue: #378ADD;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
