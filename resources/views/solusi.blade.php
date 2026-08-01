@@ -262,6 +262,31 @@
         </div>
     </section>
 
+    {{-- ===== NICHE & LOCATION LINKS ===== --}}
+    <section class="py-20 bg-white">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center max-w-lg mx-auto mb-10">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🎯 Solusi Sesuai Kebutuhan</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Website untuk Setiap Jenis Lembaga</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-14">
+                @foreach (config('niche_pages') as $slug => $niche)
+                <a href="{{ route('niche.show', $slug) }}" class="inline-flex items-center gap-2 bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl px-5 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-light transition-colors">Website {{ $niche['label'] }}</a>
+                @endforeach
+            </div>
+
+            <div class="text-center max-w-lg mx-auto mb-10">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">📍 Wilayah Layanan</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Melayani Kabupaten Rembang & Sekitarnya</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                @foreach (config('location_pages') as $slug => $location)
+                <a href="{{ route('lokasi.show', $slug) }}" class="inline-flex items-center gap-2 bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl px-5 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-light transition-colors">Jasa Website di {{ $location['name'] }}</a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     {{-- ===== FAQ ===== --}}
     <section class="py-20 bg-[#f4f8f6]">
         <div class="max-w-[1100px] mx-auto px-6">
