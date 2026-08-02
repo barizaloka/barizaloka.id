@@ -2,36 +2,37 @@
 
 namespace App\Models;
 
-use Database\Factories\ServiceFactory;
+use Database\Factories\PackageJasaWebsiteFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
-class Service extends Model
+class PackageJasaWebsite extends Model
 {
-    /** @use HasFactory<ServiceFactory> */
+    /** @use HasFactory<PackageJasaWebsiteFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'icon',
         'name',
         'slug',
-        'summary',
-        'description',
-        'price_from',
+        'tagline',
+        'price',
+        'price_label',
+        'price_period',
         'features',
+        'cta_label',
+        'whatsapp_message',
         'is_featured',
+        'badge_label',
         'order',
-        'meta_title',
-        'meta_description',
     ];
 
     /** @return array<string, string> */
     protected function casts(): array
     {
         return [
+            'price' => 'integer',
             'features' => 'array',
             'is_featured' => 'boolean',
             'order' => 'integer',
@@ -40,26 +41,11 @@ class Service extends Model
 
     protected static function booted(): void
     {
-        static::creating(function (Service $service) {
-            if (empty($service->slug)) {
-                $service->slug = Str::slug($service->name);
+        static::creating(function (PackageJasaWebsite $package) {
+            if (empty($package->slug)) {
+                $package->slug = Str::slug($package->name);
             }
         });
-    }
-
-    public function projects(): HasMany
-    {
-        return $this->hasMany(Project::class);
-    }
-
-    public function testimonials(): HasMany
-    {
-        return $this->hasMany(Testimonial::class);
-    }
-
-    public function scopeFeatured(Builder $query): Builder
-    {
-        return $query->where('is_featured', true);
     }
 
     public function scopeOrdered(Builder $query): Builder

@@ -1,41 +1,32 @@
 <?php
 
-namespace App\Filament\Resources\Testimonials\Tables;
+namespace App\Filament\Resources\PackageJasaWebsites\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class TestimonialsTable
+class PackageJasaWebsitesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                ImageColumn::make('avatar')
-                    ->label('Foto')
-                    ->circular(),
-
                 TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('Nama Paket')
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('role')
-                    ->label('Peran'),
+                TextColumn::make('price_label')
+                    ->label('Harga'),
 
-                TextColumn::make('quote')
-                    ->label('Testimoni')
-                    ->limit(60),
-
-                TextColumn::make('rating')
-                    ->label('Rating')
-                    ->badge(),
+                TextColumn::make('badge_label')
+                    ->label('Badge')
+                    ->placeholder('—'),
 
                 IconColumn::make('is_featured')
                     ->label('Unggulan')
@@ -44,6 +35,12 @@ class TestimonialsTable
                 TextColumn::make('order')
                     ->label('Urutan')
                     ->sortable(),
+
+                TextColumn::make('created_at')
+                    ->label('Dibuat')
+                    ->dateTime('d M Y')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

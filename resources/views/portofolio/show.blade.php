@@ -47,12 +47,6 @@
                             <div class="font-semibold">{{ $project->client_name }}</div>
                         </div>
                     @endif
-                    @if ($project->service)
-                        <div>
-                            <div class="text-xs text-zinc-500 uppercase tracking-wide mb-1">Layanan</div>
-                            <a href="{{ route('layanan.show', $project->service) }}" class="font-semibold text-brand-primary hover:underline">{{ $project->service->name }}</a>
-                        </div>
-                    @endif
                 </div>
                 @if ($project->url)
                     <a href="{{ $project->url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-brand-dark text-white rounded-xl px-6 py-3 text-sm font-bold hover:-translate-y-0.5 transition-all">🔗 Kunjungi Website</a>

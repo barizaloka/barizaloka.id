@@ -21,7 +21,6 @@ class ProjectFactory extends Factory
         $title = fake()->unique()->words(3, true);
 
         return [
-            'service_id' => null,
             'title' => ucfirst($title),
             'slug' => Str::slug($title),
             'client_name' => fake()->company(),

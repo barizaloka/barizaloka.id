@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Testimonials\Pages;
+namespace App\Filament\Resources\PackageJasaWebsites\Pages;
 
-use App\Filament\Resources\Testimonials\TestimonialResource;
+use App\Filament\Resources\PackageJasaWebsites\PackageJasaWebsiteResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditTestimonial extends EditRecord
+class EditPackageJasaWebsite extends EditRecord
 {
-    protected static string $resource = TestimonialResource::class;
+    protected static string $resource = PackageJasaWebsiteResource::class;
 
     protected function getHeaderActions(): array
     {

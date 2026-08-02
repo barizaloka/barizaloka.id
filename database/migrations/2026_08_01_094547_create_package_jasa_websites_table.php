@@ -11,19 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('package_jasa_websites', function (Blueprint $table) {
             $table->id();
-            $table->string('icon')->nullable();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('summary');
-            $table->longText('description');
-            $table->string('price_from')->nullable();
+            $table->string('tagline')->nullable();
+            $table->unsignedBigInteger('price');
+            $table->string('price_label');
+            $table->string('price_period')->default('per tahun');
             $table->json('features')->nullable();
+            $table->string('cta_label')->nullable();
+            $table->string('whatsapp_message')->nullable();
             $table->boolean('is_featured')->default(false);
+            $table->string('badge_label')->nullable();
             $table->unsignedInteger('order')->default(0);
-            $table->string('meta_title')->nullable();
-            $table->text('meta_description')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('package_jasa_websites');
     }
 };

@@ -49,12 +49,6 @@ class ProjectForm
                                 'komunitas' => 'Komunitas & Organisasi',
                             ]),
 
-                        Select::make('service_id')
-                            ->label('Layanan Terkait')
-                            ->relationship('service', 'name')
-                            ->searchable()
-                            ->preload(),
-
                         TextInput::make('url')
                             ->label('Tautan Website')
                             ->url(),

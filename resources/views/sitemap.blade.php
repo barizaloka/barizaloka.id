@@ -34,22 +34,6 @@
     </url>
 
     <url>
-        <loc>{{ route('layanan.index') }}</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    @foreach ($services as $service)
-    <url>
-        <loc>{{ route('layanan.show', $service) }}</loc>
-        <lastmod>{{ $service->updated_at->toAtomString() }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    @endforeach
-
-    <url>
         <loc>{{ route('portofolio.index') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
@@ -95,6 +79,22 @@
     @endforeach
 
     <url>
+        <loc>{{ route('provinsi.index') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    @foreach (array_keys(config('provinsi_pages')) as $provinsi)
+    <url>
+        <loc>{{ route('provinsi.show', $provinsi) }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    @endforeach
+
+    <url>
         <loc>{{ route('harga') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
@@ -106,13 +106,6 @@
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>{{ route('testimoni.index') }}</loc>
-        <lastmod>{{ now()->toAtomString() }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
     </url>
 
     <url>

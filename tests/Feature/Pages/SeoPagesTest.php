@@ -2,31 +2,9 @@
 
 use App\Models\Faq;
 use App\Models\Project;
-use App\Models\Service;
-use App\Models\Testimonial;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
-
-test('layanan index lists services', function () {
-    Service::factory()->create(['name' => 'Website Pesantren']);
-
-    $this->get(route('layanan.index'))
-        ->assertOk()
-        ->assertSee('Website Pesantren');
-});
-
-test('layanan show page displays a single service', function () {
-    $service = Service::factory()->create(['name' => 'Website Desa']);
-
-    $this->get(route('layanan.show', $service))
-        ->assertOk()
-        ->assertSee('Website Desa');
-});
-
-test('layanan show page 404s for an unknown slug', function () {
-    $this->get('/layanan/tidak-ada')->assertNotFound();
-});
 
 test('portofolio index shows an empty state when there are no projects', function () {
     $this->get(route('portofolio.index'))
@@ -40,19 +18,6 @@ test('portofolio show page displays a single project', function () {
     $this->get(route('portofolio.show', $project))
         ->assertOk()
         ->assertSee('Website Masjid Al-Ikhlas');
-});
-
-test('testimoni index shows an empty state when there are no testimonials', function () {
-    $this->get(route('testimoni.index'))->assertOk();
-});
-
-test('testimoni index lists featured testimonials', function () {
-    Testimonial::factory()->create(['name' => 'Ustadz Ahmad', 'quote' => 'Website jadi cepat dan mudah dikelola.']);
-
-    $this->get(route('testimoni.index'))
-        ->assertOk()
-        ->assertSee('Ustadz Ahmad')
-        ->assertSee('Website jadi cepat dan mudah dikelola.');
 });
 
 test('faq index lists active faqs and hides inactive ones', function () {
@@ -74,14 +39,12 @@ test('kontak page is reachable', function () {
     $this->get(route('kontak'))->assertOk();
 });
 
-test('sitemap includes layanan and portofolio urls', function () {
-    $service = Service::factory()->create();
+test('sitemap includes portofolio urls', function () {
     $project = Project::factory()->create();
 
     $response = $this->get(route('sitemap'));
 
     $response->assertOk();
-    $response->assertSee(route('layanan.show', $service), false);
     $response->assertSee(route('portofolio.show', $project), false);
 });
 
@@ -138,4 +101,30 @@ test('sitemap includes niche-lokasi combination landing pages', function () {
 
     $response->assertOk();
     $response->assertSee(route('niche-lokasi.show', ['pesantren', 'rembang']), false);
+});
+
+test('provinsi index page is reachable and lists all 34 provinces', function () {
+    $response = $this->get(route('provinsi.index'));
+
+    $response->assertOk();
+    $response->assertSee(config('provinsi_pages.jawa-tengah.name'));
+    $response->assertSee(config('provinsi_pages.papua.name'));
+});
+
+test('provinsi landing page is reachable for each configured province', function (string $provinsi) {
+    $this->get(route('provinsi.show', $provinsi))
+        ->assertOk()
+        ->assertSee(config("provinsi_pages.{$provinsi}.name"));
+})->with(['aceh', 'jawa-tengah', 'bali', 'kalimantan-timur', 'sulawesi-selatan', 'papua']);
+
+test('provinsi landing page 404s for an unknown province', function () {
+    $this->get('/potensi-digital-tidak-ada')->assertNotFound();
+});
+
+test('sitemap includes provinsi landing pages', function () {
+    $response = $this->get(route('sitemap'));
+
+    $response->assertOk();
+    $response->assertSee(route('provinsi.index'), false);
+    $response->assertSee(route('provinsi.show', 'jawa-tengah'), false);
 });

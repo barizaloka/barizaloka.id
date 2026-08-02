@@ -11,24 +11,14 @@
                 'name' => 'Jasa Pembuatan Website Barizaloka',
                 'description' => 'Jasa pembuatan website untuk pesantren, desa, UMKM, dan komunitas.',
                 'brand' => ['@type' => 'Organization', 'name' => 'Barizaloka'],
-                'offers' => [
-                    [
-                        '@type' => 'Offer',
-                        'name' => 'Paket Landing',
-                        'price' => '350000',
-                        'priceCurrency' => 'IDR',
-                        'priceValidUntil' => now()->addYear()->toDateString(),
-                        'url' => route('harga'),
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'name' => 'Paket CMS',
-                        'price' => '600000',
-                        'priceCurrency' => 'IDR',
-                        'priceValidUntil' => now()->addYear()->toDateString(),
-                        'url' => route('harga'),
-                    ],
-                ],
+                'offers' => $packages->map(fn ($package) => [
+                    '@type' => 'Offer',
+                    'name' => $package->name,
+                    'price' => (string) $package->price,
+                    'priceCurrency' => 'IDR',
+                    'priceValidUntil' => now()->addYear()->toDateString(),
+                    'url' => route('harga'),
+                ])->all(),
             ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
         </script>
     </x-slot:head>
@@ -47,57 +37,27 @@
     <section class="py-20 bg-[#f4f8f6]">
         <div class="max-w-[1100px] mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
-                {{-- Paket Landing --}}
-                <div class="flex flex-col bg-white border border-[#e0ebe7] rounded-2xl p-10">
-                    <div class="text-xl font-bold mb-2">Paket Landing</div>
-                    <p class="text-sm text-zinc-500 mb-8">Satu Halaman, Langsung Online. Cocok untuk jadwal kajian, info acara, atau profil sederhana.</p>
-                    <div class="mb-8">
-                        <div class="font-brand-serif text-4xl font-extrabold text-brand-primary" style="font-family: 'Playfair Display', Georgia, serif;">Rp 350rb</div>
-                        <div class="text-sm text-zinc-500 mt-1">per tahun</div>
+                @foreach ($packages as $package)
+                    <div class="relative flex flex-col bg-white rounded-2xl p-10 {{ $package->is_featured ? 'border-2 border-brand-primary shadow-lg' : 'border border-[#e0ebe7]' }}">
+                        @if ($package->badge_label)
+                            <span class="absolute top-5 right-5 bg-brand-primary text-white text-[.7rem] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">{{ $package->badge_label }}</span>
+                        @endif
+                        <div class="text-xl font-bold mb-2">{{ $package->name }}</div>
+                        @if ($package->tagline)
+                            <p class="text-sm text-zinc-500 mb-8">{{ $package->tagline }}</p>
+                        @endif
+                        <div class="mb-8">
+                            <div class="font-brand-serif text-4xl font-extrabold text-brand-primary" style="font-family: 'Playfair Display', Georgia, serif;">{{ $package->price_label }}</div>
+                            <div class="text-sm text-zinc-500 mt-1">{{ $package->price_period }}</div>
+                        </div>
+                        <ul class="flex-1 flex flex-col gap-3 border-t border-[#e0ebe7] pt-8 mb-10 text-sm text-[#1a2420]">
+                            @foreach ($package->features as $feature)
+                                <li @class(['pl-6 text-xs' => $feature['indent'] ?? false])>{{ ($feature['indent'] ?? false) ? '•' : '✅' }} {!! $feature['text'] !!}</li>
+                            @endforeach
+                        </ul>
+                        <a href="https://wa.me/6285188158542?text={{ urlencode($package->whatsapp_message ?? '') }}" target="_blank" rel="noopener" class="text-center rounded-xl px-7 py-3.5 text-sm font-bold transition-colors {{ $package->is_featured ? 'bg-brand-gold text-white hover:opacity-90' : 'bg-white text-brand-dark border border-brand-dark hover:bg-brand-light' }}">{{ $package->cta_label ?? 'Pilih '.$package->name }}</a>
                     </div>
-                    <ul class="flex-1 flex flex-col gap-3 border-t border-[#e0ebe7] pt-8 mb-10 text-sm text-[#1a2420]">
-                        <li>✅ <strong>Domain .my.id GRATIS</strong> (1 tahun)</li>
-                        <li>✅ 1 Halaman Landing Page</li>
-                        <li>✅ Desain Responsif (HP &amp; Desktop)</li>
-                        <li>✅ SSL/HTTPS Gratis (Aman)</li>
-                        <li>✅ Hosting 1 Tahun</li>
-                        <li>✅ Pengerjaan Cepat (1-3 Hari)</li>
-                        <li>✅ <strong>Layanan Ubah Isi GRATIS:</strong></li>
-                        <li class="pl-6 text-xs">• Ganti teks/gambar (max 3 hari sekali)</li>
-                        <li class="pl-6 text-xs">• Revisi layout (max 2 minggu sekali)</li>
-                        <li>✅ Backup Data Rutin</li>
-                        <li>✅ Konsultasi Konten via WhatsApp</li>
-                    </ul>
-                    <a href="https://wa.me/6285188158542?text=Halo%20Barizaloka%2C%20saya%20tertarik%20dengan%20Paket%20Landing" target="_blank" rel="noopener" class="text-center bg-white text-brand-dark border border-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:bg-brand-light transition-colors">Pilih Paket Landing</a>
-                </div>
-
-                {{-- Paket CMS --}}
-                <div class="relative flex flex-col bg-white border-2 border-brand-primary rounded-2xl p-10 shadow-lg">
-                    <span class="absolute top-5 right-5 bg-brand-primary text-white text-[.7rem] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Paling Populer</span>
-                    <div class="text-xl font-bold mb-2">Paket CMS</div>
-                    <p class="text-sm text-zinc-500 mb-8">Bisa Diurus Sendiri. Cocok untuk UMKM, organisasi, atau masjid yang aktif update informasi.</p>
-                    <div class="mb-8">
-                        <div class="font-brand-serif text-4xl font-extrabold text-brand-primary" style="font-family: 'Playfair Display', Georgia, serif;">Rp 600rb</div>
-                        <div class="text-sm text-zinc-500 mt-1">per tahun</div>
-                    </div>
-                    <ul class="flex-1 flex flex-col gap-3 border-t border-[#e0ebe7] pt-8 mb-10 text-sm text-[#1a2420]">
-                        <li>✅ <strong>Domain .my.id GRATIS</strong> (1 tahun)</li>
-                        <li>✅ Dashboard WordPress (Bisa edit sendiri)</li>
-                        <li>✅ Tampilan Profesional &amp; Responsif</li>
-                        <li>✅ Maksimal 5 Halaman Kustom</li>
-                        <li>✅ SSL/HTTPS Gratis</li>
-                        <li>✅ Hosting 1 Tahun</li>
-                        <li>✅ Backup Mingguan (Retensi 7 hari)</li>
-                        <li>✅ Keamanan &amp; Monitoring Dasar</li>
-                        <li>✅ Update WordPress Otomatis (1 tahun)</li>
-                        <li>✅ Pengerjaan 3-7 Hari</li>
-                        <li>✅ Gratis Konsultasi via WhatsApp</li>
-                        <li>✅ <strong>Layanan Ubah Isi GRATIS:</strong></li>
-                        <li class="pl-6 text-xs">• Ganti teks/gambar (max 3 hari sekali)</li>
-                        <li class="pl-6 text-xs">• Revisi layout (max 2 minggu sekali)</li>
-                    </ul>
-                    <a href="https://wa.me/6285188158542?text=Halo%20Barizaloka%2C%20saya%20tertarik%20dengan%20Paket%20CMS" target="_blank" rel="noopener" class="text-center bg-brand-gold text-white rounded-xl px-7 py-3.5 text-sm font-bold hover:opacity-90 transition-opacity">Pilih Paket CMS</a>
-                </div>
+                @endforeach
             </div>
 
             <div class="text-center mt-12 text-sm text-[#1a2420] leading-relaxed max-w-2xl mx-auto">
