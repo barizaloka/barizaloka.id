@@ -15,7 +15,7 @@
 
             <div class="flex flex-wrap gap-3 justify-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">← Kembali ke Beranda</a>
-                <a href="{{ route('solusi') }}" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">Lihat Layanan</a>
+                <a href="{{ route('jasa-website') }}" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">Lihat Layanan</a>
             </div>
 
             <nav class="mt-12 pt-8 border-t border-white/10" aria-label="Tautan Populer">

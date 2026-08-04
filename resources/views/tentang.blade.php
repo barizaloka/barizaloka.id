@@ -25,7 +25,7 @@
                 <div class="text-sm text-zinc-500 font-medium">Website Terbangun</div>
             </div>
             <div class="text-center px-10 border-r border-[#e0ebe7] max-sm:px-5">
-                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">4</div>
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">3</div>
                 <div class="text-sm text-zinc-500 font-medium">Pilar Aktif</div>
             </div>
             <div class="text-center px-10 border-r border-[#e0ebe7] max-sm:px-5">
@@ -116,18 +116,10 @@
         <div class="max-w-[1100px] mx-auto px-6">
             <div class="text-center max-w-lg mx-auto mb-12">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">Ekosistem Digital</span>
-                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Empat Pilar, Satu Gerakan</h2>
-                <p class="text-zinc-500">Di bawah naungan Barizaloka, empat pilar tumbuh dengan fokus dan karakter masing-masing.</p>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Tiga Pilar, Satu Gerakan</h2>
+                <p class="text-zinc-500">Di bawah naungan Barizaloka, tiga pilar tumbuh dengan fokus dan karakter masing-masing.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden">
-                    <div class="absolute top-0 inset-x-0 h-1" style="background:#6C5CE7"></div>
-                    <span class="block text-4xl mb-4">🌙</span>
-                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Astro Falak</h3>
-                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">Ilmu Falak &amp; Astronomi Islam</div>
-                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Komunitas yang mendalami ilmu hisab rukyat, penentuan awal bulan Hijriyah, dan kekayaan khazanah astronomi Islam yang relevan hingga kini.</p>
-                    <a href="https://astrofalak.my.id/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white text-brand-dark border border-brand-dark rounded-lg px-4 py-2 text-sm font-bold hover:bg-brand-light transition-colors">🌙 Kunjungi Astro Falak</a>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden">
                     <div class="absolute top-0 inset-x-0 h-1 bg-brand-primary"></div>
                     <span class="block text-4xl mb-4">🌿</span>
@@ -201,10 +193,9 @@
                     <div class="absolute left-2.75 top-1.25 size-5 rounded-full bg-white border-4 border-brand-primary z-10"></div>
                     <span class="block font-brand-serif text-sm font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">2026</span>
                     <div class="bg-white border border-[#e0ebe7] rounded-xl p-6 shadow-sm">
-                        <h3 class="font-brand-serif text-lg font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Empat Pilar Ekosistem Resmi Berdiri</h3>
-                        <p class="text-sm text-zinc-500 leading-relaxed mb-4">Jerih payah itu terbayar. Tahun 2026, ekosistem Barizaloka resmi memiliki empat pilar yang aktif dan terarah.</p>
+                        <h3 class="font-brand-serif text-lg font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Tiga Pilar Ekosistem Resmi Berdiri</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed mb-4">Jerih payah itu terbayar. Tahun 2026, ekosistem Barizaloka resmi memiliki tiga pilar yang aktif dan terarah.</p>
                         <div class="grid grid-cols-2 gap-2 text-sm">
-                            <div>🌙 Astro Falak</div>
                             <div>🌿 Astraloka</div>
                             <div>💻 Baricode</div>
                             <div>📿 Self Reminder</div>
@@ -222,7 +213,7 @@
                         <div class="grid grid-cols-2 gap-2 text-sm">
                             <div>🌐 Jasa Website</div>
                             <div>🤝 Pendampingan Digital</div>
-                            <div>✨ 4 Pilar Aktif</div>
+                            <div>✨ 3 Pilar Aktif</div>
                         </div>
                     </div>
                 </div>

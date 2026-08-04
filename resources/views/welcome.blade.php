@@ -116,21 +116,7 @@
                 <p class="text-zinc-500">Setiap pilar memiliki fokus yang berbeda namun bersatu dalam satu tujuan: dampak nyata yang positif.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                {{-- Astro Falak --}}
-                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <div class="absolute top-0 inset-x-0 h-1" style="background:#6C5CE7"></div>
-                    <span class="block text-4xl mb-4">🌙</span>
-                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Astro Falak</h3>
-                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🔭 Komunitas Belajar Falak</div>
-                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Belajar ilmu falak dan astronomi bersama agar memahami bagaimana ulama memandang waktu—dari hilal hingga arah kiblat.</p>
-                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
-                        <li>🌙 Pengamatan Hilal &amp; Kalender</li>
-                        <li>⭐ Ilmu Falak &amp; Astronomi Islam</li>
-                        <li>🧭 Arah Kiblat &amp; Waktu Shalat</li>
-                    </ul>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 {{-- Astraloka --}}
                 <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
@@ -274,7 +260,7 @@
                         </li>
                     </ul>
                     <div class="flex gap-4 flex-wrap">
-                        <a href="{{ route('solusi') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">💻 Lihat Paket &amp; Harga</a>
+                        <a href="{{ route('harga') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">💻 Lihat Paket &amp; Harga</a>
                         <a href="https://wa.me/6285188158542?text=Halo%20Barizaloka%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">💬 Konsultasi Gratis</a>
                     </div>
                 </div>
@@ -303,7 +289,7 @@
                         </div>
                         <div class="text-white/55 text-xs leading-relaxed">WordPress CMS. Cocok untuk UMKM, masjid, atau organisasi yang aktif update konten.</div>
                     </div>
-                    <a href="{{ route('solusi') }}" class="flex items-center justify-center gap-2 bg-transparent border border-dashed border-white/30 rounded-lg p-4 text-white/65 text-sm hover:bg-white/8 hover:text-white/90 transition-colors">
+                    <a href="{{ route('harga') }}" class="flex items-center justify-center gap-2 bg-transparent border border-dashed border-white/30 rounded-lg p-4 text-white/65 text-sm hover:bg-white/8 hover:text-white/90 transition-colors">
                         Bandingkan paket lengkap →
                     </a>
                 </div>

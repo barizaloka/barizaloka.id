@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HargaController;
+use App\Http\Controllers\JasaWebsiteController;
 use App\Http\Controllers\LocationPageController;
 use App\Http\Controllers\NicheLocationPageController;
 use App\Http\Controllers\NichePageController;
@@ -13,7 +14,7 @@ use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
-Route::view('/solusi', 'solusi')->name('solusi');
+Route::get('/jasa-website', [JasaWebsiteController::class, 'index'])->name('jasa-website');
 Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::view('/tentang', 'tentang')->name('tentang');
 Route::get('/harga', [HargaController::class, 'index'])->name('harga');

@@ -120,7 +120,7 @@
                     </div>
                 </div>
 
-                <a href="{{ route('solusi') }}" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Jasa Website</a>
+                <a href="{{ route('jasa-website') }}" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Jasa Website</a>
                 <a href="{{ route('blog.index') }}" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Blog</a>
                 <a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Etalase Karya</a>
                 <a href="{{ route('kontak') }}" class="text-sm font-semibold text-white bg-brand-primary px-4.5 py-2 rounded-lg hover:bg-brand-dark transition-colors">Hubungi Kami</a>
@@ -144,7 +144,7 @@
             <a href="{{ route('harga') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">💰 Harga</a>
             <a href="{{ route('portofolio.index') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">🖥️ Portofolio</a>
             <a href="{{ route('faq.index') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">❓ FAQ</a>
-            <a href="{{ route('solusi') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Jasa Website</a>
+            <a href="{{ route('jasa-website') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Jasa Website</a>
             <a href="{{ route('blog.index') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Blog</a>
             <a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Etalase Karya</a>
             <a href="{{ route('kontak') }}" class="px-2 py-2.5 text-sm font-semibold text-brand-primary">Hubungi Kami</a>

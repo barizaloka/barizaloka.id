@@ -20,7 +20,14 @@
     </url>
 
     <url>
-        <loc>{{ route('solusi') }}</loc>
+        <loc>{{ route('jasa-website') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>{{ route('harga') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

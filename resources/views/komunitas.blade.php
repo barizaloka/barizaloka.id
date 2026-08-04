@@ -75,7 +75,7 @@
 
             <span class="anim-up-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-purple-200 text-xs font-semibold text-purple-700 shadow-sm">
                 <span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
-                🏘️ 4 Komunitas Aktif
+                🏘️ 3 Komunitas Aktif
             </span>
 
             <h1 class="anim-up-2 text-4xl md:text-6xl font-bold leading-tight tracking-tight text-zinc-900">
@@ -84,7 +84,7 @@
             </h1>
 
             <p class="anim-up-3 text-lg text-zinc-600 max-w-2xl leading-relaxed">
-                Empat pilar komunitas yang lahir dari semangat pemuda Desa Sedan. Masing-masing bergerak di bidang berbeda, namun bersatu dalam satu misi — <strong class="text-zinc-800">menciptakan dampak nyata</strong> yang positif.
+                Tiga pilar komunitas yang lahir dari semangat pemuda Desa Sedan. Masing-masing bergerak di bidang berbeda, namun bersatu dalam satu misi — <strong class="text-zinc-800">menciptakan dampak nyata</strong> yang positif.
             </p>
 
             {{-- Stats --}}
@@ -92,7 +92,7 @@
                 <div class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-zinc-200 shadow-sm">
                     <span class="text-2xl">🏘️</span>
                     <div class="text-left">
-                        <p class="text-xl font-bold text-zinc-900 leading-none">4</p>
+                        <p class="text-xl font-bold text-zinc-900 leading-none">3</p>
                         <p class="text-xs text-zinc-500 mt-0.5">Komunitas</p>
                     </div>
                 </div>
@@ -340,77 +340,6 @@
                     </div>
                 </div>
 
-                {{-- Astro Falak --}}
-                <div class="card-hover group rounded-3xl border border-amber-100 overflow-hidden shadow-lg shadow-amber-50 hover:shadow-2xl hover:shadow-amber-100 hover:border-amber-200">
-                    <div class="grid grid-cols-1 lg:grid-cols-5">
-                        {{-- Content panel (left) --}}
-                        <div class="lg:col-span-3 p-8 lg:p-10 flex flex-col gap-6 bg-white order-2 lg:order-1">
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold uppercase tracking-wide">⏳ Segera Hadir</span>
-                                    <span class="text-xs text-zinc-400">in development</span>
-                                </div>
-                                <p class="text-zinc-600 leading-relaxed text-base">
-                                    Astro Falak adalah komunitas belajar ilmu falak dan astronomi Islam. Bersama para pecinta langit dan ulama, komunitas ini membuka ruang untuk memahami bagaimana Islam memandang waktu—dari pengamatan hilal hingga penetapan arah kiblat yang tepat.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-100">
-                                    <span class="text-2xl">🌙</span>
-                                    <div>
-                                        <p class="text-sm font-semibold text-zinc-800">Pengamatan Hilal</p>
-                                        <p class="text-xs text-zinc-500 mt-0.5">Kalender Hijriah</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-100">
-                                    <span class="text-2xl">⭐</span>
-                                    <div>
-                                        <p class="text-sm font-semibold text-zinc-800">Ilmu Falak</p>
-                                        <p class="text-xs text-zinc-500 mt-0.5">Astronomi Islam</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-100">
-                                    <span class="text-2xl">🧭</span>
-                                    <div>
-                                        <p class="text-sm font-semibold text-zinc-800">Arah Kiblat</p>
-                                        <p class="text-xs text-zinc-500 mt-0.5">Waktu shalat akurat</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-3 mt-auto pt-2">
-                                <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-100 text-zinc-400 font-semibold text-sm cursor-not-allowed select-none">
-                                    🔭 Website Segera Hadir
-                                </span>
-                                <span class="px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold">
-                                    🚧 In Development
-                                </span>
-                            </div>
-                        </div>
-
-                        {{-- Header panel (right) --}}
-                        <div class="lg:col-span-2 relative bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 p-10 flex flex-col justify-between min-h-60 lg:min-h-auto overflow-hidden order-1 lg:order-2">
-                            <div class="absolute top-0 right-0 size-48 rounded-full bg-white/10 blur-3xl"></div>
-                            <div class="absolute bottom-0 left-0 size-32 rounded-full bg-orange-300/20 blur-2xl"></div>
-
-                            <div class="relative">
-                                <div class="size-18 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-5xl shadow-lg mb-6">
-                                    🌙
-                                </div>
-                                <h2 class="text-3xl font-bold text-white mb-2">Astro Falak</h2>
-                                <p class="text-amber-100 font-medium text-sm">🔭 Komunitas Belajar Falak</p>
-                            </div>
-
-                            <div class="relative flex flex-wrap gap-2 mt-6">
-                                <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold">🌙 Falak</span>
-                                <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold">⭐ Astronomi</span>
-                                <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold">🕌 Islam</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -465,7 +394,7 @@
                    class="px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 shadow-lg">
                     💬 Hubungi Kami
                 </a>
-                <a href="{{ route('solusi') }}"
+                <a href="{{ route('harga') }}"
                    class="px-8 py-4 rounded-xl bg-white/20 backdrop-blur-sm border border-white/40 text-white font-bold text-sm hover:bg-white/30 hover:-translate-y-1 transition-all duration-200">
                     💡 Lihat Solusi Kami
                 </a>

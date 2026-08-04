@@ -75,7 +75,7 @@
         <div class="relative z-10 max-w-[600px] mx-auto px-6">
             <h2 class="font-brand-serif text-[clamp(1.4rem,3vw,2rem)] font-extrabold text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Butuh Website untuk Pesantren, Desa, atau UMKM?</h2>
             <div class="flex flex-wrap gap-3 justify-center mt-6">
-                <a href="{{ route('solusi') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">Lihat Jasa Website</a>
+                <a href="{{ route('jasa-website') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">Lihat Jasa Website</a>
                 <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">← Kembali ke Blog</a>
             </div>
         </div>

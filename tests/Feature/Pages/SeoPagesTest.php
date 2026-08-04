@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Faq;
+use App\Models\PackageJasaWebsite;
 use App\Models\Project;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -33,6 +34,22 @@ test('faq index lists active faqs and hides inactive ones', function () {
 
 test('harga page is reachable', function () {
     $this->get(route('harga'))->assertOk();
+});
+
+test('jasa-website landing page lists packages from the database', function () {
+    PackageJasaWebsite::factory()->create(['name' => 'Paket Landing', 'price_label' => 'Rp 350rb']);
+
+    $this->get(route('jasa-website'))
+        ->assertOk()
+        ->assertSee('Paket Landing')
+        ->assertSee('Rp 350rb');
+});
+
+test('sitemap includes jasa-website landing page', function () {
+    $response = $this->get(route('sitemap'));
+
+    $response->assertOk();
+    $response->assertSee(route('jasa-website'), false);
 });
 
 test('kontak page is reachable', function () {
