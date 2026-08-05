@@ -63,3 +63,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 require __DIR__.'/settings.php';
+
+Route::get('/{slug}', [PostController::class, 'showBySlug'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('posts.showBySlug');

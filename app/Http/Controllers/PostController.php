@@ -44,8 +44,25 @@ class PostController extends Controller
             ->whereYear('published_at', $year)
             ->whereMonth('published_at', $month)
             ->where('slug', $slug)
+            ->where('permalink_format', 'tahun_bulan_slug')
             ->firstOrFail();
 
+        return $this->renderPost($post);
+    }
+
+    public function showBySlug(string $slug): View
+    {
+        $post = Post::with(['author', 'category', 'tags'])
+            ->published()
+            ->where('slug', $slug)
+            ->where('permalink_format', 'slug')
+            ->firstOrFail();
+
+        return $this->renderPost($post);
+    }
+
+    private function renderPost(Post $post): View
+    {
         $post->incrementViews();
 
         $relatedPosts = Post::with(['author', 'category'])

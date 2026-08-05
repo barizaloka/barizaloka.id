@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Posts\Schemas;
 
 use App\Models\Post;
+use App\Rules\UniqueSlugGlobal;
 use App\Rules\UniqueSlugPerMonth;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
@@ -42,9 +43,13 @@ class PostForm
                             ->live(onBlur: true)
                             ->rules(fn (Get $get, ?Post $record) => [
                                 'alpha_dash',
-                                new UniqueSlugPerMonth($get('published_at'), $record?->id),
+                                $get('permalink_format') === 'slug'
+                                    ? new UniqueSlugGlobal($record?->id)
+                                    : new UniqueSlugPerMonth($get('published_at'), $record?->id),
                             ])
-                            ->helperText(fn (Get $get) => 'Permalink: barizaloka.id/'.($get('published_at') ? Carbon::parse($get('published_at')) : now())->format('Y/m').'/'.($get('slug') ?: '{slug}')),
+                            ->helperText(fn (Get $get) => $get('permalink_format') === 'slug'
+                                ? 'Permalink: barizaloka.id/'.($get('slug') ?: '{slug}')
+                                : 'Permalink: barizaloka.id/'.($get('published_at') ? Carbon::parse($get('published_at')) : now())->format('Y/m').'/'.($get('slug') ?: '{slug}')),
 
                         Textarea::make('excerpt')
                             ->label('Ringkasan')
@@ -89,6 +94,16 @@ class PostForm
                             ->label('Tanggal Publikasi')
                             ->live()
                             ->native(false),
+
+                        Select::make('permalink_format')
+                            ->label('Format Permalink')
+                            ->options([
+                                'tahun_bulan_slug' => 'Tahun/Bulan/Slug (default)',
+                                'slug' => 'Slug langsung',
+                            ])
+                            ->default('tahun_bulan_slug')
+                            ->required()
+                            ->live(),
 
                         Toggle::make('is_featured')
                             ->label('Artikel Unggulan'),

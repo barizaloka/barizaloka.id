@@ -70,7 +70,7 @@ class PackageJasaWebsiteSeeder extends Seeder
                 'order' => 2,
             ],
             [
-                'name' => 'Paket Marketplace Digital',
+                'name' => 'Paket Marketplace Digital (Tahap Pengembangan)',
                 'tagline' => 'Jualan Produk Digital Sendiri. Cocok untuk kreator ebook, template, atau kelas online (mirip Lynk.id).',
                 'price' => 1200000,
                 'price_label' => 'Mulai Rp 1,2jt',

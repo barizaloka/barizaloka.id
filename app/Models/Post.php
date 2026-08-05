@@ -21,6 +21,7 @@ class Post extends Model
         'category_id',
         'title',
         'slug',
+        'permalink_format',
         'excerpt',
         'content',
         'featured_image',
@@ -93,6 +94,10 @@ class Post extends Model
 
     public function permalink(): string
     {
+        if ($this->permalink_format === 'slug') {
+            return route('posts.showBySlug', ['slug' => $this->slug]);
+        }
+
         $date = $this->permalinkDate();
 
         return route('posts.show', [
