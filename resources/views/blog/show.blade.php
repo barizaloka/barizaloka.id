@@ -1,6 +1,8 @@
 <x-layouts.base
     :title="($post->meta_title ?: $post->title).' — Barizaloka'"
     :description="$post->meta_description ?: Str::limit(strip_tags($post->excerpt ?: $post->content), 160)"
+    :ogImage="$post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png')"
+    ogType="article"
 >
 
     <style>

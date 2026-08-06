@@ -1,6 +1,7 @@
 <x-layouts.base
     :title="$project->meta_title ?: $project->title.' — Portofolio Barizaloka'"
     :description="$project->meta_description ?: $project->summary"
+    :ogImage="$project->thumbnail ? Storage::url($project->thumbnail) : url('/og-image.png')"
 >
 
     <x-slot:head>
