@@ -3,6 +3,7 @@
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HargaController;
 use App\Http\Controllers\JasaWebsiteController;
+use App\Http\Controllers\KalkulatorBiayaAdminMarketplaceController;
 use App\Http\Controllers\LocationPageController;
 use App\Http\Controllers\NicheLocationPageController;
 use App\Http\Controllers\NichePageController;
@@ -24,6 +25,7 @@ Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::view('/tentang', 'tentang')->name('tentang');
 Route::get('/harga', [HargaController::class, 'index'])->name('harga');
 Route::view('/kontak', 'kontak')->name('kontak');
+Route::get('/kalkulator-biaya-admin-marketplace', [KalkulatorBiayaAdminMarketplaceController::class, 'index'])->name('kalkulator-biaya-admin-marketplace');
 
 Route::get('/portofolio', [ProjectController::class, 'index'])->name('portofolio.index');
 Route::get('/portofolio/{project:slug}', [ProjectController::class, 'show'])->name('portofolio.show');
