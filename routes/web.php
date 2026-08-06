@@ -9,11 +9,16 @@ use App\Http\Controllers\NichePageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProvinsiPageController;
+use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', function () {
+    $partners = Partner::active()->ordered()->get();
+
+    return view('welcome', compact('partners'));
+})->name('home');
 Route::get('/jasa-website', [JasaWebsiteController::class, 'index'])->name('jasa-website');
 Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::view('/tentang', 'tentang')->name('tentang');

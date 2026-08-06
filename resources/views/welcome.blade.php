@@ -208,13 +208,17 @@
                 <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold" style="font-family: 'Playfair Display', Georgia, serif;">Dipercaya Oleh Mitra &amp; Klien Kami</h2>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                <a href="https://masjidsyathosedan.com" target="_blank" rel="noopener" class="flex flex-col items-center text-center gap-2.5 bg-white border border-[#e0ebe7] rounded-xl px-4 py-6 hover:-translate-y-1 hover:shadow-md transition-all">
-                    <span class="text-4xl">🕌</span>
-                    <div>
-                        <strong class="block text-sm font-bold text-[#1a2420]">Masjid Syatho Sedan</strong>
-                        <span class="text-xs text-zinc-500 leading-tight">📍 Rembang, Jawa Tengah</span>
-                    </div>
-                </a>
+                @foreach ($partners as $partner)
+                    <a href="{{ $partner->url }}" target="_blank" rel="noopener" class="flex flex-col items-center text-center gap-2.5 bg-white border border-[#e0ebe7] rounded-xl px-4 py-6 hover:-translate-y-1 hover:shadow-md transition-all">
+                        <span class="text-4xl">{{ $partner->icon }}</span>
+                        <div>
+                            <strong class="block text-sm font-bold text-[#1a2420]">{{ $partner->name }}</strong>
+                            @if ($partner->location)
+                                <span class="text-xs text-zinc-500 leading-tight">📍 {{ $partner->location }}</span>
+                            @endif
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
