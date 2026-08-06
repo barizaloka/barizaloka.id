@@ -62,7 +62,7 @@
 
             <div class="text-center mt-12 text-sm text-[#1a2420] leading-relaxed max-w-2xl mx-auto">
                 <p class="mb-1">⚠️ <strong>Catatan Penting:</strong></p>
-                <p class="mb-1">Harga di atas adalah biaya per tahun, sudah termasuk <strong>Hosting, SSL, Maintenance, dan Update Konten</strong>.</p>
+                <p class="mb-1">Harga di atas adalah biaya per tahun, sudah termasuk <strong>Hosting, SSL, Maintenance</strong>.</p>
                 <p>Harga sudah <strong>TERMASUK domain .my.id GRATIS</strong> (1 tahun). Ingin domain lain (.com, .id, .net, dll)? Ada biaya tambahan sesuai jenis domain yang dipilih.</p>
                 <div class="mt-6 text-xs text-zinc-500">
                     💳 Pembayaran Aman: DP 50% → Selesai &amp; Review → Pelunasan 50%<br>
