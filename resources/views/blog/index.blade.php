@@ -26,11 +26,7 @@
                     <a href="{{ $featuredPost->permalink() }}" class="group block bg-white border border-[#e0ebe7] rounded-2xl overflow-hidden mb-10 hover:shadow-lg transition-all">
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="aspect-[16/9] md:aspect-auto bg-brand-light overflow-hidden">
-                                @if ($featuredPost->featured_image)
-                                    <img src="{{ Storage::url($featuredPost->featured_image) }}" alt="{{ $featuredPost->title }}" class="w-full h-full object-cover">
-                                @else
-                                    <div class="w-full h-full flex items-center justify-center text-5xl">✍️</div>
-                                @endif
+                                <img src="{{ $featuredPost->featured_image ? Storage::url($featuredPost->featured_image) : url('/og-image.png') }}" alt="{{ $featuredPost->title }}" class="w-full h-full object-cover">
                             </div>
                             <div class="p-8 flex flex-col justify-center">
                                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3 py-1 rounded-full mb-3 w-fit">✦ Artikel Unggulan</span>
