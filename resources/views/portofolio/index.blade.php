@@ -26,7 +26,7 @@
                         <a href="{{ route('portofolio.show', $project) }}" class="group block bg-white border border-[#e0ebe7] rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all">
                             <div class="aspect-[16/10] bg-brand-light overflow-hidden">
                                 @if ($project->thumbnail)
-                                    <img src="{{ Storage::url($project->thumbnail) }}" alt="{{ $project->title }}" class="w-full h-full object-cover">
+                                    <img src="{{ Storage::url($project->thumbnail) }}" alt="{{ $project->title }}" loading="lazy" class="w-full h-full object-cover">
                                 @else
                                     <div class="w-full h-full flex items-center justify-center text-5xl">🖥️</div>
                                 @endif

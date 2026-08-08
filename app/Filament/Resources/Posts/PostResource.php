@@ -15,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class PostResource extends Resource
 {
@@ -27,6 +28,21 @@ class PostResource extends Resource
     protected static ?int $navigationSort = 1;
 
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** @return array<string> */
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'excerpt', 'category.name'];
+    }
+
+    /** @return array<string, string> */
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Kategori' => $record->category?->name ?? '-',
+            'Status' => ucfirst($record->status),
+        ];
+    }
 
     public static function form(Schema $schema): Schema
     {

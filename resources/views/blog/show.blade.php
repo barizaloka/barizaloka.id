@@ -5,6 +5,69 @@
     ogType="article"
 >
 
+    <x-slot:head>
+        <script type="application/ld+json">
+            {!! json_encode([
+                '@@context' => 'https://schema.org',
+                '@type' => 'BlogPosting',
+                'headline' => $post->title,
+                'description' => $post->meta_description ?: Str::limit(strip_tags($post->excerpt ?: $post->content), 160),
+                'image' => $post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png'),
+                'datePublished' => $post->permalinkDate()->toAtomString(),
+                'dateModified' => $post->updated_at->toAtomString(),
+                'author' => [
+                    '@type' => 'Person',
+                    'name' => $post->author?->name ?? 'Barizaloka',
+                ],
+                'publisher' => [
+                    '@type' => 'Organization',
+                    'name' => 'Barizaloka',
+                    'logo' => [
+                        '@type' => 'ImageObject',
+                        'url' => url('/favicon.svg'),
+                    ],
+                ],
+                'mainEntityOfPage' => [
+                    '@type' => 'WebPage',
+                    '@id' => $post->permalink(),
+                ],
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        </script>
+        <script type="application/ld+json">
+            {!! json_encode([
+                '@@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Beranda', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Blog', 'item' => route('blog.index')],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $post->title, 'item' => $post->permalink()],
+                ],
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        </script>
+    </x-slot:head>
+
+    <div id="reading-progress-bar" class="fixed top-0 left-0 h-1 bg-brand-primary z-[60]" style="width: 0%;"></div>
+
+    <script>
+        (function () {
+            const bar = document.getElementById('reading-progress-bar');
+            const content = document.querySelector('.post-content');
+            if (!bar || !content) { return; }
+
+            const update = () => {
+                const start = content.offsetTop;
+                const total = content.offsetHeight;
+                const scrolled = window.scrollY + window.innerHeight - start;
+                const percent = Math.min(100, Math.max(0, (scrolled / total) * 100));
+                bar.style.width = percent + '%';
+            };
+
+            document.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>
+
     <style>
         .post-content h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.5rem; margin: 2rem 0 1rem; color: #1a2420; }
         .post-content h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.25rem; margin: 1.75rem 0 0.75rem; color: #1a2420; }
@@ -21,7 +84,14 @@
     {{-- ===== HEADER ===== --}}
     <section class="relative text-center py-24 overflow-hidden bg-brand-darker">
         <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 70% at 50% 60%, rgba(29,158,117,.3) 0%, transparent 70%);"></div>
+
         <div class="relative z-10 max-w-2xl mx-auto px-6">
+            <x-breadcrumb :items="[
+                ['label' => 'Beranda', 'url' => route('home')],
+                ['label' => 'Blog', 'url' => route('blog.index')],
+                ['label' => Str::limit($post->title, 40)],
+            ]" />
+
             @if ($post->category)
                 <a href="{{ route('blog.category', $post->category) }}" class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3">{{ $post->category->name }}</a>
             @endif

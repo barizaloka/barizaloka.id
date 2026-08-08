@@ -19,11 +19,28 @@
                 'url' => route('portofolio.show', $project),
             ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
         </script>
+        <script type="application/ld+json">
+            {!! json_encode([
+                '@@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Beranda', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Portofolio', 'item' => route('portofolio.index')],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $project->title, 'item' => route('portofolio.show', $project)],
+                ],
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        </script>
     </x-slot:head>
 
     <section class="relative text-center py-24 overflow-hidden bg-brand-darker">
         <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 70% at 50% 60%, rgba(29,158,117,.3) 0%, transparent 70%);"></div>
         <div class="relative z-10 max-w-2xl mx-auto px-6">
+            <x-breadcrumb :items="[
+                ['label' => 'Beranda', 'url' => route('home')],
+                ['label' => 'Portofolio', 'url' => route('portofolio.index')],
+                ['label' => Str::limit($project->title, 40)],
+            ]" />
+
             @if ($project->category)
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3">{{ $project->category }}</span>
             @endif

@@ -2,7 +2,7 @@
 
 <article class="bg-white border border-[#e0ebe7] rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all">
     <a href="{{ $post->permalink() }}" class="block aspect-[16/9] bg-brand-light overflow-hidden">
-        <img src="{{ $post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png') }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
+        <img src="{{ $post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png') }}" alt="{{ $post->title }}" loading="lazy" class="w-full h-full object-cover">
     </a>
     <div class="p-6">
         @if ($post->category)

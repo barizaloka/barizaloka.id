@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link rel="canonical" href="{{ url()->current() }}">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="{{ $robots ?? 'index, follow' }}">
 
     {{-- Open Graph (WhatsApp, Facebook, dll) --}}
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
@@ -32,6 +32,26 @@
     <meta name="twitter:description" content="{{ $description ?? 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.' }}">
     <meta name="twitter:image" content="{{ $ogImage ?? url('/og-image.png') }}">
     <meta name="twitter:image:alt" content="{{ $title ?? config('app.name', 'Barizaloka') }}">
+
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => 'Barizaloka',
+            'url' => url('/'),
+            'logo' => url('/favicon.svg'),
+            'description' => 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.',
+            'email' => 'barizaloka@gmail.com',
+            'telephone' => '+6285188158542',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'addressLocality' => 'Rembang',
+                'addressRegion' => 'Jawa Tengah',
+                'addressCountry' => 'ID',
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

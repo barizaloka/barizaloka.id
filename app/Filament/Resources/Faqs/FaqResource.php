@@ -15,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class FaqResource extends Resource
 {
@@ -27,6 +28,20 @@ class FaqResource extends Resource
     protected static ?int $navigationSort = 4;
 
     protected static ?string $recordTitleAttribute = 'question';
+
+    /** @return array<string> */
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['question', 'answer', 'category'];
+    }
+
+    /** @return array<string, string> */
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Kategori' => $record->category ?? '-',
+        ];
+    }
 
     public static function form(Schema $schema): Schema
     {

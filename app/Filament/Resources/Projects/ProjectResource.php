@@ -15,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class ProjectResource extends Resource
 {
@@ -27,6 +28,21 @@ class ProjectResource extends Resource
     protected static ?int $navigationSort = 2;
 
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** @return array<string> */
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'client_name', 'category', 'summary'];
+    }
+
+    /** @return array<string, string> */
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Klien' => $record->client_name ?? '-',
+            'Kategori' => $record->category ?? '-',
+        ];
+    }
 
     public static function form(Schema $schema): Schema
     {

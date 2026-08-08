@@ -3,26 +3,6 @@
     description="Hubungi Barizaloka untuk konsultasi gratis jasa pembuatan website. Chat WhatsApp atau email kami, tim siap membantu pesantren, desa, UMKM, dan komunitas Anda."
 >
 
-    <x-slot:head>
-        <script type="application/ld+json">
-            {!! json_encode([
-                '@@context' => 'https://schema.org',
-                '@type' => 'LocalBusiness',
-                'name' => 'Barizaloka',
-                'description' => 'Ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual.',
-                'url' => url('/'),
-                'email' => 'barizaloka@gmail.com',
-                'telephone' => '+6285188158542',
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'addressLocality' => 'Rembang',
-                    'addressRegion' => 'Jawa Tengah',
-                    'addressCountry' => 'ID',
-                ],
-            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-        </script>
-    </x-slot:head>
-
     {{-- ===== HERO ===== --}}
     <section class="relative text-center py-24 overflow-hidden bg-brand-darker">
         <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 70% at 50% 60%, rgba(29,158,117,.3) 0%, transparent 70%);"></div>

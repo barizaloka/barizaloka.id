@@ -1,6 +1,7 @@
 <x-layouts.base
     title="Cari Artikel — Blog Barizaloka"
     description="Cari artikel di Blog Barizaloka."
+    robots="noindex, follow"
 >
 
     {{-- ===== HERO ===== --}}

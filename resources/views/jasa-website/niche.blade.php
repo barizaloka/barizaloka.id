@@ -3,8 +3,8 @@
     :description="$page['meta_description']"
 >
 
-    @if (! empty($page['faqs']))
-        <x-slot:head>
+    <x-slot:head>
+        @if (! empty($page['faqs']))
             <script type="application/ld+json">
                 {!! json_encode([
                     '@@context' => 'https://schema.org',
@@ -19,8 +19,19 @@
                     ])->values(),
                 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
             </script>
-        </x-slot:head>
-    @endif
+        @endif
+        <script type="application/ld+json">
+            {!! json_encode([
+                '@@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Beranda', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Jasa Website', 'item' => route('jasa-website')],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $page['hero_badge'], 'item' => route('niche.show', $page['slug'])],
+                ],
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        </script>
+    </x-slot:head>
 
     <style>
         @keyframes heroFadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -43,6 +54,12 @@
         <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(29,158,117,.35) 0%, transparent 70%);"></div>
 
         <div class="relative z-10 max-w-3xl mx-auto px-6 py-16 text-center hero-anim">
+            <x-breadcrumb :items="[
+                ['label' => 'Beranda', 'url' => route('home')],
+                ['label' => 'Jasa Website', 'url' => route('jasa-website')],
+                ['label' => $page['hero_badge']],
+            ]" />
+
             <span class="inline-flex items-center gap-1.5 bg-white/12 border border-white/25 rounded-full px-4.5 py-2 text-sm text-[#c8f0e2] tracking-wide mb-6">{{ $page['hero_badge'] }}</span>
 
             <h1 class="font-brand-serif font-extrabold text-[clamp(2rem,6vw,3.6rem)] leading-[1.15] text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">

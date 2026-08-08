@@ -2,15 +2,20 @@
 
 namespace App\Filament\Resources\Posts\Tables;
 
+use App\Models\Post;
+use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
 
 class PostsTable
 {
@@ -52,6 +57,14 @@ class PostsTable
                     ->label('Unggulan')
                     ->boolean(),
 
+                IconColumn::make('seo_complete')
+                    ->label('SEO')
+                    ->boolean()
+                    ->getStateUsing(fn (Post $record): bool => self::isSeoComplete($record))
+                    ->tooltip(fn (Post $record): string => self::isSeoComplete($record)
+                        ? 'Meta title, deskripsi, dan gambar unggulan sudah lengkap'
+                        : 'Lengkapi meta title, meta deskripsi, dan gambar unggulan untuk SEO optimal'),
+
                 TextColumn::make('views_count')
                     ->label('Dilihat')
                     ->numeric()
@@ -81,6 +94,13 @@ class PostsTable
                 SelectFilter::make('category')
                     ->label('Kategori')
                     ->relationship('category', 'name'),
+
+                SelectFilter::make('tags')
+                    ->label('Tag')
+                    ->relationship('tags', 'name'),
+
+                TernaryFilter::make('is_featured')
+                    ->label('Unggulan'),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -88,9 +108,33 @@ class PostsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
+                    BulkAction::make('publish')
+                        ->label('Publikasikan')
+                        ->icon(Heroicon::OutlinedCheckCircle)
+                        ->color('success')
+                        ->action(fn (Collection $records) => $records->each->update([
+                            'status' => 'published',
+                            'published_at' => now(),
+                        ]))
+                        ->deselectRecordsAfterCompletion()
+                        ->requiresConfirmation(),
+
+                    BulkAction::make('unpublish')
+                        ->label('Jadikan Draft')
+                        ->icon(Heroicon::OutlinedEyeSlash)
+                        ->color('warning')
+                        ->action(fn (Collection $records) => $records->each->update(['status' => 'draft']))
+                        ->deselectRecordsAfterCompletion()
+                        ->requiresConfirmation(),
+
                     DeleteBulkAction::make(),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');
+    }
+
+    private static function isSeoComplete(Post $record): bool
+    {
+        return filled($record->meta_title) && filled($record->meta_description) && filled($record->featured_image);
     }
 }
