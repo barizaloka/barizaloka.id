@@ -111,7 +111,7 @@
 
             @if ($post->featured_image)
                 <div class="rounded-2xl overflow-hidden mb-10 -mt-20 relative z-10 shadow-lg">
-                    <img src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}" class="w-full aspect-[16/9] object-cover">
+                    <img src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}" class="w-full h-auto">
                 </div>
             @endif
 
