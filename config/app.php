@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'default_description' => 'Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, SaaS, jual beli website & aplikasi, serta komunitas lingkungan & teknologi.',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

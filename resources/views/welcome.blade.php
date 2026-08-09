@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Barizaloka — Dari Santri untuk Go Digital"
-    description="Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual."
+    description="Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, SaaS, jual beli website & aplikasi, serta komunitas lingkungan & teknologi."
 >
 
     <style>

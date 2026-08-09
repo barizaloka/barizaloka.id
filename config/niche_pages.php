@@ -5,7 +5,7 @@ return [
     'pesantren' => [
         'label' => 'Pesantren',
         'title' => 'Jasa Pembuatan Website Pesantren — Barizaloka',
-        'meta_description' => 'Jasa pembuatan website pesantren mulai Rp 350.000/tahun. Tampilkan profil, jadwal kajian, pendaftaran santri baru, dan galeri kegiatan secara online.',
+        'meta_description' => 'Jasa pembuatan website pesantren mulai Rp 350.000/tahun. Tampilkan profil, jadwal kajian, pendaftaran santri, dan galeri kegiatan secara online.',
         'hero_badge' => '🕌 Untuk Pesantren & Lembaga Pendidikan Islam',
         'hero_title' => 'Website Pesantren',
         'hero_title_highlight' => 'Profesional, Mudah Dikelola Pengurus',
@@ -33,7 +33,7 @@ return [
     'masjid' => [
         'label' => 'Masjid',
         'title' => 'Jasa Pembuatan Website Masjid — Barizaloka',
-        'meta_description' => 'Jasa pembuatan website masjid mulai Rp 350.000/tahun. Tampilkan jadwal sholat, kajian rutin, laporan kas & infaq, secara transparan dan mudah diakses jamaah.',
+        'meta_description' => 'Jasa pembuatan website masjid mulai Rp 350.000/tahun. Tampilkan jadwal sholat, kajian rutin, dan laporan kas & infaq secara transparan untuk jamaah.',
         'hero_badge' => '🕌 Untuk Masjid, Mushola & Takmir',
         'hero_title' => 'Website Masjid',
         'hero_title_highlight' => 'Transparan & Dekat dengan Jamaah',
@@ -61,7 +61,7 @@ return [
     'desa' => [
         'label' => 'Desa',
         'title' => 'Jasa Pembuatan Website Desa — Barizaloka',
-        'meta_description' => 'Jasa pembuatan website desa mulai Rp 350.000/tahun. Sajikan profil desa, layanan administrasi, potensi UMKM, dan transparansi anggaran desa secara online.',
+        'meta_description' => 'Jasa pembuatan website desa mulai Rp 350.000/tahun. Sajikan profil desa, layanan administrasi, dan potensi UMKM desa secara online.',
         'hero_badge' => '🏘️ Untuk Pemerintah Desa & BUMDes',
         'hero_title' => 'Website Desa',
         'hero_title_highlight' => 'Transparan, Informatif, Mudah Diakses Warga',
@@ -89,7 +89,7 @@ return [
     'umkm' => [
         'label' => 'UMKM',
         'title' => 'Jasa Pembuatan Website UMKM — Barizaloka',
-        'meta_description' => 'Jasa pembuatan website UMKM mulai Rp 350.000/tahun. Tampilkan katalog produk, harga, dan kontak pemesanan agar usaha Anda tampil profesional di internet.',
+        'meta_description' => 'Jasa pembuatan website UMKM mulai Rp 350.000/tahun. Tampilkan katalog produk, harga, dan kontak pemesanan agar usaha tampil profesional online.',
         'hero_badge' => '🛍️ Untuk UMKM & Usaha Rumahan',
         'hero_title' => 'Website UMKM',
         'hero_title_highlight' => 'Toko Online Sederhana, Untung Maksimal',

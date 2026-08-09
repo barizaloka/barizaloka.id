@@ -1,6 +1,6 @@
 <x-layouts.base
     :title="($post->meta_title ?: $post->title).' — Barizaloka'"
-    :description="$post->meta_description ?: Str::limit(strip_tags($post->excerpt ?: $post->content), 160)"
+    :description="$post->meta_description"
     :ogImage="$post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png')"
     ogType="article"
 >
@@ -11,7 +11,7 @@
                 '@@context' => 'https://schema.org',
                 '@type' => 'BlogPosting',
                 'headline' => $post->title,
-                'description' => $post->meta_description ?: Str::limit(strip_tags($post->excerpt ?: $post->content), 160),
+                'description' => $post->meta_description ?: config('app.default_description'),
                 'image' => $post->featured_image ? Storage::url($post->featured_image) : url('/og-image.png'),
                 'datePublished' => $post->permalinkDate()->toAtomString(),
                 'dateModified' => $post->updated_at->toAtomString(),

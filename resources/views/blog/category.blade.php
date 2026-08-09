@@ -1,6 +1,6 @@
 <x-layouts.base
     :title="$category->meta_title ?: $category->name.' — Blog Barizaloka'"
-    :description="$category->meta_description ?: $category->description ?: 'Artikel dalam kategori '.$category->name.' di Blog Barizaloka.'"
+    :description="$category->meta_description"
 >
 
     {{-- ===== HERO ===== --}}

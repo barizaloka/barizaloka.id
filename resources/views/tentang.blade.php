@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Tentang Barizaloka"
-    description="Lahir dari lingkungan pesantren, dibesarkan di desa, Barizaloka hadir membuktikan bahwa teknologi bukan milik kota besar semata. Kami membangun jembatan digital untuk pesantren, desa, dan UMKM di seluruh Indonesia."
+    description="Lahir dari lingkungan pesantren, dibesarkan di desa, Barizaloka membangun jembatan digital untuk pesantren, desa, dan UMKM di seluruh Indonesia."
 >
 
     {{-- ===== ABOUT HERO ===== --}}

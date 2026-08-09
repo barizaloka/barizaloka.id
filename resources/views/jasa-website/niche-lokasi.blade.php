@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Jasa Pembuatan Website {{ $niche['label'] }} di {{ $location['name'] }} — Barizaloka"
-    :description="'Jasa pembuatan website ' . $niche['label'] . ' di ' . $location['name'] . '. ' . $niche['meta_description']"
+    :description="'Jasa pembuatan website ' . $niche['label'] . ' di ' . $location['name'] . ', mulai Rp 350.000/tahun. ' . \Illuminate\Support\Str::after($niche['meta_description'], 'tahun. ')"
 >
 
     <x-slot:head>
