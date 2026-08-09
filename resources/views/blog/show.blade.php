@@ -142,6 +142,15 @@
         </section>
     @endif
 
+    {{-- ===== SEO HIGHLIGHT ===== --}}
+    <section id="seo" class="py-20 bg-white">
+        <div class="max-w-[800px] mx-auto px-6 text-center">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🔍 SEO Ready</span>
+            <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold leading-tight mb-4" style="font-family: 'Playfair Display', Georgia, serif;">Jasa Pembuatan Website<br>Muncul di Google</h2>
+            <p class="text-zinc-500 leading-relaxed">Ubah website biasa menjadi mesin penghasil leads yang muncul di halaman pertama pencarian Google. Dilengkapi dengan optimasi SEO kelas dunia, desain responsif multi-device, dan dukungan penuh hampir sepanjang hari.</p>
+        </div>
+    </section>
+
     {{-- ===== CTA ===== --}}
     <section class="relative py-16 text-center overflow-hidden bg-brand-darker">
         <div class="relative z-10 max-w-[600px] mx-auto px-6">

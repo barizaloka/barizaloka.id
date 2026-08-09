@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View as ViewFacade;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -65,6 +66,8 @@ class PostController extends Controller
     {
         $post->incrementViews();
 
+        ViewFacade::share('currentCategoryId', $post->category_id);
+
         $relatedPosts = Post::with(['author', 'category'])
             ->published()
             ->where('id', '!=', $post->id)
@@ -81,6 +84,8 @@ class PostController extends Controller
 
     public function category(Category $category): View
     {
+        ViewFacade::share('currentCategoryId', $category->id);
+
         $posts = Post::with(['author', 'category', 'tags'])
             ->published()
             ->where('category_id', $category->id)

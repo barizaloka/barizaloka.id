@@ -236,7 +236,9 @@
 
                 <div>
                     <div class="font-brand-serif text-2xl font-bold text-white mb-2.5" style="font-family: 'Playfair Display', Georgia, serif;">Barizaloka</div>
-                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs">Jasa website terpercaya. Serta ekosistem teknologi inovatif yang membangun dampak nyata di bidang lingkungan, teknologi, dan spiritual.</p>
+                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs">Jasa website dari santri untuk digital yang terpercaya. Serta ekosistem teknologi inovatif yang membangun dampak nyata di bidang lingkungan, teknologi, dan spiritual.</p>
+                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Santri Rembang Jawa Tengah yang ngerti kode.</p>
+                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Mendedikasikan waktunya untuk belajar di pesantren dan membangun karir di jasa pembuatan website / aplikasi.</p>
                 </div>
 
                 <div>
@@ -286,6 +288,8 @@
         </svg>
         <span class="whitespace-nowrap max-sm:hidden">Chat WhatsApp</span>
     </a>
+
+    <x-popup-widget />
 
     @stack('scripts')
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="QT3vkVW4ywuJBzCorYjTGQ" async></script>

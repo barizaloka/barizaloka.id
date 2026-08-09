@@ -1,5 +1,5 @@
 <x-layouts.base
-    title="Barizaloka — Menghubungkan Komunitas, Membangun Solusi"
+    title="Barizaloka — Dari Santri untuk Go Digital"
     description="Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta komunitas lingkungan, teknologi, dan spiritual."
 >
 
@@ -48,6 +48,15 @@
             </div>
 
             <p class="text-sm text-white/50">🏡 Didirikan oleh Pemuda Desa — Kecamatan Sedan dan Sarang, Kabupaten Rembang 🌾</p>
+        </div>
+    </section>
+
+    {{-- ===== SEO HIGHLIGHT ===== --}}
+    <section id="seo" class="py-20 bg-white">
+        <div class="max-w-[800px] mx-auto px-6 text-center">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🔍 SEO Ready</span>
+            <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold leading-tight mb-4" style="font-family: 'Playfair Display', Georgia, serif;">Jasa Pembuatan Website<br>Muncul di Google</h2>
+            <p class="text-zinc-500 leading-relaxed">Ubah website biasa menjadi mesin penghasil leads yang muncul di halaman pertama pencarian Google. Dilengkapi dengan optimasi SEO kelas dunia, desain responsif multi-device, dan dukungan penuh hampir sepanjang hari.</p>
         </div>
     </section>
 
