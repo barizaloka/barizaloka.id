@@ -106,7 +106,7 @@
                 <div class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-zinc-200 shadow-sm">
                     <span class="text-2xl">🌾</span>
                     <div class="text-left">
-                        <p class="text-xl font-bold text-zinc-900 leading-none">2021</p>
+                        <p class="text-xl font-bold text-zinc-900 leading-none">2025</p>
                         <p class="text-xs text-zinc-500 mt-0.5">Berdiri</p>
                     </div>
                 </div>
