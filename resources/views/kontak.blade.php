@@ -23,12 +23,14 @@
                 <span class="text-sm font-semibold text-brand-primary">+62 851-8815-8542</span>
             </a>
 
+            <!--email_off-->
             <a href="mailto:barizaloka@gmail.com" class="flex flex-col items-center text-center bg-white border border-[#e0ebe7] rounded-2xl p-10 hover:shadow-md hover:-translate-y-1 transition-all">
                 <div class="text-4xl mb-4">📧</div>
                 <h2 class="font-brand-serif text-xl font-bold mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Email</h2>
                 <p class="text-sm text-zinc-500 mb-4">Cocok untuk pertanyaan detail, kerja sama, atau proposal.</p>
                 <span class="text-sm font-semibold text-brand-primary">barizaloka@gmail.com</span>
             </a>
+            <!--/email_off-->
 
         </div>
 

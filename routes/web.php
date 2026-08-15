@@ -65,12 +65,18 @@ Route::get('/{year}/{month}/{slug}', [PostController::class, 'show'])
     ->where('month', '[0-9]{2}')
     ->name('posts.show');
 
+Route::get('/artikel/{slug}', [PostController::class, 'showBySlug'])
+    ->where('slug', '[a-z0-9-]+')
+    ->name('posts.showBySlug');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
 
 require __DIR__.'/settings.php';
 
-Route::get('/{slug}', [PostController::class, 'showBySlug'])
+// Legacy URLs from before articles moved under /artikel/{slug}. Redirect
+// 301 so search rankings and old backlinks carry over to the new path.
+Route::get('/{slug}', [PostController::class, 'redirectLegacySlug'])
     ->where('slug', '[a-z0-9-]+')
-    ->name('posts.showBySlug');
+    ->name('posts.legacySlug');

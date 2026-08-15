@@ -48,7 +48,7 @@ class PostForm
                                     : new UniqueSlugPerMonth($get('published_at'), $record?->id),
                             ])
                             ->helperText(fn (Get $get) => $get('permalink_format') === 'slug'
-                                ? 'Permalink: barizaloka.id/'.($get('slug') ?: '{slug}')
+                                ? 'Permalink: barizaloka.id/artikel/'.($get('slug') ?: '{slug}')
                                 : 'Permalink: barizaloka.id/'.($get('published_at') ? Carbon::parse($get('published_at')) : now())->format('Y/m').'/'.($get('slug') ?: '{slug}')),
 
                         Textarea::make('excerpt')
@@ -99,7 +99,7 @@ class PostForm
                             ->label('Format Permalink')
                             ->options([
                                 'tahun_bulan_slug' => 'Tahun/Bulan/Slug (default)',
-                                'slug' => 'Slug langsung',
+                                'slug' => 'Slug langsung (/artikel/slug)',
                             ])
                             ->default('tahun_bulan_slug')
                             ->required()

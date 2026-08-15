@@ -266,7 +266,7 @@
                     <div class="text-xs font-bold uppercase tracking-widest text-white mb-3.5">Kontak</div>
                     <ul class="flex flex-col gap-1.5 text-sm">
                         <li><a href="{{ route('kontak') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">☎️ Halaman Kontak</a></li>
-                        <li><a href="mailto:barizaloka@gmail.com" class="text-[#7a9992] hover:text-brand-mid transition-colors">📧 barizaloka@gmail.com</a></li>
+                        <li><!--email_off--><a href="mailto:barizaloka@gmail.com" class="text-[#7a9992] hover:text-brand-mid transition-colors">📧 barizaloka@gmail.com</a><!--/email_off--></li>
                         <li><a href="https://wa.me/6285188158542" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">💬 WhatsApp</a></li>
                     </ul>
                 </div>

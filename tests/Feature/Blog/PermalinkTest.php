@@ -77,15 +77,15 @@ test('a post defaults to the tahun/bulan/slug permalink format', function () {
     expect($post->fresh()->permalink_format)->toBe('tahun_bulan_slug');
 });
 
-test('a post using the slug permalink format is reachable at /slug', function () {
+test('a post using the slug permalink format is reachable at /artikel/slug', function () {
     $post = Post::factory()->published()->create([
         'slug' => 'kabar-gembira',
         'permalink_format' => 'slug',
         'published_at' => '2026-03-10 10:00:00',
     ]);
 
-    $this->get('/kabar-gembira')->assertOk();
-    expect($post->permalink())->toBe(url('/kabar-gembira'));
+    $this->get('/artikel/kabar-gembira')->assertOk();
+    expect($post->permalink())->toBe(url('/artikel/kabar-gembira'));
 });
 
 test('a slug-format post is not reachable at its /year/month/slug path', function () {
@@ -105,6 +105,22 @@ test('a tahun-bulan-slug post is not reachable at the plain /slug path', functio
     ]);
 
     $this->get('/kabar-baik')->assertNotFound();
+});
+
+test('the legacy /slug path 301-redirects a slug-format post to /artikel/slug', function () {
+    Post::factory()->published()->create([
+        'slug' => 'kabar-gembira',
+        'permalink_format' => 'slug',
+        'published_at' => '2026-03-10 10:00:00',
+    ]);
+
+    $this->get('/kabar-gembira')
+        ->assertRedirect('/artikel/kabar-gembira')
+        ->assertStatus(301);
+});
+
+test('the legacy /slug path 404s when no matching slug-format post exists', function () {
+    $this->get('/tidak-ada-artikel-seperti-ini')->assertNotFound();
 });
 
 test('two slug-format posts with the same slug fails the global uniqueness rule', function () {

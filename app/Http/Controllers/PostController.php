@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Illuminate\View\View;
@@ -60,6 +61,20 @@ class PostController extends Controller
             ->firstOrFail();
 
         return $this->renderPost($post);
+    }
+
+    /**
+     * Legacy articles used to live at /{slug} before moving to /artikel/{slug}.
+     * Redirect 301 so search rankings and old backlinks carry over.
+     */
+    public function redirectLegacySlug(string $slug): RedirectResponse
+    {
+        Post::published()
+            ->where('slug', $slug)
+            ->where('permalink_format', 'slug')
+            ->firstOrFail();
+
+        return redirect()->route('posts.showBySlug', ['slug' => $slug], 301);
     }
 
     private function renderPost(Post $post): View

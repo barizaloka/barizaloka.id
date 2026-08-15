@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
 /**
- * A post using the plain /{slug} permalink format needs a globally unique
+ * A post using the /artikel/{slug} permalink format needs a globally unique
  * slug among other posts using that same format, since the public URL
  * carries no year/month to disambiguate.
  */
