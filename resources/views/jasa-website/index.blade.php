@@ -10,14 +10,49 @@
                 '@type' => 'Product',
                 'name' => 'Jasa Pembuatan Website Barizaloka',
                 'description' => 'Jasa pembuatan website untuk pesantren, masjid, desa, dan UMKM.',
-                'brand' => ['@type' => 'Organization', 'name' => 'Barizaloka'],
+                'image' => url('/og-image.png'),
+                'brand' => ['@type' => 'Brand', 'name' => 'Barizaloka'],
                 'offers' => $packages->map(fn ($package) => [
                     '@type' => 'Offer',
                     'name' => $package->name,
                     'price' => (string) $package->price,
                     'priceCurrency' => 'IDR',
+                    'validFrom' => now()->toDateString(),
                     'priceValidUntil' => now()->addYear()->toDateString(),
+                    'availability' => 'https://schema.org/InStock',
                     'url' => route('jasa-website'),
+                    'shippingDetails' => [
+                        '@type' => 'OfferShippingDetails',
+                        'shippingRate' => [
+                            '@type' => 'MonetaryAmount',
+                            'value' => '0',
+                            'currency' => 'IDR',
+                        ],
+                        'shippingDestination' => [
+                            '@type' => 'DefinedRegion',
+                            'addressCountry' => 'ID',
+                        ],
+                        'deliveryTime' => [
+                            '@type' => 'ShippingDeliveryTime',
+                            'handlingTime' => [
+                                '@type' => 'QuantitativeValue',
+                                'minValue' => 0,
+                                'maxValue' => 1,
+                                'unitCode' => 'DAY',
+                            ],
+                            'transitTime' => [
+                                '@type' => 'QuantitativeValue',
+                                'minValue' => 3,
+                                'maxValue' => 14,
+                                'unitCode' => 'DAY',
+                            ],
+                        ],
+                    ],
+                    'hasMerchantReturnPolicy' => [
+                        '@type' => 'MerchantReturnPolicy',
+                        'returnPolicyCategory' => 'https://schema.org/MerchantReturnNotPermitted',
+                        'applicableCountry' => 'ID',
+                    ],
                 ])->all(),
             ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
         </script>
