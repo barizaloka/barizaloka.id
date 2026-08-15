@@ -163,6 +163,38 @@
         </div>
     </section>
 
+    {{-- ===== LAYANAN PER NICHE & WILAYAH ===== --}}
+    <section class="py-20 bg-white">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="text-center max-w-lg mx-auto mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">📍 Cakupan Layanan</span>
+                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Website untuk Berbagai Kebutuhan &amp; Wilayah</h2>
+                <p class="text-zinc-500">Kami sudah terbiasa membuat website untuk kalangan berikut, dan melayani konsultasi tatap muka di beberapa wilayah.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-4">Berdasarkan Kebutuhan</h3>
+                    <div class="flex flex-wrap gap-2.5">
+                        @foreach (config('niche_pages') as $slug => $page)
+                            <a href="{{ route('niche.show', $slug) }}" class="inline-flex items-center gap-2 bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl px-5 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-light transition-colors">Website {{ $page['label'] }}</a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-4">Berdasarkan Wilayah</h3>
+                    <div class="flex flex-wrap gap-2.5">
+                        @foreach (config('location_pages') as $slug => $location)
+                            <a href="{{ route('lokasi.show', $slug) }}" class="inline-flex items-center gap-2 bg-[#f4f8f6] border border-[#e0ebe7] rounded-xl px-5 py-3 text-sm font-semibold text-brand-dark hover:bg-brand-light transition-colors">{{ $location['name'] }}</a>
+                        @endforeach
+                    </div>
+                    <a href="{{ route('provinsi.index') }}" class="inline-block mt-4 text-sm font-semibold text-brand-primary hover:underline">Lihat cakupan kami di seluruh provinsi →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- ===== FINAL CTA ===== --}}
     <section class="py-20 bg-[#f4f8f6] text-center">
         <div class="max-w-[1100px] mx-auto px-6">

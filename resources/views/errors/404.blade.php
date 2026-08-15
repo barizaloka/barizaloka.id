@@ -23,7 +23,7 @@
                 <ul class="flex flex-wrap gap-2 justify-center">
                     <li><a href="{{ route('komunitas') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">🏘️ Ekosistem</a></li>
                     <li><a href="{{ route('home') }}#layanan" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💡 Layanan</a></li>
-                    <li><a href="https://app.baricode.org" target="_blank" rel="noopener" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💻 Baricode</a></li>
+                    <li><a href="https://baricode.org" target="_blank" rel="noopener" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💻 Baricode</a></li>
                     <li><a href="https://astraloka.my.id" target="_blank" rel="noopener" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">🌍 Astraloka</a></li>
                 </ul>
             </nav>

@@ -245,7 +245,7 @@
                     <ul class="flex flex-col gap-1.5 text-sm">
                         <li><a href="{{ route('komunitas') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🏘️ Semua Pilar</a></li>
                         <li><a href="https://astraloka.my.id" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🌍 Astraloka</a></li>
-                        <li><a href="https://app.baricode.org" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">💻 Baricode</a></li>
+                        <li><a href="https://baricode.org" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">💻 Baricode</a></li>
                         <li><a href="https://selfreminder.org" class="text-[#7a9992] hover:text-brand-mid transition-colors">📿 Self Reminder</a></li>
                     </ul>
                 </div>

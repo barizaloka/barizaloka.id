@@ -208,7 +208,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wide">● Aktif</span>
-                                    <span class="text-xs text-zinc-400">app.baricode.org</span>
+                                    <span class="text-xs text-zinc-400">baricode.org</span>
                                 </div>
                                 <p class="text-zinc-600 leading-relaxed text-base">
                                     Baricode adalah ruang belajar kolaboratif bagi para developer dan tech enthusiast. Dari web development hingga open source projects, Baricode menjadi jembatan antara pemula yang ingin belajar dan profesional yang ingin berbagi ilmu.
@@ -240,7 +240,7 @@
                             </div>
 
                             <div class="flex items-center gap-3 mt-auto pt-2">
-                                <a href="https://app.baricode.org" target="_blank" rel="noopener noreferrer"
+                                <a href="https://baricode.org" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold text-sm hover:from-blue-400 hover:to-indigo-500 hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-blue-200">
                                     💻 Kunjungi Baricode
                                     <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

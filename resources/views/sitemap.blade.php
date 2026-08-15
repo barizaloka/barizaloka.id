@@ -34,6 +34,13 @@
     </url>
 
     <url>
+        <loc>{{ route('kalkulator-biaya-admin-marketplace') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
         <loc>{{ route('tentang') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>

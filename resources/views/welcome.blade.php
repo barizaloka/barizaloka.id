@@ -154,7 +154,7 @@
                         <li>🚀 Proyek Kolaboratif</li>
                         <li>🌐 Jaringan Developer</li>
                     </ul>
-                    <a href="https://app.baricode.org" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">💻 Kunjungi Baricode</a>
+                    <a href="https://baricode.org" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">💻 Kunjungi Baricode</a>
                 </div>
 
                 {{-- Self Reminder --}}

@@ -111,7 +111,35 @@ return [
             ['q' => 'Apakah website UMKM ini bisa menerima pembayaran online?', 'a' => 'Untuk paket standar, pemesanan diarahkan ke WhatsApp. Integrasi payment gateway/QRIS otomatis tersedia sebagai layanan tambahan sesuai kebutuhan.'],
             ['q' => 'Apakah cocok untuk usaha rumahan skala kecil?', 'a' => 'Sangat cocok. Paket Landing kami dirancang khusus untuk usaha kecil yang ingin tampil online dengan biaya terjangkau.'],
         ],
-        'related_niches' => ['desa', 'masjid', 'pesantren'],
+        'related_niches' => ['desa', 'masjid', 'pesantren', 'sepeda-listrik'],
+    ],
+
+    'sepeda-listrik' => [
+        'label' => 'Toko Sepeda Listrik',
+        'title' => 'Jasa Pembuatan Website Toko Sepeda Listrik — Barizaloka',
+        'meta_description' => 'Jasa pembuatan website toko sepeda listrik mulai Rp 350.000/tahun. Tampilkan katalog produk, spesifikasi, dan kontak pemesanan agar toko Anda tampil profesional online.',
+        'hero_badge' => '🚲 Untuk Toko & Distributor Sepeda Listrik',
+        'hero_title' => 'Website Toko Sepeda Listrik',
+        'hero_title_highlight' => 'Katalog Rapi, Closing Lebih Cepat',
+        'hero_subtitle' => 'Tampilkan katalog sepeda listrik, spesifikasi baterai & jarak tempuh, hingga kontak pemesanan dalam satu website yang mudah diakses calon pembeli.',
+        'intro' => 'Pasar sepeda listrik tumbuh pesat, tapi calon pembeli sering ragu karena informasi spesifikasi (kapasitas baterai, jarak tempuh, garansi) hanya tersebar di caption media sosial. Website resmi membantu toko sepeda listrik tampil lebih terpercaya dan memudahkan pembeli membandingkan produk sebelum membeli.',
+        'pain_points' => [
+            ['icon' => '🔋', 'title' => 'Spesifikasi Produk Tidak Jelas', 'desc' => 'Calon pembeli kesulitan membandingkan kapasitas baterai, jarak tempuh, dan kecepatan maksimal antar model karena info hanya ada di caption Instagram.'],
+            ['icon' => '🛠️', 'title' => 'Ragu Soal Garansi & Servis', 'desc' => 'Tanpa halaman resmi, pembeli tidak yakin apakah toko menyediakan garansi, sparepart, dan layanan servis purna jual.'],
+            ['icon' => '📍', 'title' => 'Sulit Ditemukan Calon Pembeli Baru', 'desc' => 'Toko hanya mengandalkan marketplace atau media sosial, sehingga kalah bersaing dengan kompetitor yang sudah punya website sendiri di hasil pencarian Google.'],
+        ],
+        'benefits' => [
+            ['icon' => '🗂️', 'title' => 'Katalog Produk & Spesifikasi Lengkap', 'desc' => 'Tampilkan tiap model sepeda listrik lengkap dengan foto, harga, kapasitas baterai, dan jarak tempuh.'],
+            ['icon' => '🛡️', 'title' => 'Info Garansi & Layanan Servis', 'desc' => 'Cantumkan ketentuan garansi, ketersediaan sparepart, dan layanan servis agar pembeli lebih percaya.'],
+            ['icon' => '💬', 'title' => 'Pemesanan & Test Ride via WhatsApp', 'desc' => 'Tombol pesan atau jadwalkan test ride langsung terhubung ke WhatsApp toko Anda.'],
+            ['icon' => '📈', 'title' => 'Ditemukan Calon Pembeli di Google', 'desc' => 'Website dioptimasi agar toko Anda muncul saat orang mencari "sepeda listrik" di sekitar lokasi Anda.'],
+        ],
+        'faqs' => [
+            ['q' => 'Apakah website bisa menampilkan banyak varian sepeda listrik sekaligus?', 'a' => 'Bisa. Dengan Paket CMS Anda bisa menambah, mengubah, atau menghapus produk kapan saja sesuai stok terbaru.'],
+            ['q' => 'Apakah bisa dipakai untuk toko yang juga jual sparepart & aksesoris?', 'a' => 'Bisa, katalog produk bisa dikelompokkan per kategori seperti unit sepeda, baterai cadangan, dan aksesoris.'],
+            ['q' => 'Apakah cocok untuk toko sepeda listrik skala kecil atau dealer baru?', 'a' => 'Sangat cocok. Paket Landing kami dirancang untuk toko yang ingin tampil online dengan biaya terjangkau, bisa upgrade ke Paket CMS kapan saja.'],
+        ],
+        'related_niches' => ['umkm', 'desa', 'masjid'],
     ],
 
 ];

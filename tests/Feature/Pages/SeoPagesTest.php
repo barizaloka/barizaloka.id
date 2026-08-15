@@ -45,6 +45,22 @@ test('jasa-website landing page lists packages from the database', function () {
         ->assertSee('Rp 350rb');
 });
 
+test('jasa-website landing page links to every niche and location page', function () {
+    $response = $this->get(route('jasa-website'));
+
+    $response->assertOk();
+
+    foreach (array_keys(require __DIR__.'/../../../config/niche_pages.php') as $niche) {
+        $response->assertSee(route('niche.show', $niche), false);
+    }
+
+    foreach (array_keys(require __DIR__.'/../../../config/location_pages.php') as $location) {
+        $response->assertSee(route('lokasi.show', $location), false);
+    }
+
+    $response->assertSee(route('provinsi.index'), false);
+});
+
 test('sitemap includes jasa-website landing page', function () {
     $response = $this->get(route('sitemap'));
 
@@ -69,7 +85,7 @@ test('niche landing page is reachable for each configured niche', function (stri
     $this->get(route('niche.show', $niche))
         ->assertOk()
         ->assertSee(config("niche_pages.{$niche}.hero_title"));
-})->with(['pesantren', 'masjid', 'desa', 'umkm']);
+})->with(fn () => array_keys(require __DIR__.'/../../../config/niche_pages.php'));
 
 test('niche landing page 404s for an unknown niche', function () {
     $this->get('/jasa-website-tidak-ada')->assertNotFound();
@@ -79,7 +95,7 @@ test('location landing page is reachable for each configured location', function
     $this->get(route('lokasi.show', $location))
         ->assertOk()
         ->assertSee(config("location_pages.{$location}.name"));
-})->with(['rembang', 'sedan', 'sarang', 'lasem', 'pamotan']);
+})->with(fn () => array_keys(require __DIR__.'/../../../config/location_pages.php'));
 
 test('location landing page 404s for an unknown location', function () {
     $this->get('/jasa-website-di-tidak-ada')->assertNotFound();
@@ -101,12 +117,22 @@ test('niche landing page renders faq structured data', function () {
     $response->assertSee('"@type":"FAQPage"', false);
 });
 
-test('niche-lokasi combination landing page is reachable', function (string $niche) {
-    $this->get(route('niche-lokasi.show', [$niche, 'rembang']))
+test('niche-lokasi combination landing page is reachable', function (string $niche, string $location) {
+    $this->get(route('niche-lokasi.show', [$niche, $location]))
         ->assertOk()
         ->assertSee(config("niche_pages.{$niche}.label"))
-        ->assertSee(config('location_pages.rembang.name'));
-})->with(['pesantren', 'masjid', 'desa', 'umkm']);
+        ->assertSee(config("location_pages.{$location}.name"));
+})->with(function () {
+    $combinations = [];
+
+    foreach (array_keys(require __DIR__.'/../../../config/niche_pages.php') as $niche) {
+        foreach (array_keys(require __DIR__.'/../../../config/location_pages.php') as $location) {
+            $combinations["{$niche}-di-{$location}"] = [$niche, $location];
+        }
+    }
+
+    return $combinations;
+});
 
 test('niche-lokasi combination landing page 404s for an unknown niche or location', function () {
     $this->get('/jasa-website-tidak-ada-di-rembang')->assertNotFound();
@@ -132,7 +158,7 @@ test('provinsi landing page is reachable for each configured province', function
     $this->get(route('provinsi.show', $provinsi))
         ->assertOk()
         ->assertSee(config("provinsi_pages.{$provinsi}.name"));
-})->with(['aceh', 'jawa-tengah', 'bali', 'kalimantan-timur', 'sulawesi-selatan', 'papua']);
+})->with(fn () => array_keys(require __DIR__.'/../../../config/provinsi_pages.php'));
 
 test('provinsi landing page 404s for an unknown province', function () {
     $this->get('/potensi-digital-tidak-ada')->assertNotFound();
@@ -144,4 +170,13 @@ test('sitemap includes provinsi landing pages', function () {
     $response->assertOk();
     $response->assertSee(route('provinsi.index'), false);
     $response->assertSee(route('provinsi.show', 'jawa-tengah'), false);
+});
+
+test('sitemap includes every static, publicly indexable page route', function () {
+    $response = $this->get(route('sitemap'));
+
+    $response->assertOk();
+    $response->assertSee(route('kalkulator-biaya-admin-marketplace'), false);
+    $response->assertSee(route('tentang'), false);
+    $response->assertSee(route('faq.index'), false);
 });
