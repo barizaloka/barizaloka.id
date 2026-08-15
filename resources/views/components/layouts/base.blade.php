@@ -236,9 +236,8 @@
 
                 <div>
                     <div class="font-brand-serif text-2xl font-bold text-white mb-2.5" style="font-family: 'Playfair Display', Georgia, serif;">Barizaloka</div>
-                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs">Jasa website dari santri untuk digital yang terpercaya. Serta ekosistem teknologi inovatif yang membangun dampak nyata di bidang lingkungan, teknologi, dan spiritual.</p>
-                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Santri Rembang Jawa Tengah yang ngerti kode.</p>
-                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Mendedikasikan waktunya untuk belajar di pesantren dan membangun karir di jasa pembuatan website / aplikasi.</p>
+                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs">Website & aplikasi yang dikerjakan santri Rembang, Jawa Tengah — dibangun rapi, tepat waktu, dan bisa dipertanggungjawabkan.</p>
+                    <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Bukan sekadar jasa coding. Barizaloka adalah ekosistem teknologi yang mendedikasikan setiap proyek untuk dampak nyata di bidang lingkungan, teknologi, dan spiritual.</p>
                 </div>
 
                 <div>
