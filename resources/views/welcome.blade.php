@@ -251,7 +251,7 @@
                 <div>
                     <span class="inline-block bg-white/15 text-white/90 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">🛠️ Jasa Pembuatan Website</span>
                     <h2 class="font-brand-serif text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold text-white leading-tight mb-5" style="font-family: 'Playfair Display', Georgia, serif;">
-                        Website Profesional<br>Mulai <span class="text-brand-gold">Rp 350.000</span> / Tahun
+                        Website Profesional<br>untuk <span class="text-brand-gold">Semua Kebutuhan</span>
                     </h2>
                     <p class="text-white/75 leading-relaxed mb-8">Untuk pesantren, masjid, UMKM, dan komunitas desa. Cepat jadi, desain modern, dan sudah termasuk hosting + SSL.</p>
                     <ul class="flex flex-col gap-3.5 mb-10">
@@ -286,7 +286,6 @@
                                 <div class="text-white font-bold text-sm">Paket Landing</div>
                                 <div class="text-white/60 text-xs">1 halaman, langsung online</div>
                             </div>
-                            <div class="ml-auto text-white/90 font-extrabold text-base whitespace-nowrap">Rp 350rb</div>
                         </div>
                         <div class="text-white/55 text-xs leading-relaxed">Cocok untuk profil bisnis, jadwal kajian, atau landing page acara.</div>
                     </div>
@@ -298,7 +297,6 @@
                                 <div class="text-white font-bold text-sm">Paket CMS</div>
                                 <div class="text-white/60 text-xs">Kelola website sendiri</div>
                             </div>
-                            <div class="ml-auto text-white/90 font-extrabold text-base whitespace-nowrap">Rp 600rb</div>
                         </div>
                         <div class="text-white/55 text-xs leading-relaxed">WordPress CMS. Cocok untuk UMKM, masjid, atau organisasi yang aktif update konten.</div>
                     </div>

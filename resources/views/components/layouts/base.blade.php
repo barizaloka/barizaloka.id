@@ -143,6 +143,7 @@
                 <a href="{{ route('jasa-website') }}" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Jasa Website</a>
                 <a href="{{ route('blog.index') }}" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Blog</a>
                 <a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Etalase Karya</a>
+                <a href="https://contohdesain.web.id" target="_blank" rel="noopener" class="text-sm font-medium text-zinc-600 px-3.5 py-2 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors">Contoh Desain</a>
                 <a href="{{ route('kontak') }}" class="text-sm font-semibold text-white bg-brand-primary px-4.5 py-2 rounded-lg hover:bg-brand-dark transition-colors">Hubungi Kami</a>
 
             </div>
@@ -167,6 +168,7 @@
             <a href="{{ route('jasa-website') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Jasa Website</a>
             <a href="{{ route('blog.index') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Blog</a>
             <a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Etalase Karya</a>
+            <a href="https://contohdesain.web.id" target="_blank" rel="noopener" class="px-2 py-2.5 text-sm font-medium text-zinc-700">Contoh Desain</a>
             <a href="{{ route('kontak') }}" class="px-2 py-2.5 text-sm font-semibold text-brand-primary">Hubungi Kami</a>
         </div>
     </header>
@@ -257,6 +259,7 @@
                         <li><a href="{{ route('portofolio.index') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🖥️ Portofolio</a></li>
                         <li><a href="{{ route('faq.index') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">❓ FAQ</a></li>
                         <li><a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🛍️ Etalase Karya Digital</a></li>
+                        <li><a href="https://contohdesain.web.id" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🎨 Contoh Desain</a></li>
                         <li><a href="{{ route('blog.index') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">✍️ Blog</a></li>
                     </ul>
                 </div>

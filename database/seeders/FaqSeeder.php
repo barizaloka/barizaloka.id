@@ -45,7 +45,7 @@ class FaqSeeder extends Seeder
             ],
             [
                 'question' => 'Apakah website saya bisa diupdate sendiri?',
-                'answer' => 'Tentu! Jika Anda memilih Paket CMS, kami membangun website menggunakan WordPress yang user-friendly. Kami juga akan memberikan training singkat cara mengelola konten website Anda. Untuk Paket Landing, kami yang bantu updatekan kontennya.',
+                'answer' => 'Tentu! Jika Anda memilih Paket CMS, kami membangun website menggunakan Laravel yang user-friendly. Kami juga akan memberikan training singkat cara mengelola konten website Anda. Untuk Paket Landing, kami yang bantu updatekan kontennya.',
                 'category' => 'layanan',
                 'order' => 6,
             ],
