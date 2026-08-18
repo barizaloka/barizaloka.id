@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\TracksMediaLibrary;
 use Database\Factories\PopupSlideFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class PopupSlide extends Model
 {
     /** @use HasFactory<PopupSlideFactory> */
-    use HasFactory;
+    use HasFactory, TracksMediaLibrary;
 
     protected $fillable = [
         'popup_id',
@@ -27,6 +28,16 @@ class PopupSlide extends Model
         return [
             'sort_order' => 'integer',
         ];
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(fn (PopupSlide $slide) => $slide->syncMediaLibrary());
+    }
+
+    public function syncMediaLibrary(): void
+    {
+        $this->trackMediaFromField('media_path');
     }
 
     public function popup(): BelongsTo

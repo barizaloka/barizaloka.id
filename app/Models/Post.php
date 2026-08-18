@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\TracksMediaLibrary;
 use Carbon\CarbonInterface;
 use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Builder;
@@ -14,7 +15,7 @@ use Illuminate\Support\Str;
 class Post extends Model
 {
     /** @use HasFactory<PostFactory> */
-    use HasFactory;
+    use HasFactory, TracksMediaLibrary;
 
     protected $fillable = [
         'user_id',
@@ -50,6 +51,14 @@ class Post extends Model
                 $post->slug = Str::slug($post->title);
             }
         });
+
+        static::saved(fn (Post $post) => $post->syncMediaLibrary());
+    }
+
+    public function syncMediaLibrary(): void
+    {
+        $this->trackMediaFromField('featured_image', $this->user_id);
+        $this->trackMediaFromHtml('content', $this->user_id);
     }
 
     public function author(): BelongsTo

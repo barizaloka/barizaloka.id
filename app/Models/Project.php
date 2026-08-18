@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\TracksMediaLibrary;
 use Database\Factories\ProjectFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ use Illuminate\Support\Str;
 class Project extends Model
 {
     /** @use HasFactory<ProjectFactory> */
-    use HasFactory;
+    use HasFactory, TracksMediaLibrary;
 
     protected $fillable = [
         'title',
@@ -44,6 +45,14 @@ class Project extends Model
                 $project->slug = Str::slug($project->title);
             }
         });
+
+        static::saved(fn (Project $project) => $project->syncMediaLibrary());
+    }
+
+    public function syncMediaLibrary(): void
+    {
+        $this->trackMediaFromField('thumbnail');
+        $this->trackMediaFromHtml('description');
     }
 
     public function scopeFeatured(Builder $query): Builder
