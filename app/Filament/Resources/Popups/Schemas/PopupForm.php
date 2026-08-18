@@ -6,10 +6,11 @@ use App\Models\Category;
 use App\Models\Popup;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
@@ -39,16 +40,54 @@ class PopupForm
                             ->helperText('Jika ada beberapa popup cocok di halaman yang sama, prioritas tertinggi yang ditampilkan.')
                             ->numeric()
                             ->default(0),
-
-                        Textarea::make('html_content')
-                            ->label('Konten HTML + Tailwind CSS')
-                            ->helperText('Tulis markup HTML lengkap untuk isi popup. Sertakan tombol tutup dengan atribut onclick="closePopup()".')
-                            ->required()
-                            ->rows(12)
-                            ->extraInputAttributes(['style' => 'font-family: ui-monospace, monospace; font-size: 0.8125rem;'])
-                            ->columnSpanFull(),
                     ])
                     ->columns(2),
+
+                Section::make('Media')
+                    ->description('Tambahkan satu atau beberapa gambar/video. Jika lebih dari satu, akan ditampilkan sebagai slider di popup.')
+                    ->schema([
+                        Repeater::make('slides')
+                            ->relationship()
+                            ->label('Slide')
+                            ->schema([
+                                Select::make('type')
+                                    ->label('Tipe')
+                                    ->options([
+                                        'image' => 'Gambar',
+                                        'video' => 'Video',
+                                    ])
+                                    ->default('image')
+                                    ->required()
+                                    ->live(),
+
+                                FileUpload::make('media_path')
+                                    ->label('File')
+                                    ->disk('public')
+                                    ->directory('popup-slides')
+                                    ->acceptedFileTypes(fn ($get) => $get('type') === 'video'
+                                        ? ['video/mp4', 'video/webm', 'video/ogg']
+                                        : ['image/jpeg', 'image/png', 'image/webp', 'image/gif'])
+                                    ->required(),
+
+                                TextInput::make('button_label')
+                                    ->label('Teks Tombol')
+                                    ->maxLength(255),
+
+                                TextInput::make('button_url')
+                                    ->label('URL Tombol')
+                                    ->url()
+                                    ->maxLength(255),
+                            ])
+                            ->columns(2)
+                            ->orderColumn('sort_order')
+                            ->reorderable()
+                            ->collapsible()
+                            ->itemLabel(fn (array $state) => $state['button_label'] ?? 'Slide')
+                            ->addActionLabel('Tambah Slide')
+                            ->minItems(1)
+                            ->required()
+                            ->columnSpanFull(),
+                    ]),
 
                 Section::make('Target Tampilan')
                     ->schema([

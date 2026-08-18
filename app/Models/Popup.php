@@ -17,7 +17,6 @@ class Popup extends Model
     protected $fillable = [
         'name',
         'is_active',
-        'html_content',
         'target_type',
         'pages',
         'url_patterns',
@@ -75,6 +74,11 @@ class Popup extends Model
     public function views(): HasMany
     {
         return $this->hasMany(PopupView::class);
+    }
+
+    public function slides(): HasMany
+    {
+        return $this->hasMany(PopupSlide::class)->orderBy('sort_order');
     }
 
     public function hasBeenSeenBy(string $visitorId, ?string $sessionId): bool

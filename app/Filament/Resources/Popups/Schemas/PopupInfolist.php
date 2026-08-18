@@ -4,6 +4,8 @@ namespace App\Filament\Resources\Popups\Schemas;
 
 use App\Models\Popup;
 use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -19,13 +21,30 @@ class PopupInfolist
                         TextEntry::make('name')->label('Nama'),
                         IconEntry::make('is_active')->label('Aktif')->boolean(),
                         TextEntry::make('priority')->label('Prioritas'),
-                        TextEntry::make('html_content')
-                            ->label('Konten HTML')
-                            ->columnSpanFull()
-                            ->markdown(false)
-                            ->extraAttributes(['class' => 'font-mono text-xs whitespace-pre-wrap']),
                     ])
                     ->columns(2),
+
+                Section::make('Media')
+                    ->schema([
+                        RepeatableEntry::make('slides')
+                            ->label('')
+                            ->schema([
+                                TextEntry::make('type')
+                                    ->label('Tipe')
+                                    ->formatStateUsing(fn (string $state) => $state === 'video' ? 'Video' : 'Gambar'),
+                                ImageEntry::make('media_path')
+                                    ->label('Preview')
+                                    ->disk('public')
+                                    ->visible(fn ($record) => $record?->type === 'image'),
+                                TextEntry::make('media_path')
+                                    ->label('File Video')
+                                    ->visible(fn ($record) => $record?->type === 'video'),
+                                TextEntry::make('button_label')->label('Teks Tombol')->placeholder('—'),
+                                TextEntry::make('button_url')->label('URL Tombol')->placeholder('—'),
+                            ])
+                            ->columns(2)
+                            ->columnSpanFull(),
+                    ]),
 
                 Section::make('Target & Jadwal')
                     ->schema([

@@ -8,143 +8,176 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
+function createPopupWithSlide(array $attributes = [], array $slideAttributes = []): Popup
+{
+    $popup = Popup::factory()->create($attributes);
+    $popup->slides()->create(array_merge([
+        'type' => 'image',
+        'media_path' => 'popup-slides/default.jpg',
+    ], $slideAttributes));
+
+    return $popup;
+}
+
 test('popup targeted at all pages shows on the homepage', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'name' => 'Promo Semua Halaman',
         'is_active' => true,
         'target_type' => 'all',
-        'html_content' => '<div id="promo-all">Promo!</div>',
+    ], [
+        'button_label' => 'Promo All',
     ]);
 
     $response = $this->get(route('home'));
 
     $response->assertOk();
-    $response->assertSee('promo-all', false);
+    $response->assertSee('Promo All');
 });
 
 test('inactive popup is not shown', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => false,
         'target_type' => 'all',
-        'html_content' => '<div id="promo-inactive">Promo!</div>',
+    ], [
+        'button_label' => 'Promo Inactive',
     ]);
 
     $response = $this->get(route('home'));
 
-    $response->assertDontSee('promo-inactive', false);
+    $response->assertDontSee('Promo Inactive');
 });
 
 test('popup outside its schedule is not shown', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
-        'html_content' => '<div id="promo-expired">Promo!</div>',
         'end_at' => now()->subDay(),
+    ], [
+        'button_label' => 'Promo Expired',
     ]);
 
     $response = $this->get(route('home'));
 
-    $response->assertDontSee('promo-expired', false);
+    $response->assertDontSee('Promo Expired');
 });
 
 test('popup targeted at specific pages only shows on matching pages', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'pages',
         'pages' => ['harga'],
-        'html_content' => '<div id="promo-harga">Promo Harga!</div>',
+    ], [
+        'button_label' => 'Promo Harga',
     ]);
 
-    $this->get(route('harga'))->assertSee('promo-harga', false);
-    $this->get(route('home'))->assertDontSee('promo-harga', false);
+    $this->get(route('harga'))->assertSee('Promo Harga');
+    $this->get(route('home'))->assertDontSee('Promo Harga');
 });
 
 test('popup targeted at a url pattern matches dynamic pages', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'pages',
         'url_patterns' => ['jasa-website-*'],
-        'html_content' => '<div id="promo-niche">Promo Niche!</div>',
+    ], [
+        'button_label' => 'Promo Niche',
     ]);
 
-    $this->get(route('niche.show', 'pesantren'))->assertSee('promo-niche', false);
-    $this->get(route('harga'))->assertDontSee('promo-niche', false);
+    $this->get(route('niche.show', 'pesantren'))->assertSee('Promo Niche');
+    $this->get(route('harga'))->assertDontSee('Promo Niche');
 });
 
 test('popup targeted at a category only shows on that category page', function () {
     $category = Category::factory()->create();
     $otherCategory = Category::factory()->create();
 
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'categories',
         'category_ids' => [$category->id],
-        'html_content' => '<div id="promo-category">Promo Kategori!</div>',
+    ], [
+        'button_label' => 'Promo Category',
     ]);
 
-    $this->get(route('blog.category', $category))->assertSee('promo-category', false);
-    $this->get(route('blog.category', $otherCategory))->assertDontSee('promo-category', false);
-    $this->get(route('home'))->assertDontSee('promo-category', false);
+    $this->get(route('blog.category', $category))->assertSee('Promo Category');
+    $this->get(route('blog.category', $otherCategory))->assertDontSee('Promo Category');
+    $this->get(route('home'))->assertDontSee('Promo Category');
 });
 
 test('only the highest priority matching popup is shown', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
         'priority' => 1,
-        'html_content' => '<div id="promo-low">Low Priority</div>',
+    ], [
+        'button_label' => 'Promo Low',
     ]);
 
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
         'priority' => 10,
-        'html_content' => '<div id="promo-high">High Priority</div>',
+    ], [
+        'button_label' => 'Promo High',
     ]);
 
     $response = $this->get(route('home'));
 
-    $response->assertSee('promo-high', false);
-    $response->assertDontSee('promo-low', false);
+    $response->assertSee('Promo High');
+    $response->assertDontSee('Promo Low');
+});
+
+test('a popup with no slides is not shown', function () {
+    Popup::factory()->create([
+        'is_active' => true,
+        'target_type' => 'all',
+    ]);
+
+    $response = $this->get(route('home'));
+
+    $response->assertDontSee('site-popup', false);
 });
 
 test('a view is recorded in the database when a popup is shown', function () {
-    $popup = Popup::factory()->create([
+    $popup = createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
-        'html_content' => '<div id="promo-tracked">Promo!</div>',
+    ], [
+        'button_label' => 'Promo Tracked',
     ]);
 
-    $this->get(route('home'))->assertSee('promo-tracked', false);
+    $this->get(route('home'))->assertSee('Promo Tracked');
 
     expect(PopupView::where('popup_id', $popup->id)->count())->toBe(1);
 });
 
 test('frequency once_ever does not show the popup again to the same visitor', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
         'frequency' => 'once_ever',
-        'html_content' => '<div id="promo-once">Promo!</div>',
+    ], [
+        'button_label' => 'Promo Once',
     ]);
 
     $first = $this->get(route('home'));
-    $first->assertSee('promo-once', false);
+    $first->assertSee('Promo Once');
 
     $visitorId = $first->getCookie(EnsurePopupVisitorId::COOKIE, false)->getValue();
 
     $second = $this->withUnencryptedCookie(EnsurePopupVisitorId::COOKIE, $visitorId)->get(route('home'));
-    $second->assertDontSee('promo-once', false);
+    $second->assertDontSee('Promo Once');
 });
 
 test('a different visitor still sees a once_ever popup', function () {
-    Popup::factory()->create([
+    createPopupWithSlide([
         'is_active' => true,
         'target_type' => 'all',
         'frequency' => 'once_ever',
-        'html_content' => '<div id="promo-once">Promo!</div>',
+    ], [
+        'button_label' => 'Promo Once',
     ]);
 
-    $this->get(route('home'))->assertSee('promo-once', false);
-    $this->get(route('home'))->assertSee('promo-once', false);
+    $this->get(route('home'))->assertSee('Promo Once');
+    $this->get(route('home'))->assertSee('Promo Once');
 });

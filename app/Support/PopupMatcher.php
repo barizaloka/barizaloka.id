@@ -11,7 +11,7 @@ final class PopupMatcher
 {
     public static function current(): ?Popup
     {
-        $popups = Popup::query()->active()->orderByDesc('priority')->get();
+        $popups = Popup::query()->active()->with('slides')->orderByDesc('priority')->get();
 
         if ($popups->isEmpty()) {
             return null;

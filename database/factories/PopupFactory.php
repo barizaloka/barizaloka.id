@@ -20,7 +20,6 @@ class PopupFactory extends Factory
         return [
             'name' => $this->faker->sentence(3),
             'is_active' => true,
-            'html_content' => '<div class="bg-white rounded-xl p-6 shadow-xl">'.$this->faker->paragraph().'</div>',
             'target_type' => 'all',
             'pages' => null,
             'url_patterns' => null,
