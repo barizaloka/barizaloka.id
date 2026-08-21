@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Barizaloka — Dari Santri untuk Go Digital"
-    description="Barizaloka adalah ekosistem teknologi dari Rembang: jasa pembuatan website, SaaS, jual beli website & aplikasi, serta komunitas lingkungan & teknologi."
+    description="Ekosistem teknologi dari Rembang: jasa pembuatan website, serta komunitas lingkungan & teknologi."
 >
 
     <style>
@@ -39,7 +39,7 @@
                 <span class="hero-title-span">Solusi Digital untuk Bisnis Anda</span>
             </h1>
 
-            <p class="text-lg text-white/78 max-w-xl mx-auto mb-8">Ekosistem teknologi inovatif yang mendukung dampak 🌍 lingkungan, 💻 teknologi, dan ✨ spiritual yang positif.</p>
+            <p class="text-lg text-white/78 max-w-xl mx-auto mb-8">Bangun kepercayaan dengan website resmi</p>
 
             <div class="flex flex-wrap gap-3 justify-center mb-7">
                 <a href="#komunitas" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">🚀 Jelajahi Ekosistem</a>
@@ -47,7 +47,7 @@
                 <a href="#layanan" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">✨ Lihat Layanan</a>
             </div>
 
-            <p class="text-sm text-white/50">🏡 Didirikan oleh Pemuda Desa — Kecamatan Sedan dan Sarang, Kabupaten Rembang 🌾</p>
+            <p class="text-sm text-white/50">🏡 Didirikan oleh Pemuda Desa — Kecamatan Sedan dan Sarang, Kabupaten Rembang Jawa Tengah🌾</p>
         </div>
     </section>
 
