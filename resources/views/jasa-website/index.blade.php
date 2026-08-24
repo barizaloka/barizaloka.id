@@ -66,8 +66,7 @@
             <span class="inline-flex items-center gap-1.5 bg-white/12 border border-white/25 rounded-full px-4.5 py-2 text-sm text-[#c8f0e2] tracking-wide mb-6">🛠️ Jasa Pembuatan Website</span>
 
             <h1 class="font-brand-serif font-extrabold text-[clamp(2rem,6vw,3.6rem)] leading-[1.15] text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">
-                Website Profesional<br>
-                <span style="background: linear-gradient(135deg, #5DCAA5 0%, #a8edd4 50%, #5DCAA5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Mulai Rp 350.000 / Tahun</span>
+                Website Profesional
             </h1>
 
             <p class="text-lg text-white/78 max-w-xl mx-auto mb-8">Untuk pesantren, masjid, desa, dan UMKM. Cepat jadi, desain modern, sudah termasuk domain, hosting, dan SSL.</p>
