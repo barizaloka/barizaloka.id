@@ -27,6 +27,7 @@
                     <li><a href="https://lynk.id/barizaloka" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🛍️ Etalase Karya Digital</a></li>
                     <li><a href="https://contohdesain.web.id" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🎨 Contoh Desain</a></li>
                     <li><a href="{{ route('blog.index') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">✍️ Blog</a></li>
+                    <li><button onclick="window.installPWA()" type="button" class="text-[#7a9992] hover:text-brand-mid transition-colors cursor-pointer text-left">📲 Install Aplikasi Barizaloka</button></li>
                 </ul>
             </div>
 
