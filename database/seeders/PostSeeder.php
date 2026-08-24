@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -16,8 +17,9 @@ class PostSeeder extends Seeder
     {
         $author = User::first() ?? User::factory()->create();
         $category = Category::first() ?? Category::factory()->create();
+        $tags = Tag::all();
 
-        Post::factory()
+        $posts = Post::factory()
             ->count(5)
             ->published()
             ->state([
@@ -27,7 +29,7 @@ class PostSeeder extends Seeder
             ])
             ->create();
 
-        Post::factory()
+        $morePosts = Post::factory()
             ->count(5)
             ->published()
             ->state([
@@ -36,5 +38,11 @@ class PostSeeder extends Seeder
                 'permalink_format' => 'slug',
             ])
             ->create();
+
+        if ($tags->isNotEmpty()) {
+            $posts->concat($morePosts)->each(function (Post $post) use ($tags) {
+                $post->tags()->sync($tags->random(min(3, $tags->count()))->pluck('id'));
+            });
+        }
     }
 }

@@ -32,8 +32,13 @@ test('faq index lists active faqs and hides inactive ones', function () {
     $response->assertDontSee('Pertanyaan lama yang disembunyikan');
 });
 
-test('harga page is reachable', function () {
-    $this->get(route('harga'))->assertOk();
+test('harga page is reachable and lists packages from the database', function () {
+    PackageJasaWebsite::factory()->create(['name' => 'Paket Landing', 'price_label' => 'Rp 350rb']);
+
+    $this->get(route('harga'))
+        ->assertOk()
+        ->assertSee('Paket Landing')
+        ->assertSee('Rp 350rb');
 });
 
 test('jasa-website landing page lists packages from the database', function () {

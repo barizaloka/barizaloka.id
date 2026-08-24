@@ -34,40 +34,39 @@
     </section>
 
     {{-- ===== PRICING ===== --}}
-    <section class="py-20 bg-[#f4f8f6]">
+    <section class="py-16 bg-[#f4f8f6]">
         <div class="max-w-[1100px] mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 @foreach ($packages as $package)
-                    <div class="relative flex flex-col bg-white rounded-2xl p-10 {{ $package->is_featured ? 'border-2 border-brand-primary shadow-lg' : 'border border-[#e0ebe7]' }}">
+                    <div class="relative flex flex-col bg-white rounded-2xl p-6 sm:p-7 {{ $package->is_featured ? 'border-2 border-brand-primary shadow-lg ring-4 ring-brand-primary/10' : 'border border-[#e0ebe7] shadow-xs' }} hover:shadow-md transition-all duration-200">
                         @if ($package->badge_label)
-                            <span class="absolute top-5 right-5 bg-brand-primary text-white text-[.7rem] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">{{ $package->badge_label }}</span>
+                            <div class="mb-3">
+                                <span class="inline-block bg-brand-primary text-white text-[.65rem] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">{{ $package->badge_label }}</span>
+                            </div>
                         @endif
-                        <div class="text-xl font-bold mb-2">{{ $package->name }}</div>
+                        <h3 class="text-lg font-bold text-zinc-900 mb-1.5 leading-snug">{{ $package->name }}</h3>
                         @if ($package->tagline)
-                            <p class="text-sm text-zinc-500 mb-8">{{ $package->tagline }}</p>
+                            <p class="text-xs text-zinc-500 mb-4 leading-relaxed min-h-[2.5rem]">{{ $package->tagline }}</p>
                         @endif
-                        <div class="mb-8">
-                            <div class="font-brand-serif text-4xl font-extrabold text-brand-primary" style="font-family: 'Playfair Display', Georgia, serif;">{{ $package->price_label }}</div>
-                            <div class="text-sm text-zinc-500 mt-1">{{ $package->price_period }}</div>
+                        <div class="mb-5 pb-4 border-b border-[#e0ebe7]">
+                            <div class="font-brand-serif text-3xl font-extrabold text-brand-primary" style="font-family: 'Playfair Display', Georgia, serif;">{{ $package->price_label }}</div>
+                            <div class="text-xs text-zinc-500 mt-0.5">{{ $package->price_period }}</div>
                         </div>
-                        <ul class="flex-1 flex flex-col gap-3 border-t border-[#e0ebe7] pt-8 mb-10 text-sm text-[#1a2420]">
+                        <ul class="flex-1 flex flex-col gap-2.5 mb-6 text-xs text-[#1a2420]">
                             @foreach ($package->features as $feature)
-                                <li @class(['pl-6 text-xs' => $feature['indent'] ?? false])>{{ ($feature['indent'] ?? false) ? '•' : '✅' }} {!! $feature['text'] !!}</li>
+                                <li @class([
+                                    'flex items-start gap-2 leading-snug',
+                                    'pl-4 text-zinc-500 text-[0.75rem]' => $feature['indent'] ?? false,
+                                    'font-medium' => !($feature['indent'] ?? false) && (str_contains($feature['text'], '<strong>')),
+                                ])>
+                                    <span class="shrink-0 text-brand-primary font-bold">{{ ($feature['indent'] ?? false) ? '•' : '✓' }}</span>
+                                    <span>{!! $feature['text'] !!}</span>
+                                </li>
                             @endforeach
                         </ul>
-                        <a href="https://wa.me/6285188158542?text={{ urlencode($package->whatsapp_message ?? '') }}" target="_blank" rel="noopener" class="text-center rounded-xl px-7 py-3.5 text-sm font-bold transition-colors {{ $package->is_featured ? 'bg-brand-gold text-white hover:opacity-90' : 'bg-white text-brand-dark border border-brand-dark hover:bg-brand-light' }}">{{ $package->cta_label ?? 'Pilih '.$package->name }}</a>
+                        <a href="https://wa.me/6285188158542?text={{ urlencode($package->whatsapp_message ?? '') }}" target="_blank" rel="noopener" class="mt-auto text-center rounded-xl px-5 py-3 text-xs sm:text-sm font-bold transition-all duration-200 {{ $package->is_featured ? 'bg-brand-gold text-white hover:opacity-90 shadow-xs' : 'bg-white text-brand-dark border border-brand-dark/40 hover:bg-brand-light hover:border-brand-primary' }}">{{ $package->cta_label ?? 'Pilih '.$package->name }}</a>
                     </div>
                 @endforeach
-            </div>
-
-            <div class="text-center mt-12 text-sm text-[#1a2420] leading-relaxed max-w-2xl mx-auto">
-                <p class="mb-1">⚠️ <strong>Catatan Penting:</strong></p>
-                <p class="mb-1">Harga di atas adalah biaya per tahun, sudah termasuk <strong>Hosting, SSL, Maintenance</strong>.</p>
-                <p>Harga sudah <strong>TERMASUK domain .my.id GRATIS</strong> (1 tahun). Ingin domain lain (.com, .id, .net, dll)? Ada biaya tambahan sesuai jenis domain yang dipilih.</p>
-                <div class="mt-6 text-xs text-zinc-500">
-                    💳 Pembayaran Aman: DP 50% → Selesai &amp; Review → Pelunasan 50%<br>
-                    <span class="font-semibold">✓ Bank Transfer • ✓ E-wallet • ✓ QRIS</span>
-                </div>
             </div>
         </div>
     </section>
