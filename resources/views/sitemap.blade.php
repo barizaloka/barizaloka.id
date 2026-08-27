@@ -62,6 +62,13 @@
     </url>
 
     <url>
+        <loc>{{ route('bapak-ekonomi-digital') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
         <loc>{{ route('portofolio.index') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>

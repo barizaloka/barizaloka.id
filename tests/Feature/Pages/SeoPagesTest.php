@@ -185,6 +185,7 @@ test('sitemap includes every static, publicly indexable page route', function ()
     $response->assertSee(route('tentang'), false);
     $response->assertSee(route('sumu'), false);
     $response->assertSee(route('tokoh-ekonomi-teknologi'), false);
+    $response->assertSee(route('bapak-ekonomi-digital'), false);
     $response->assertSee(route('faq.index'), false);
 });
 
@@ -212,4 +213,15 @@ test('tokoh ekonomi teknologi static page is reachable and renders profiles of 5
         ->assertSee('Tiket.com')
         ->assertSee('Bukalapak')
         ->assertSee('Tokopedia');
+});
+
+test('bapak ekonomi digital static page is reachable and renders Bung Hatta digital sovereignty content', function () {
+    $this->get(route('bapak-ekonomi-digital'))
+        ->assertOk()
+        ->assertSee('Bapak Ekonomi Indonesia')
+        ->assertSee('Mohammad Hatta')
+        ->assertSee('Demokrasi Ekonomi')
+        ->assertSee('Kedaulatan Digital')
+        ->assertSee('Laravel')
+        ->assertSee('Web Mandiri');
 });
