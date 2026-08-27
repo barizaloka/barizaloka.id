@@ -16,7 +16,7 @@ beforeEach(function () {
 test('creating an article without bearer token returns 401 unauthenticated', function () {
     Log::spy();
 
-    $response = $this->postJson('/api/v1/posts', [
+    $response = $this->postJson('/api/posts', [
         'title' => 'Test Title',
     ]);
 
@@ -31,7 +31,7 @@ test('creating an article without bearer token returns 401 unauthenticated', fun
 test('creating an article with invalid bearer token returns 401 unauthenticated', function () {
     Log::spy();
 
-    $response = $this->withToken('wrong-token')->postJson('/api/v1/posts', [
+    $response = $this->withToken('wrong-token')->postJson('/api/posts', [
         'title' => 'Test Title',
     ]);
 
@@ -64,7 +64,7 @@ test('creating an article with valid bearer token successfully creates post and 
     ];
 
     $response = $this->withToken('test-bearer-token')
-        ->postJson('/api/v1/posts', $payload);
+        ->postJson('/api/posts', $payload);
 
     $response->assertStatus(201)
         ->assertJson([
@@ -98,7 +98,7 @@ test('creating an article with valid bearer token successfully creates post and 
 
 test('creating an article fails validation when required fields are missing', function () {
     $response = $this->withToken('test-bearer-token')
-        ->postJson('/api/v1/posts', []);
+        ->postJson('/api/posts', []);
 
     $response->assertStatus(422)
         ->assertJsonValidationErrors(['title', 'category_id', 'content']);

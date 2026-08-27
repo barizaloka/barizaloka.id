@@ -55,6 +55,13 @@
     </url>
 
     <url>
+        <loc>{{ route('tokoh-ekonomi-teknologi') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
         <loc>{{ route('portofolio.index') }}</loc>
         <lastmod>{{ now()->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>

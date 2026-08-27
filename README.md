@@ -84,6 +84,128 @@ Artikel/blog pada Barizaloka mendukung 2 jenis struktur permalink yang dapat dis
    - **Redirect Legacy:** Akses lama ke `/{slug}` dialihkan secara permanen (HTTP 301 Redirect) ke `/artikel/{slug}` agar ranking SEO dan backlink tetap terjaga.
    - **Penggunaan:** Cocok untuk konten *evergreen*, panduan utama, atau URL yang membutuhkan tampilan bersih & singkat.
 
+## API Artikel
+
+Aplikasi menyediakan API RESTful untuk membuat dan mempublikasikan artikel secara terprogram.
+
+### Konfigurasi `.env`
+
+Tambahkan variabel lingkungan berikut pada file `.env`:
+
+```env
+ARTICLE_API_BEARER_TOKEN=token-rahasia-anda
+ARTICLE_API_DEFAULT_USER_ID=1 # Opsional: ID user default jika user_id tidak dikirim di request
+```
+
+### Autentikasi
+
+API dilindungi menggunakan Bearer Token middleware (`EnsureValidApiBearerToken`). Setiap request harus menyertakan header Authorization:
+
+```http
+Authorization: Bearer <ARTICLE_API_BEARER_TOKEN>
+```
+
+---
+
+### Endpoint: Buat Artikel Baru
+
+- **Method:** `POST`
+- **URL:** `/api/posts`
+- **Headers:**
+  - `Authorization: Bearer <ARTICLE_API_BEARER_TOKEN>`
+  - `Content-Type: application/json`
+  - `Accept: application/json`
+
+#### Parameter Request Body (JSON)
+
+| Field | Tipe | Wajib? | Deskripsi |
+|---|---|---|---|
+| `title` | String | Ya | Judul artikel (maks. 255 karakter). |
+| `category_id` | Integer | Ya | ID kategori artikel (`exists:categories,id`). |
+| `content` | String | Ya | Konten / isi artikel (teks / HTML). |
+| `excerpt` | String | Tidak | Ringkasan singkat artikel. |
+| `slug` | String | Tidak | Slug unik artikel (maks. 255 karakter). Jika tidak diisi, otomatis digenerate dari `title`. |
+| `status` | String | Tidak | Status artikel (`published` atau `draft`). Default: `published`. |
+| `published_at` | String (Date) | Tidak | Waktu publikasi artikel (format Date/ISO8601). Default: waktu saat ini jika status `published`. |
+| `tag_ids` | Array of Integer | Tidak | List ID tag yang dikaitkan dengan artikel (`exists:tags,id`). |
+| `user_id` | Integer | Tidak | ID user sebagai penulis (`exists:users,id`). Default: `ARTICLE_API_DEFAULT_USER_ID` atau user pertama di database. |
+| `meta_title` | String | Tidak | Meta title untuk optimasi SEO. |
+| `meta_description` | String | Tidak | Meta description untuk optimasi SEO. |
+
+#### Contoh Request (cURL)
+
+```bash
+curl -X POST "https://barizaloka.id/api/posts" \
+  -H "Authorization: Bearer token-rahasia-anda" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "title": "Panduan Mengembangkan Website Pesantren",
+    "category_id": 1,
+    "content": "<p>Berikut adalah langkah-langkah dalam pembuatan website pesantren...</p>",
+    "excerpt": "Panduan lengkap pembuatan website pesantren.",
+    "status": "published",
+    "tag_ids": [1, 2],
+    "meta_title": "Panduan Website Pesantren | Barizaloka",
+    "meta_description": "Artikel panduan pembuatan website pesantren profesional."
+  }'
+```
+
+#### Respon API
+
+- **`201 Created`** — Artikel berhasil dibuat
+
+  ```json
+  {
+    "message": "Article created successfully.",
+    "data": {
+      "id": 1,
+      "user_id": 1,
+      "category_id": 1,
+      "title": "Panduan Mengembangkan Website Pesantren",
+      "slug": "panduan-mengembangkan-website-pesantren",
+      "excerpt": "Panduan lengkap pembuatan website pesantren.",
+      "content": "<p>Berikut adalah langkah-langkah dalam pembuatan website pesantren...</p>",
+      "status": "published",
+      "published_at": "2026-08-27T20:11:00.000000Z",
+      "meta_title": "Panduan Website Pesantren | Barizaloka",
+      "meta_description": "Artikel panduan pembuatan website pesantren profesional.",
+      "created_at": "2026-08-27T20:11:00.000000Z",
+      "updated_at": "2026-08-27T20:11:00.000000Z",
+      "author": { ... },
+      "category": { ... },
+      "tags": [ ... ]
+    }
+  }
+  ```
+
+- **`401 Unauthorized`** — Token tidak valid atau tidak dikirim
+
+  ```json
+  {
+    "message": "Unauthenticated."
+  }
+  ```
+
+- **`422 Unprocessable Entity`** — Gagal validasi data
+
+  ```json
+  {
+    "message": "The title field is required. (and 2 more errors)",
+    "errors": {
+      "title": [
+        "The title field is required."
+      ],
+      "category_id": [
+        "The category id field is required."
+      ],
+      "content": [
+        "The content field is required."
+      ]
+    }
+  }
+  ```
+
 ## Sitemap
 
 `GET /sitemap.xml` ([resources/views/sitemap.blade.php](resources/views/sitemap.blade.php)) mendaftarkan seluruh halaman publik yang boleh diindeks: halaman statis, seluruh niche (dibaca dari `config/niche_pages.php`), lokasi, kombinasi niche × lokasi, provinsi, blog, dan portofolio.

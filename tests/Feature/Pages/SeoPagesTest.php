@@ -184,6 +184,7 @@ test('sitemap includes every static, publicly indexable page route', function ()
     $response->assertSee(route('kalkulator-biaya-admin-marketplace'), false);
     $response->assertSee(route('tentang'), false);
     $response->assertSee(route('sumu'), false);
+    $response->assertSee(route('tokoh-ekonomi-teknologi'), false);
     $response->assertSee(route('faq.index'), false);
 });
 
@@ -196,4 +197,19 @@ test('sumu static page is reachable and renders analysis content', function () {
         ->assertSee('Transparansi')
         ->assertSee('Marketplace Sendiri')
         ->assertSee('sumu.or.id');
+});
+
+test('tokoh ekonomi teknologi static page is reachable and renders profiles of 5 tech founders', function () {
+    $this->get(route('tokoh-ekonomi-teknologi'))
+        ->assertOk()
+        ->assertSee('Nadiem Makarim')
+        ->assertSee('Ferry Unardi')
+        ->assertSee('Natali Ardianto')
+        ->assertSee('Achmad Zaky')
+        ->assertSee('William Tanuwijaya')
+        ->assertSee('Go-Jek')
+        ->assertSee('Traveloka')
+        ->assertSee('Tiket.com')
+        ->assertSee('Bukalapak')
+        ->assertSee('Tokopedia');
 });

@@ -30,6 +30,7 @@ Route::get('/jasa-website', [JasaWebsiteController::class, 'index'])->name('jasa
 Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::view('/tentang', 'tentang')->name('tentang');
 Route::view('/sumu-serikat-usaha-muhammadiyah', 'sumu')->name('sumu');
+Route::view('/tokoh-ekonomi-indonesia-yuk-jadi-seperti-mereka-bidang-teknologi', 'tokoh-ekonomi-teknologi')->name('tokoh-ekonomi-teknologi');
 Route::get('/harga', [HargaController::class, 'index'])->name('harga');
 Route::view('/kontak', 'kontak')->name('kontak');
 Route::get('/kalkulator-biaya-admin-marketplace', [KalkulatorBiayaAdminMarketplaceController::class, 'index'])->name('kalkulator-biaya-admin-marketplace');
