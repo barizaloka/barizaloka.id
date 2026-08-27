@@ -69,6 +69,21 @@ Halaman **lokasi**, **kombinasi niche × lokasi**, dan **provinsi** dihasilkan d
 - **Halaman independen** — kalau butuh desain/konten unik, gambar khusus, atau layout beda dari halaman lain (niche baru yang benar-benar berbeda dari yang sudah ada).
 - **Template + config** — kalau halamannya pada dasarnya kombinasi/variasi dari data yang sama (lokasi, provinsi, kombinasi), dan jumlahnya berpotensi banyak.
 
+## Permalink Artikel
+
+Artikel/blog pada Barizaloka mendukung 2 jenis struktur permalink yang dapat disesuaikan melalui kolom `permalink_format` pada data artikel:
+
+1. **Format Tanggal (`tahun_bulan_slug`)** — *Default*
+   - **Pattern URL:** `/{YYYY}/{MM}/{slug}` (contoh: `/2026/03/kabar-baik`)
+   - **Keunikan Slug:** Unik per bulan & tahun publikasi (slug yang sama dapat digunakan di bulan/tahun yang berbeda).
+   - **Penggunaan:** Cocok untuk berita, update berkala, atau konten berbasis waktu.
+
+2. **Format Clean Slug (`slug`)**
+   - **Pattern URL:** `/artikel/{slug}` (contoh: `/artikel/panduan-jasa-website`)
+   - **Keunikan Slug:** Unik secara global untuk seluruh artikel berformat `slug`.
+   - **Redirect Legacy:** Akses lama ke `/{slug}` dialihkan secara permanen (HTTP 301 Redirect) ke `/artikel/{slug}` agar ranking SEO dan backlink tetap terjaga.
+   - **Penggunaan:** Cocok untuk konten *evergreen*, panduan utama, atau URL yang membutuhkan tampilan bersih & singkat.
+
 ## Sitemap
 
 `GET /sitemap.xml` ([resources/views/sitemap.blade.php](resources/views/sitemap.blade.php)) mendaftarkan seluruh halaman publik yang boleh diindeks: halaman statis, seluruh niche (dibaca dari `config/niche_pages.php`), lokasi, kombinasi niche × lokasi, provinsi, blog, dan portofolio.
