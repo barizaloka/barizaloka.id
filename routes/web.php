@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::get('/jasa-website', [JasaWebsiteController::class, 'index'])->name('jasa-website');
 Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::view('/tentang', 'tentang')->name('tentang');
+Route::view('/sumu-serikat-usaha-muhammadiyah', 'sumu')->name('sumu');
 Route::get('/harga', [HargaController::class, 'index'])->name('harga');
 Route::view('/kontak', 'kontak')->name('kontak');
 Route::get('/kalkulator-biaya-admin-marketplace', [KalkulatorBiayaAdminMarketplaceController::class, 'index'])->name('kalkulator-biaya-admin-marketplace');

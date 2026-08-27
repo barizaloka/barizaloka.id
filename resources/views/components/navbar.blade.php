@@ -42,6 +42,13 @@
                             <small class="text-xs text-zinc-500 leading-tight">Partner & kolaborator</small>
                         </span>
                     </a>
+                    <a href="{{ route('sumu') }}" role="menuitem" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors text-[#1a2420]">
+                        <span class="text-base w-6 text-center">💚</span>
+                        <span class="flex flex-col gap-0.5">
+                            <strong class="text-sm font-semibold leading-tight">Inisiatif SUMU</strong>
+                            <small class="text-xs text-zinc-500 leading-tight">Analisis & Sinergi Usaha Muhammadiyah</small>
+                        </span>
+                    </a>
                 </div>
             </div>
 

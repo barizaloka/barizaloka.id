@@ -183,5 +183,17 @@ test('sitemap includes every static, publicly indexable page route', function ()
     $response->assertOk();
     $response->assertSee(route('kalkulator-biaya-admin-marketplace'), false);
     $response->assertSee(route('tentang'), false);
+    $response->assertSee(route('sumu'), false);
     $response->assertSee(route('faq.index'), false);
+});
+
+test('sumu static page is reachable and renders analysis content', function () {
+    $this->get(route('sumu'))
+        ->assertOk()
+        ->assertSee('Serikat Usaha Muhammadiyah')
+        ->assertSee('Web Software Engineer')
+        ->assertSee('Laravel')
+        ->assertSee('Transparansi')
+        ->assertSee('Marketplace Sendiri')
+        ->assertSee('sumu.or.id');
 });
