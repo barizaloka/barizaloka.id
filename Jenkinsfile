@@ -2,7 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename '.docker/ci/Dockerfile'
-            args '-u 0'
+            args '-u 0 --privileged'
         }
     }
 
@@ -30,7 +30,7 @@ pipeline {
                 sh 'echo "Deploying to staging..."'
 
                 sh '''
-                    sh jenkins@jenkins:~$ ssh contohdesain.web.id@ssh.gb.stackcp.com && exit
+                    ssh contohdesain.web.id@ssh.gb.stackcp.com
                 '''
             }
         }
