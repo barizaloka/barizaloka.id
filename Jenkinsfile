@@ -2,24 +2,55 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            dir '.docker/ci'
             args '-u 0'
         }
     }
 
     stages {
-        stage('Install & Build Assets') {
+        stage('Check Evrything') {
             steps {
-                // 1. Install vendor Composer agar file CSS Livewire/Flux tersedia
-                sh 'composer install --no-dev --prefer-dist --optimize-autoloader'
-                
-                // 2. Build aset Vite/Tailwind
-                sh 'npm ci'
-                sh 'npm run build'
-
-                // 3. Kompres folder aset public/build
-                sh 'tar -czf assets.tar.gz public/build'
+                sh 'composer --version'
+                sh 'php --version'
+                sh 'ls -a'
             }
+        }
+
+        stage('Install') {
+            steps {
+                sh 'composer install'
+                sh 'npm install'
+            }
+        }
+
+        stage('Deploy to Staging') {
+            when {
+                branch 'staging'
+            }
+            steps {
+                sh 'echo "Deploying to staging..."'
+
+                sh '''
+                    sh jenkins@jenkins:~$ ssh contohdesain.web.id@ssh.gb.stackcp.com && exit
+                '''
+            }
+        }
+
+        stage('Deploy to Production') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'master'
+                }
+            }
+            steps {
+                sh 'echo "Deploying to production..."'
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'rm -f my-app'
         }
     }
 }
