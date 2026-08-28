@@ -2,12 +2,12 @@ pipeline {
     agent {
         dockerfile {
             filename '.docker/ci/Dockerfile'
-            args '-u 0 --privileged'
+            args '-u 0 --cgroupns=host'
         }
     }
 
     stages {
-        stage('Check Evrything') {
+        stage('Check Everything') {
             steps {
                 sh 'composer --version'
                 sh 'php --version'
