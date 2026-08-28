@@ -29,11 +29,13 @@ pipeline {
             steps {
                 sh 'echo "Deploying to staging..."'
 
-                sh '''
-                    mkdir -p ~/.ssh
-                    ssh-keyscan -H ssh.gb.stackcp.com >> ~/.ssh/known_hosts 2>/dev/null || true
-                    ssh -T -o StrictHostKeyChecking=no contohdesain.web.id@ssh.gb.stackcp.com 'ls -a'
-                '''
+                sshagent(credentials: ['ssh-staging-key']) {
+                    sh '''
+                        mkdir -p ~/.ssh
+                        ssh-keyscan -H ssh.gb.stackcp.com >> ~/.ssh/known_hosts 2>/dev/null || true
+                        ssh -T -o StrictHostKeyChecking=no contohdesain.web.id@ssh.gb.stackcp.com 'ls -a'
+                    '''
+                }
             }
         }
 
