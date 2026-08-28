@@ -2,7 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename '.docker/ci/Dockerfile'
-            args '-u 0 --cgroupns=host'
+            args '-u 0'
         }
     }
 
@@ -30,7 +30,9 @@ pipeline {
                 sh 'echo "Deploying to staging..."'
 
                 sh '''
-                    ssh contohdesain.web.id@ssh.gb.stackcp.com && ls -a && exit
+                    mkdir -p ~/.ssh
+                    ssh-keyscan -H ssh.gb.stackcp.com >> ~/.ssh/known_hosts 2>/dev/null || true
+                    ssh -T -o StrictHostKeyChecking=no contohdesain.web.id@ssh.gb.stackcp.com 'ls -a'
                 '''
             }
         }
