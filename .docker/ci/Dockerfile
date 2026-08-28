@@ -1,6 +1,6 @@
 FROM php:8.4-cli-alpine
 
-# Install dependensi sistem, tools kompresi, Node.js, NPM, dan Git
+# 1. Install dependensi sistem & library C untuk ekstensi intl/zip
 RUN apk add --no-cache \
     git \
     curl \
@@ -9,16 +9,17 @@ RUN apk add --no-cache \
     tar \
     openssh-client \
     nodejs \
-    npm
+    npm \
+    icu-dev \
+    libzip-dev
 
-# Install Composer resmi dari image composer
-COPY --from=docker.io/composer:latest /usr/bin/composer /usr/bin/composer
+# 2. Install & aktifkan ekstensi PHP intl & zip
+RUN docker-php-ext-install intl zip
 
-# Tentukan direktori kerja utama
+# 3. Install Composer dari image resmi
+COPY --from=docker.io/library/composer:latest /usr/bin/composer /usr/bin/composer
+
+# 4. Izinkan semua direktori di Git (mengatasi dubious ownership di Jenkins)
+RUN git config --global --add safe.directory '*'
+
 WORKDIR /app
-
-# Opsional: Jika ingin meng-copy seluruh source code saat build image lokal
-COPY . .
-
-# Verifikasi versi tool (Opsional untuk debugging log)
-RUN node -v && npm -v && composer --version
