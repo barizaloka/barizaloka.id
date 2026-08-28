@@ -30,7 +30,7 @@ pipeline {
                 sh 'echo "Deploying to staging..."'
 
                 sh '''
-                    ssh contohdesain.web.id@ssh.gb.stackcp.com
+                    ssh contohdesain.web.id@ssh.gb.stackcp.com && ls -a && exit
                 '''
             }
         }
