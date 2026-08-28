@@ -47,10 +47,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            sh 'rm -f my-app'
-        }
-    }
 }
