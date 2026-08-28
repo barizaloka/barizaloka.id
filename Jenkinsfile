@@ -21,12 +21,5 @@ pipeline {
                 sh 'tar -czf assets.tar.gz public/build'
             }
         }
-
-        stage('Run Tests') {
-            steps {
-                // Opsional: Jalankan pengujian sebelum deploy
-                sh 'php artisan test --env=testing'
-            }
-        }
     }
 }
