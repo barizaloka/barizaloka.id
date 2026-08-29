@@ -43,7 +43,6 @@
                                 <option value="pesantren">Pesantren & Masjid</option>
                                 <option value="desa">Desa</option>
                                 <option value="umkm">UMKM</option>
-                                <option value="komunitas">Komunitas & Organisasi</option>
                             </flux:select>
                             <flux:error name="category" />
                         </flux:field>

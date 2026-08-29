@@ -15,7 +15,7 @@ class FaqSeeder extends Seeder
         $faqs = [
             [
                 'question' => 'Apa itu Barizaloka?',
-                'answer' => 'Barizaloka adalah ekosistem teknologi dari Rembang yang menyediakan jasa pembuatan website, pengembangan SaaS, jual beli website & aplikasi, serta menaungi komunitas lingkungan, teknologi, dan spiritual.',
+                'answer' => 'Barizaloka adalah penyedia solusi teknologi dari Rembang yang menyediakan jasa pembuatan website, pengembangan SaaS, serta jual beli website & aplikasi.',
                 'category' => 'umum',
                 'order' => 1,
             ],
@@ -63,7 +63,7 @@ class FaqSeeder extends Seeder
             ],
             [
                 'question' => 'Apakah Barizaloka melayani klien di luar Rembang?',
-                'answer' => 'Ya, meskipun berbasis di Rembang, Barizaloka melayani klien pesantren, desa, UMKM, dan komunitas dari seluruh Indonesia secara online melalui WhatsApp dan konsultasi jarak jauh.',
+                'answer' => 'Ya, meskipun berbasis di Rembang, Barizaloka melayani klien pesantren, desa, dan UMKM dari seluruh Indonesia secara online melalui WhatsApp dan konsultasi jarak jauh.',
                 'category' => 'umum',
                 'order' => 9,
             ],

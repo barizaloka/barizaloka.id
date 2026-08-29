@@ -9,7 +9,7 @@
                 <div class="text-center flex flex-col gap-1">
                     <div class="text-4xl mb-2">🚀</div>
                     <h1 class="text-2xl font-bold text-zinc-900">Buat akun baru</h1>
-                    <p class="text-sm text-zinc-500">Bergabung bersama komunitas Barizaloka</p>
+                    <p class="text-sm text-zinc-500">Bergabung bersama Barizaloka</p>
                 </div>
 
                 {{-- Session Status --}}

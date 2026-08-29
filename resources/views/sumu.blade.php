@@ -100,7 +100,7 @@
                         Wadah Wirausaha Memakmurkan Anggota & Memajukan Indonesia
                     </h2>
                     <p class="text-zinc-600 leading-relaxed mb-4 text-sm sm:text-base">
-                        <strong>Serikat Usaha Muhammadiyah (SUMU)</strong> adalah komunitas dan platform kolaborasi gerakan kewirausahaan inklusif yang digagas untuk memperkuat jaring-jaring wirausaha warga Muhammadiyah dan masyarakat luas.
+                        <strong>Serikat Usaha Muhammadiyah (SUMU)</strong> adalah wadah dan platform kolaborasi gerakan kewirausahaan inklusif yang digagas untuk memperkuat jaring-jaring wirausaha warga Muhammadiyah dan masyarakat luas.
                     </p>
                     <p class="text-zinc-600 leading-relaxed text-sm sm:text-base mb-6">
                         SUMU tidak hanya menjadi wadah silaturahmi pengusaha, tetapi juga mesin pertumbuhan ekonomi yang berorientasi pada pencetakan konglomerasi Islam yang beretika, profesional, transparan, dan berdaya saing global.
@@ -339,9 +339,9 @@
 
                 <div class="p-6 rounded-2xl bg-white border border-emerald-100 shadow-sm">
                     <div class="text-3xl mb-3">🤝</div>
-                    <h3 class="font-bold text-zinc-900 text-base mb-2">2. Sinergi Teknis & Komunitas</h3>
+                    <h3 class="font-bold text-zinc-900 text-base mb-2">2. Sinergi Teknis & Pendampingan</h3>
                     <p class="text-xs text-zinc-600 leading-relaxed">
-                        Melalui pilar <strong>Baricode</strong>, kami siap berkolaborasi dalam pendampingan teknologi, riset arsitektur web, hingga pengembangan prototipe portal & marketplace mandiri.
+                        Kami siap berkolaborasi dalam pendampingan teknologi, riset arsitektur web, hingga pengembangan prototipe portal & marketplace mandiri.
                     </p>
                 </div>
 

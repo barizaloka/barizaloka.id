@@ -158,7 +158,7 @@
                         <svg class="faq-icon size-4 shrink-0 text-zinc-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-answer hidden px-6 pb-5 text-sm text-zinc-500 leading-relaxed bg-[#f4f8f6]">
-                        Ya, kami melayani pembuatan website untuk pesantren, UMKM, desa, dan komunitas di seluruh kabupaten/kota di {{ $page['name'] }}, dikerjakan secara online dari mana saja.
+                        Ya, kami melayani pembuatan website untuk pesantren, UMKM, dan desa di seluruh kabupaten/kota di {{ $page['name'] }}, dikerjakan secara online dari mana saja.
                     </div>
                 </div>
                 <div class="faq-item bg-white border border-[#e0ebe7] rounded-xl overflow-hidden">

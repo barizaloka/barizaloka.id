@@ -24,7 +24,6 @@ Route::get('/', function () {
 
 Route::view('/tentang', 'tentang')->name('tentang');
 Route::view('/kontak', 'kontak')->name('kontak');
-Route::view('/komunitas', 'komunitas')->name('komunitas');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 /*

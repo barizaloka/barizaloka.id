@@ -21,10 +21,10 @@
             <nav class="mt-12 pt-8 border-t border-white/10" aria-label="Tautan Populer">
                 <p class="text-xs text-white/40 uppercase tracking-widest mb-4">Atau langsung ke:</p>
                 <ul class="flex flex-wrap gap-2 justify-center">
-                    <li><a href="{{ route('komunitas') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">🏘️ Ekosistem</a></li>
-                    <li><a href="{{ route('home') }}#layanan" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💡 Layanan</a></li>
-                    <li><a href="https://baricode.org" target="_blank" rel="noopener" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💻 Baricode</a></li>
-                    <li><a href="https://astraloka.my.id" target="_blank" rel="noopener" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">🌍 Astraloka</a></li>
+                    <li><a href="{{ route('tentang') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">📖 Tentang Kami</a></li>
+                    <li><a href="{{ route('harga') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">💰 Harga</a></li>
+                    <li><a href="{{ route('portofolio.index') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">🖥️ Portofolio</a></li>
+                    <li><a href="{{ route('kontak') }}" class="inline-block px-4 py-1.5 rounded-lg bg-white/7 border border-white/12 text-white/75 text-sm hover:bg-brand-primary/25 hover:text-white hover:border-brand-primary/40 transition-colors">☎️ Hubungi Kami</a></li>
                 </ul>
             </nav>
         </div>

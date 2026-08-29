@@ -151,7 +151,7 @@
                         </p>
                     </div>
                     <div class="p-4 rounded-xl bg-indigo-50/80 border border-indigo-100 text-xs text-indigo-900">
-                        🛒 <strong>Solusi Digital:</strong> Integrasi portal marketplace komunitas yang menghubungkan produsen lokal langsung ke konsumen secara efisien.
+                        🛒 <strong>Solusi Digital:</strong> Integrasi portal marketplace mandiri yang menghubungkan produsen lokal langsung ke konsumen secara efisien.
                     </div>
                 </div>
 
@@ -385,7 +385,7 @@
                         Saatnya UMKM &amp; Koperasi Indonesia Naik Kelas dengan Web Mandiri
                     </h2>
                     <p class="text-emerald-100/90 text-sm sm:text-base max-w-2xl leading-relaxed mb-8">
-                        Barizaloka berkomitmen mendampingi para pelaku usaha, pemilik brand lokal, koperasi, dan komunitas untuk memiliki infrastruktur web yang andal, estetis, dan terjangkau.
+                        Barizaloka berkomitmen mendampingi para pelaku usaha, pemilik brand lokal, koperasi, dan lembaga lokal untuk memiliki infrastruktur web yang andal, estetis, dan terjangkau.
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
                         <div class="p-5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">

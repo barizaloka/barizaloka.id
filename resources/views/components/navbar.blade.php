@@ -21,13 +21,6 @@
                             <small class="text-xs text-zinc-500 leading-tight">Kisah & profil Barizaloka</small>
                         </span>
                     </a>
-                    <a href="{{ route('komunitas') }}" role="menuitem" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors text-[#1a2420]">
-                        <span class="text-base w-6 text-center">🌐</span>
-                        <span class="flex flex-col gap-0.5">
-                            <strong class="text-sm font-semibold leading-tight">Ekosistem</strong>
-                            <small class="text-xs text-zinc-500 leading-tight">Komunitas & jaringan kami</small>
-                        </span>
-                    </a>
                     <a href="{{ route('home') }}#nilai" role="menuitem" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg hover:bg-brand-light hover:text-brand-dark transition-colors text-[#1a2420]">
                         <span class="text-base w-6 text-center">✦</span>
                         <span class="flex flex-col gap-0.5">
@@ -101,7 +94,6 @@
     {{-- Mobile menu --}}
     <div id="mobile-nav" class="hidden md:hidden flex-col gap-1 bg-white border-b border-[#e0ebe7] px-6 py-4 max-h-[calc(100vh-68px)] overflow-y-auto">
         <a href="{{ route('tentang') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">📖 Tentang Kami</a>
-        <a href="{{ route('komunitas') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">🌐 Ekosistem</a>
         <a href="{{ route('home') }}#nilai" class="px-2 py-2.5 text-sm font-medium text-zinc-700">✦ Nilai Kami</a>
         <a href="{{ route('home') }}#mitra" class="px-2 py-2.5 text-sm font-medium text-zinc-700">🤝 Mitra</a>
         <a href="{{ route('harga') }}" class="px-2 py-2.5 text-sm font-medium text-zinc-700">💰 Harga</a>

@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Portofolio — Website yang Sudah Kami Bangun | Barizaloka"
-    description="Lihat portofolio website yang telah dikerjakan Barizaloka untuk pesantren, desa, UMKM, dan komunitas di seluruh Indonesia."
+    description="Lihat portofolio website yang telah dikerjakan Barizaloka untuk pesantren, desa, dan UMKM di seluruh Indonesia."
 >
 
     {{-- ===== HERO ===== --}}
@@ -9,7 +9,7 @@
         <div class="relative z-10 max-w-xl mx-auto px-6">
             <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3">Portofolio</span>
             <h1 class="font-brand-serif text-[clamp(2rem,5vw,3rem)] font-extrabold text-white leading-tight my-3" style="font-family: 'Playfair Display', Georgia, serif;">Website yang<br>Telah Kami Bangun</h1>
-            <p class="text-white/72 leading-relaxed">Sebagian dari proyek yang telah kami kerjakan bersama pesantren, desa, UMKM, dan komunitas.</p>
+            <p class="text-white/72 leading-relaxed">Sebagian dari proyek yang telah kami kerjakan bersama pesantren, desa, dan UMKM.</p>
         </div>
     </section>
 

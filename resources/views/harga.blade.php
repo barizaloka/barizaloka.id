@@ -9,7 +9,7 @@
                 '@@context' => 'https://schema.org',
                 '@type' => 'Product',
                 'name' => 'Jasa Pembuatan Website Barizaloka',
-                'description' => 'Jasa pembuatan website untuk pesantren, desa, UMKM, dan komunitas.',
+                'description' => 'Jasa pembuatan website untuk pesantren, desa, dan UMKM.',
                 'brand' => ['@type' => 'Organization', 'name' => 'Barizaloka'],
                 'offers' => $packages->map(fn ($package) => [
                     '@type' => 'Offer',

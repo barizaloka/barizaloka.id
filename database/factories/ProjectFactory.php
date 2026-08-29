@@ -24,7 +24,7 @@ class ProjectFactory extends Factory
             'title' => ucfirst($title),
             'slug' => Str::slug($title),
             'client_name' => fake()->company(),
-            'category' => fake()->randomElement(['pesantren', 'desa', 'umkm', 'komunitas']),
+            'category' => fake()->randomElement(['pesantren', 'desa', 'umkm']),
             'summary' => fake()->sentence(),
             'description' => fake()->paragraphs(3, true),
             'url' => fake()->url(),

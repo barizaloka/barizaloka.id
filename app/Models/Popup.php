@@ -55,7 +55,6 @@ class Popup extends Model
             'portofolio.index' => 'Portofolio',
             'faq.index' => 'FAQ',
             'tentang' => 'Tentang Kami',
-            'komunitas' => 'Komunitas',
             'kalkulator-biaya-admin-marketplace' => 'Kalkulator Biaya Admin Marketplace',
         ];
     }

@@ -46,7 +46,6 @@ class ProjectForm
                                 'pesantren' => 'Pesantren & Masjid',
                                 'desa' => 'Desa',
                                 'umkm' => 'UMKM',
-                                'komunitas' => 'Komunitas & Organisasi',
                             ]),
 
                         TextInput::make('url')

@@ -5,16 +5,12 @@
             <div>
                 <div class="font-brand-serif text-2xl font-bold text-white mb-2.5" style="font-family: 'Playfair Display', Georgia, serif;">Barizaloka</div>
                 <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs">Website & aplikasi yang dikerjakan santri Rembang, Jawa Tengah — dibangun rapi, tepat waktu, dan bisa dipertanggungjawabkan.</p>
-                <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Bukan sekadar jasa coding. Barizaloka adalah ekosistem teknologi yang mendedikasikan setiap proyek untuk dampak nyata di bidang lingkungan, teknologi, dan spiritual.</p>
+                <p class="text-sm text-[#7a9992] leading-relaxed max-w-xs mt-3">Bukan sekadar jasa coding. Barizaloka mendedikasikan setiap karya digital untuk menghadirkan kualitas terbaik dan dampak positif yang berkelanjutan.</p>
             </div>
 
             <div>
-                <div class="text-xs font-bold uppercase tracking-widest text-white mb-3.5">Ekosistem</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-white mb-3.5">Program</div>
                 <ul class="flex flex-col gap-1.5 text-sm">
-                    <li><a href="{{ route('komunitas') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🏘️ Semua Pilar</a></li>
-                    <li><a href="https://astraloka.my.id" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">🌍 Astraloka</a></li>
-                    <li><a href="https://baricode.org" target="_blank" rel="noopener" class="text-[#7a9992] hover:text-brand-mid transition-colors">💻 Baricode</a></li>
-                    <li><a href="https://selfreminder.org" class="text-[#7a9992] hover:text-brand-mid transition-colors">📿 Self Reminder</a></li>
                     <li><a href="{{ route('sumu') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">💚 Inisiatif SUMU</a></li>
                     <li><a href="{{ route('tokoh-ekonomi-teknologi') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🚀 Tokoh Ekonomi Teknologi</a></li>
                 </ul>

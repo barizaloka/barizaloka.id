@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Kontak Kami — Barizaloka"
-    description="Hubungi Barizaloka untuk konsultasi gratis jasa pembuatan website. Chat WhatsApp atau email kami, tim siap membantu pesantren, desa, UMKM, dan komunitas Anda."
+    description="Hubungi Barizaloka untuk konsultasi gratis jasa pembuatan website. Chat WhatsApp atau email kami, tim siap membantu pesantren, desa, dan UMKM Anda."
 >
 
     {{-- ===== HERO ===== --}}
@@ -9,7 +9,7 @@
         <div class="relative z-10 max-w-xl mx-auto px-6">
             <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3">Kontak Kami</span>
             <h1 class="font-brand-serif text-[clamp(2rem,5vw,3rem)] font-extrabold text-white leading-tight my-3" style="font-family: 'Playfair Display', Georgia, serif;">Mari Ngobrol Soal<br>Kebutuhan Digital Anda</h1>
-            <p class="text-white/72 leading-relaxed">Tim Barizaloka siap membantu konsultasi gratis — dari pesantren, desa, UMKM, hingga komunitas.</p>
+            <p class="text-white/72 leading-relaxed">Tim Barizaloka siap membantu konsultasi gratis — dari pesantren, desa, hingga UMKM.</p>
         </div>
     </section>
 

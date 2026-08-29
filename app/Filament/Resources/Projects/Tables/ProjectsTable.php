@@ -56,7 +56,6 @@ class ProjectsTable
                         'pesantren' => 'Pesantren & Masjid',
                         'desa' => 'Desa',
                         'umkm' => 'UMKM',
-                        'komunitas' => 'Komunitas & Organisasi',
                     ]),
             ])
             ->recordActions([

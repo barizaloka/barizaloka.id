@@ -71,7 +71,7 @@ class Edit extends Component
             'title' => 'required|string|max:255',
             'slug' => 'required|string|alpha_dash|max:255|unique:projects,slug,'.$this->project->id,
             'client_name' => 'nullable|string|max:255',
-            'category' => 'nullable|string|in:pesantren,desa,umkm,komunitas',
+            'category' => 'nullable|string|in:pesantren,desa,umkm',
             'url' => 'nullable|url|max:255',
             'summary' => 'required|string|max:500',
             'description' => 'nullable|string',

@@ -1,6 +1,6 @@
 <x-layouts.base
     title="Barizaloka — Dari Santri untuk Go Digital"
-    description="Ekosistem teknologi dari Rembang: jasa pembuatan website, serta komunitas lingkungan & teknologi."
+    description="Jasa pembuatan website profesional dari Rembang — cepat, rapi, dan terpercaya."
 >
 
     <style>
@@ -42,9 +42,8 @@
             <p class="text-lg text-white/78 max-w-xl mx-auto mb-8">Bangun kepercayaan dengan website resmi</p>
 
             <div class="flex flex-wrap gap-3 justify-center mb-7">
-                <a href="#komunitas" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">🚀 Jelajahi Ekosistem</a>
-                <a href="#layanan" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">💡 Lihat Solusi Kami</a>
-                <a href="#layanan" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">✨ Lihat Layanan</a>
+                <a href="#layanan-kami" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-7 py-3.5 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">💡 Lihat Layanan</a>
+                <a href="{{ route('harga') }}" class="inline-flex items-center gap-1.5 bg-transparent border border-white/50 text-white rounded-xl px-7 py-3.5 text-sm font-semibold hover:bg-white/10 transition-colors">💰 Lihat Paket &amp; Harga</a>
             </div>
 
             <p class="text-sm text-white/50">🏡 Didirikan oleh Pemuda Desa — Kecamatan Sedan dan Sarang, Kabupaten Rembang Jawa Tengah🌾</p>
@@ -102,76 +101,16 @@
     <section id="stats" class="bg-white border-b border-[#e0ebe7] py-8">
         <div class="max-w-[1100px] mx-auto px-6 flex flex-wrap justify-center items-center">
             <div class="text-center px-12 border-r border-[#e0ebe7] max-sm:px-6">
-                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">4</div>
-                <div class="text-sm text-zinc-500 font-medium">🏘️ Pilar Aktif</div>
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">100+</div>
+                <div class="text-sm text-zinc-500 font-medium">💻 Website &amp; Karya Digital</div>
             </div>
             <div class="text-center px-12 border-r border-[#e0ebe7] max-sm:px-6">
-                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">200+</div>
-                <div class="text-sm text-zinc-500 font-medium">👥 Anggota Bergabung</div>
+                <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">100%</div>
+                <div class="text-sm text-zinc-500 font-medium">👥 Kepuasan Klien</div>
             </div>
             <div class="text-center px-12 max-sm:px-6">
                 <div class="font-brand-serif text-4xl font-extrabold text-brand-primary mb-1" style="font-family: 'Playfair Display', Georgia, serif;">∞</div>
                 <div class="text-sm text-zinc-500 font-medium">🌟 Dampak Positif</div>
-            </div>
-        </div>
-    </section>
-
-    {{-- ===== KOMUNITAS ===== --}}
-    <section id="komunitas" class="py-20 bg-[#f4f8f6]">
-        <div class="max-w-[1100px] mx-auto px-6">
-            <div class="text-center max-w-lg mx-auto mb-12">
-                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-primary bg-brand-light px-3.5 py-1.5 rounded-full mb-3.5">🏘️ Pilar Utama</span>
-                <h2 class="font-brand-serif text-[clamp(1.6rem,4vw,2.4rem)] font-bold mb-3" style="font-family: 'Playfair Display', Georgia, serif;">Ekosistem Kami</h2>
-                <p class="text-zinc-500">Setiap pilar memiliki fokus yang berbeda namun bersatu dalam satu tujuan: dampak nyata yang positif.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                {{-- Astraloka --}}
-                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-primary"></div>
-                    <span class="block text-4xl mb-4">🌍</span>
-                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Astraloka</h3>
-                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🌱 Usaha Peduli Alam</div>
-                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Membangun kesadaran lingkungan melalui edukasi daur ulang, aksi sosial, dan program pengelolaan sampah yang berkelanjutan.</p>
-                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
-                        <li>♻️ Edukasi Daur Ulang</li>
-                        <li>🤝 Aksi Sosial Lingkungan</li>
-                        <li>🗑️ Program Pengelolaan Sampah</li>
-                    </ul>
-                    <a href="https://astraloka.my.id" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">🌍 Kunjungi Astraloka</a>
-                </div>
-
-                {{-- Baricode --}}
-                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-blue"></div>
-                    <span class="block text-4xl mb-4">💻</span>
-                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Baricode</h3>
-                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🖥️ Usaha Teknologi &amp; IT</div>
-                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Ruang belajar mandiri dan kolaboratif bagi para developer—dari pemula hingga profesional yang ingin terus berkembang.</p>
-                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
-                        <li>📚 Belajar Mandiri &amp; Terstruktur</li>
-                        <li>🚀 Proyek Kolaboratif</li>
-                        <li>🌐 Jaringan Developer</li>
-                    </ul>
-                    <a href="https://baricode.org" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">💻 Kunjungi Baricode</a>
-                </div>
-
-                {{-- Self Reminder --}}
-                <div class="relative bg-white border border-[#e0ebe7] rounded-2xl p-7 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <div class="absolute top-0 inset-x-0 h-1 bg-brand-gold"></div>
-                    <span class="block text-4xl mb-4">📿</span>
-                    <h3 class="font-brand-serif text-xl font-bold mb-0.5" style="font-family: 'Playfair Display', Georgia, serif;">Self Reminder</h3>
-                    <div class="text-xs font-semibold text-brand-primary uppercase tracking-wide mb-3.5">🕌 Pengingat Diri Menuju Akhirat</div>
-                    <p class="text-sm text-zinc-500 mb-4 leading-relaxed">Ruang refleksi spiritual yang menyediakan pengingat harian, muhasabah diri, dan wawasan untuk perjalanan menuju akhirat.</p>
-                    <ul class="flex flex-col gap-1.5 text-sm text-[#1a2420] mb-5">
-                        <li>🌙 Pengingat Spiritual Harian</li>
-                        <li>💭 Muhasabah &amp; Refleksi Diri</li>
-                        <li>📊 Pantauan Progres Ibadah</li>
-                    </ul>
-                    <a href="https://selfreminder.org" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary border border-brand-primary rounded-lg px-4 py-2 hover:bg-brand-primary hover:text-white transition-colors">📿 Kunjungi Self Reminder</a>
-                </div>
-
             </div>
         </div>
     </section>
@@ -253,7 +192,7 @@
                     <h2 class="font-brand-serif text-[clamp(1.8rem,3.5vw,2.75rem)] font-extrabold text-white leading-tight mb-5" style="font-family: 'Playfair Display', Georgia, serif;">
                         Website Profesional<br>untuk <span class="text-brand-gold">Semua Kebutuhan</span>
                     </h2>
-                    <p class="text-white/75 leading-relaxed mb-8">Untuk pesantren, masjid, UMKM, dan komunitas desa. Cepat jadi, desain modern, dan sudah termasuk hosting + SSL.</p>
+                    <p class="text-white/75 leading-relaxed mb-8">Untuk pesantren, masjid, UMKM, dan lembaga lokal. Cepat jadi, desain modern, dan sudah termasuk hosting + SSL.</p>
                     <ul class="flex flex-col gap-3.5 mb-10">
                         <li class="flex items-center gap-3 text-white/85 text-sm">
                             <span class="bg-white/15 rounded-full size-7 flex items-center justify-center shrink-0">⚡</span>
@@ -312,9 +251,9 @@
     {{-- ===== CTA FINAL ===== --}}
     <section class="relative py-20 text-center overflow-hidden bg-brand-darker">
         <div class="relative z-10 max-w-[700px] mx-auto px-6">
-            <h2 class="font-brand-serif text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">🚀 Siap Bergabung dengan Ekosistem Kami?</h2>
-            <p class="text-white/75 max-w-md mx-auto mb-8">Jadilah bagian dari gerakan positif. Bersama kita bisa menciptakan perubahan yang lebih besar. 💪</p>
-            <a href="#komunitas" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-8 py-4 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">🌍 Jelajahi Ekosistem</a>
+            <h2 class="font-brand-serif text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">🚀 Siap Membangun Website Anda?</h2>
+            <p class="text-white/75 max-w-md mx-auto mb-8">Konsultasikan kebutuhan digital Anda bersama tim Barizaloka. Kami siap membantu Anda. 💪</p>
+            <a href="{{ route('kontak') }}" class="inline-flex items-center gap-1.5 bg-white text-brand-dark rounded-xl px-8 py-4 text-sm font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all">💬 Hubungi Kami</a>
         </div>
     </section>
 
