@@ -22,32 +22,30 @@ pipeline {
             }
         }
 
-        stage('Deploy to Staging') {
-            when {
-                branch 'staging'
+        stage('Build Assets') {
+            steps {
+                sh 'npm run build'
             }
+        }
+
+        stage('Deploy') {
             steps {
                 sh 'echo "Deploying to staging..."'
                 sshPublisher(publishers: [
                     sshPublisherDesc(
                         configName: 'hosting-indonesia-1',
                         transfers: [
-                            sshTransfer(execCommand: 'touch cobabro.txt')
+                            sshTransfer(
+                                sourceFiles: 'public/build/**',
+                                removePrefix: 'public/build',
+                                remoteDirectory: 'public/build',
+                                execCommand: 'cd /home/barizaloka/barizaloka.id && rm -rf public/build/* && git pull origin master',
+                                execTimeout: 120000,
+                                usePty: true
+                            )
                         ]
                     )
                 ])
-            }
-        }
-
-        stage('Deploy to Production') {
-            when {
-                anyOf {
-                    branch 'main'
-                    branch 'master'
-                }
-            }
-            steps {
-                sh 'echo "Deploying to production..."'
             }
         }
     }
