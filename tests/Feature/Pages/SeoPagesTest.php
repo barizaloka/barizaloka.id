@@ -186,6 +186,7 @@ test('sitemap includes every static, publicly indexable page route', function ()
     $response->assertSee(route('sumu'), false);
     $response->assertSee(route('tokoh-ekonomi-teknologi'), false);
     $response->assertSee(route('bapak-ekonomi-digital'), false);
+    $response->assertSee(route('beda-website-marketplace'), false);
     $response->assertSee(route('faq.index'), false);
 });
 
@@ -224,4 +225,15 @@ test('bapak ekonomi digital static page is reachable and renders Bung Hatta digi
         ->assertSee('Kedaulatan Digital')
         ->assertSee('Laravel')
         ->assertSee('Web Mandiri');
+});
+
+test('beda website marketplace static page is reachable and renders comparison content', function () {
+    $this->get(route('beda-website-marketplace'))
+        ->assertOk()
+        ->assertSee('Beda Website Sendiri vs Marketplace')
+        ->assertSee('Marketplace Pihak Ke-3')
+        ->assertSee('Website Sendiri')
+        ->assertSee('Biaya Komisi Penjualan')
+        ->assertSee('Solusi Hibrida')
+        ->assertSee('Laravel');
 });
