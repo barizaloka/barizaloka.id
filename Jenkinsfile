@@ -32,7 +32,7 @@ pipeline {
                     sshPublisherDesc(
                         configName: 'hosting-indonesia-1',
                         transfers: [
-                            sshTransfer(execCommand: 'echo Koneksi berhasil dari Jenkins && pwd')
+                            sshTransfer(execCommand: 'touch cobabro.txt')
                         ]
                     )
                 ])
