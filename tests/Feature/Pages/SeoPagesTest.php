@@ -187,6 +187,7 @@ test('sitemap includes every static, publicly indexable page route', function ()
     $response->assertSee(route('tokoh-ekonomi-teknologi'), false);
     $response->assertSee(route('bapak-ekonomi-digital'), false);
     $response->assertSee(route('beda-website-marketplace'), false);
+    $response->assertSee(route('sekolah-digital'), false);
     $response->assertSee(route('faq.index'), false);
 });
 
@@ -236,4 +237,21 @@ test('beda website marketplace static page is reachable and renders comparison c
         ->assertSee('Biaya Komisi Penjualan')
         ->assertSee('Solusi Hibrida')
         ->assertSee('Laravel');
+});
+
+test('sekolah digital static page is reachable and renders collaboration content without pricing', function () {
+    $response = $this->get(route('sekolah-digital'));
+
+    $response->assertOk()
+        ->assertSee('Sekolah Digital')
+        ->assertSee('Cara Memulai &amp; Sinergi Bersama Vendor Web &amp; Server', false)
+        ->assertSee('Ajak Kolaborasi Sekarang')
+        ->assertSee('Domain .sch.id')
+        ->assertSee('Managed Server')
+        ->assertSee('FAQPage')
+        ->assertSee('BreadcrumbList');
+
+    $response->assertDontSee('Rp 350')
+        ->assertDontSee('Rp 750')
+        ->assertDontSee('Rp 1.500');
 });

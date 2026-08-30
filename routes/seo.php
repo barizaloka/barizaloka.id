@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/sumu-serikat-usaha-muhammadiyah', 'sumu')->name('sumu');
 Route::view('/tokoh-ekonomi-indonesia-yuk-jadi-seperti-mereka-bidang-teknologi', 'tokoh-ekonomi-teknologi')->name('tokoh-ekonomi-teknologi');
 Route::view('/bapak-ekonomi-indonesia-solusi-digital-sekarang', 'bapak-ekonomi-digital')->name('bapak-ekonomi-digital');
+Route::view('/sekolah-digital', 'sekolah-digital')->name('sekolah-digital');
 Route::view('/beda-website-sendiri-dengan-marketplace', 'beda-website-sendiri-dengan-marketplace')->name('beda-website-marketplace');
 
 // SEO - Dynamic Programmatic SEO Pages (Lokasi & Niche)

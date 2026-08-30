@@ -12,6 +12,7 @@
                 <div class="text-xs font-bold uppercase tracking-widest text-white mb-3.5">Program</div>
                 <ul class="flex flex-col gap-1.5 text-sm">
                     <li><a href="{{ route('sumu') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">💚 Inisiatif SUMU</a></li>
+                    <li><a href="{{ route('sekolah-digital') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🎓 Sekolah Digital</a></li>
                     <li><a href="{{ route('tokoh-ekonomi-teknologi') }}" class="text-[#7a9992] hover:text-brand-mid transition-colors">🚀 Tokoh Ekonomi Teknologi</a></li>
                 </ul>
             </div>
