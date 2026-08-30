@@ -1,12 +1,14 @@
 {
     "agents": [
-        "claude_code",
-        "gemini",
-        "copilot"
+        "gemini"
     ],
     "guidelines": true,
     "mcp": true,
     "nightwatch_mcp": false,
+    "packages": [
+        "filament/filament",
+        "laramint/laravel-brain"
+    ],
     "sail": false,
     "skills": [
         "fortify-development",
@@ -14,6 +16,7 @@
         "fluxui-development",
         "livewire-development",
         "pest-testing",
-        "tailwindcss-development"
+        "tailwindcss-development",
+        "laravel-brain"
     ]
 }
